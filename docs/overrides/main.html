@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LLM Development Mastery Path">
+  <meta property="og:title" content="{{ page.title | default('LLM Development Mastery Path') }}">
+  <meta property="og:description" content="A structured, module-wise training program for building applications with Large Language Models — prompt engineering, LLM APIs, tool calling, agents, and evaluation — free, with runnable Python code in every module.">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page.title | default('LLM Development Mastery Path') }}">
+  <meta name="twitter:description" content="A structured, module-wise training program for building applications with Large Language Models — prompt engineering, LLM APIs, tool calling, agents, and evaluation — free, with runnable Python code in every module.">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9440969811959397"
+     crossorigin="anonymous"></script>
+{% endblock %}

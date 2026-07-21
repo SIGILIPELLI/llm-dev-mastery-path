@@ -1,0 +1,100 @@
+site_name: LLM Development Mastery Path
+site_description: A structured, module-wise training program for building applications with Large Language Models — prompt engineering, LLM APIs, tool calling, agents, and evaluation — from entry level to master level.
+site_url: https://sigilipelli.github.io/llm-dev-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/llm-dev-mastery-path
+repo_name: llm-dev-mastery-path
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Privacy Policy: privacy.md
+  - "Level 1 · Entry":
+      - Overview: level-1/index.md
+      - "01 · The LLM Landscape & Setup": level-1/01-llm-landscape-setup.md
+      - "02 · API Fundamentals": level-1/02-api-fundamentals.md
+      - "03 · Prompt Engineering": level-1/03-prompt-engineering.md
+      - "04 · Structured Output": level-1/04-structured-output.md
+      - "05 · Tool / Function Calling": level-1/05-tool-calling.md
+      - "06 · Conversation State & Memory": level-1/06-conversation-state-memory.md
+      - "07 · Streaming": level-1/07-streaming.md
+      - "08 · Errors, Rate Limits & Cost": level-1/08-errors-rate-limits-cost.md
+      - "09 · A Simple Agent Loop": level-1/09-simple-agent-loop.md
+      - "10 · Capstone — CLI Personal Assistant": level-1/10-capstone-project.md
+  - "Level 2 · Intermediate":
+      - Overview: level-2/index.md
+      - "01 · Advanced Prompting Patterns": level-2/01-advanced-prompting-patterns.md
+      - "02 · Prompt Caching & Cost Optimization": level-2/02-prompt-caching.md
+      - "03 · Vision & Multimodal Inputs": level-2/03-vision-multimodal.md
+      - "04 · Advanced Tool Use Patterns": level-2/04-advanced-tool-use.md
+      - "05 · Model Context Protocol (MCP)": level-2/05-mcp.md
+      - "06 · Evaluation Frameworks": level-2/06-evaluation-frameworks.md
+      - "07 · Advanced Agent Patterns": level-2/07-advanced-agent-patterns.md
+      - "08 · Multi-Agent Systems": level-2/08-multi-agent-systems.md
+      - "09 · Building LLM Web Apps": level-2/09-llm-web-apps.md
+      - "10 · Project — Production-Ready Agent Service": level-2/10-project-agent-service.md
+  - "Level 3 · Advanced":
+      - Overview: level-3/index.md
+      - "01 · Transformer Internals": level-3/01-transformer-internals.md
+      - "02 · Tokenizers Deep Dive": level-3/02-tokenizers.md
+      - "03 · Embeddings & Semantic Search": level-3/03-embeddings-semantic-search.md
+      - "04 · Running Local Models with Ollama": level-3/04-local-models-ollama.md
+      - "05 · Serving Open Models with vLLM": level-3/05-serving-vllm.md
+      - "06 · Fine-Tuning Fundamentals (LoRA/QLoRA)": level-3/06-fine-tuning.md
+      - "07 · Quantization & Inference Optimization": level-3/07-quantization-inference.md
+      - "08 · Guardrails & Content Moderation": level-3/08-guardrails-moderation.md
+      - "09 · Observability & Tracing": level-3/09-observability-tracing.md
+      - "10 · Project — Self-Hosted LLM Stack": level-3/10-project-self-hosted-stack.md
+  - "Level 4 · Master":
+      - Overview: level-4/index.md
+      - "01 · Pretraining & Scaling Laws Overview": level-4/01-pretraining-scaling-laws.md
+      - "02 · Alignment & RLHF Overview": level-4/02-alignment-rlhf.md
+      - "03 · Production LLM Platform Architecture": level-4/03-llm-platform-architecture.md
+      - "04 · Safety & Red-Teaming": level-4/04-safety-red-teaming.md
+      - "05 · Advanced Evaluation at Scale": level-4/05-evaluation-at-scale.md
+      - "06 · Cost Optimization at Scale": level-4/06-cost-optimization-at-scale.md
+      - "07 · Latency Engineering & Batching": level-4/07-latency-engineering.md
+      - "08 · Security — Prompt Injection & Beyond": level-4/08-security-prompt-injection.md
+      - "09 · Compliance, Privacy & Governance": level-4/09-compliance-privacy-governance.md
+      - "10 · Capstone Project": level-4/10-capstone-project.md
