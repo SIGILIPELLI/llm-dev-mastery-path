@@ -1,8 +1,8 @@
 site_name: LLM Development Mastery Path
 site_description: A structured, module-wise training program for building applications with Large Language Models — prompt engineering, LLM APIs, tool calling, agents, and evaluation — from entry level to master level.
-site_url: https://sigilipelli.github.io/llm-dev-skillmastery/
-repo_url: https://github.com/SIGILIPELLI/llm-dev-skillmastery
-repo_name: llm-dev-skillmastery
+site_url: https://sigilipelli.github.io/llm-dev-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/llm-dev-mastery-path
+repo_name: llm-dev-mastery-path
 
 theme:
   name: material
