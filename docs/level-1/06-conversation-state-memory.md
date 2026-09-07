@@ -162,6 +162,29 @@ if history_tokens(convo.system, convo.messages) > 8_000:
     ...  # summarize now
 ```
 
+## How It Actually Works
+
+LLM APIs are stateless: the server holds no memory of your previous
+requests between calls. Every "conversation" you have is really the same
+thing repeated — you resend the *entire* message history on every single
+request, and the model re-reads it from scratch each time as one long
+token sequence, exactly like it would if you'd typed the whole transcript
+in one giant message. There's no persistent server-side session tied to
+a conversation; the "memory" lives entirely in whatever list of messages
+your client code maintains and resends.
+
+This is precisely why token counting matters for state management: each
+resend costs you the full context length in tokens, and that length grows
+with every turn — a 20-turn conversation might resend thousands of tokens
+that were already "seen" and paid for in earlier calls just to keep
+context. (Prompt caching, in Level 2, is the specific optimization that
+avoids fully re-processing that repeated prefix on the server side.) It's
+also why context windows put a hard ceiling on conversation length:
+history plus new input plus reserved output space must all fit inside one
+model's fixed attention span, so summarization or truncation strategies
+exist purely to keep that resent history under the limit as conversations
+grow.
+
 ## Cheat sheet
 
 | Concept | Key fact |

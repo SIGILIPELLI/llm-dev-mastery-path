@@ -169,6 +169,36 @@ tool_choice={"type": "none"}                      # text only this turn
 Forcing a specific tool is handy for extraction pipelines where the "tool"
 is really just a schema you want filled in.
 
+## How It Actually Works
+
+Tool calling is not a special API mode where the model "reaches out" and
+executes code — the model never runs anything itself. What actually
+happens: the tool definitions (names, descriptions, JSON-schema parameter
+specs) you pass are serialized into the prompt the model sees, typically
+in a dedicated section of the chat template. The model was fine-tuned on
+examples where, given tool descriptions plus a user request that matches
+one, the correct next tokens are a specially-formatted "tool call" block
+naming the tool and filling in arguments — the same constrained/structured
+generation mechanism as the previous lesson, applied to matching the
+tool's parameter schema instead of arbitrary JSON.
+
+When the API returns a `tool_use` block, that's the end of the model's
+turn — generation stops, because the model has been trained to stop and
+wait once it's emitted a complete tool call rather than hallucinate a
+result. Your application code is what actually calls the function, and
+the loop only continues because *you* take that output, execute it
+locally, and send the result back as a new message with a `tool_result`
+role. The model has no channel to the outside world; the entire
+"loop" is client-side orchestration around a model that only ever
+predicts tokens.
+
+This explains why tool descriptions matter so much for accuracy: the
+model picks which tool to call and how to fill its arguments purely from
+matching your description text and the user's request against patterns
+learned in training — a vague description produces the same kind of
+next-token uncertainty as a vague prompt does anywhere else in this
+lesson set.
+
 ## Cheat sheet
 
 | Concept | Key fact |

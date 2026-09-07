@@ -187,6 +187,32 @@ for the simplest structure that solves the problem:
 Rule of thumb: **if you can write the steps as code, write code and call the
 model per step.** Use an agent only when the model must decide the steps.
 
+## How It Actually Works
+
+An "agent loop" is not a new model capability — it's plain client-side
+control flow wrapped around the same stateless, tool-calling model from
+earlier lessons. Each iteration of the loop does exactly one thing the
+model can already do: read the full accumulated message history (system
+prompt, prior tool calls, prior tool results) and predict what comes
+next — either a final text answer or another `tool_use` block. The
+"agency" is entirely an illusion created by your code deciding to
+re-invoke the model with an updated transcript instead of stopping.
+
+This is why the message history is the agent's *only* memory across
+steps: every tool result your loop appends becomes part of what the model
+conditions on for its next decision, and once history is truncated,
+summarized, or exceeds the context window, the model genuinely cannot
+"remember" what it can no longer see in its input — there is no separate
+scratch memory outside the token sequence.
+
+It also explains why agent loops need an explicit stop condition and a
+max-iteration cap: nothing about the underlying next-token prediction
+mechanism guarantees convergence to a final answer. A model can, in
+principle, keep predicting "call another tool" indefinitely (e.g., stuck
+retrying a failing call in a loop that looks reasonable one step at a
+time), so termination has to be enforced by the orchestrating code, not
+assumed from the model's behavior.
+
 ## Cheat sheet
 
 | Concept | Key fact |

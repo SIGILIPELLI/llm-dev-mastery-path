@@ -181,6 +181,43 @@ print("accuracy:", run_evals(CLASSIFIER_PROMPT_V2))
 This is a miniature **eval harness** — the capstone project ships one, and
 Level 2 covers full evaluation frameworks.
 
+## How It Actually Works
+
+Prompt engineering techniques work because of how the model was trained,
+not because of any hidden "instruction parser." During fine-tuning
+(specifically instruction-tuning and RLHF, covered in Level 4), the model
+saw huge numbers of examples pairing clear, well-structured instructions
+with high-quality responses, and vague or ambiguous ones with weaker
+responses. Every technique in this lesson is really about steering the
+model's next-token predictions toward the region of its learned
+probability space that resembles those "good example" completions.
+
+XML-style delimiters (`<document>...</document>`) work because delimiter
+patterns like these appear constantly in the model's training data (docs,
+code, markup) as reliable boundaries — the attention mechanism learns to
+treat a closing tag as a strong signal "this chunk is one coherent unit,
+stop attending to it as ongoing instructions." This is why malformed or
+inconsistent tags degrade performance: the model's attention has nothing
+crisp to lock onto.
+
+Few-shot examples work through **in-context learning**: the transformer's
+attention layers can extract a pattern from examples present earlier in
+the same context window and apply it to a new input, without any weight
+update. This is fundamentally different from training — nothing about the
+model changes; the pattern only exists for the duration of that single
+forward pass over that specific prompt. This is also why few-shot examples
+consume context-window budget and cost tokens on every single call, unlike
+fine-tuning.
+
+Chain-of-thought prompting exploits the autoregressive nature of
+generation directly: each token the model emits becomes part of the input
+context for predicting the next one. When you ask the model to "think step
+by step," you're forcing intermediate reasoning tokens onto the context
+before the final answer token, giving the network more computed
+intermediate representations to condition on — effectively more forward
+passes of "thinking" budget per answer, which measurably improves accuracy
+on multi-step problems compared to jumping straight to a final answer.
+
 ## Cheat sheet
 
 | Technique | Use when | One-liner |

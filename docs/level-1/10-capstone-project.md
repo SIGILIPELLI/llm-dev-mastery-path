@@ -381,6 +381,41 @@ with guardrails. That is the core toolkit of applied LLM engineering —
 Level 2 builds production patterns (caching, evals at scale, MCP,
 multi-agent systems) on top of it.
 
+## How It Actually Works
+
+Stepping back across the whole capstone, every piece resolves to the same
+underlying mechanism: a stateless transformer that predicts one token at
+a time, with all "features" implemented as client-side orchestration
+around that single primitive.
+
+`assistant.py`'s agent loop works because the model is stateless — each
+call re-reads the full history you've assembled and produces either text
+or a tool-call token sequence; nothing persists between calls except what
+your loop chooses to resend. `memory.py`'s summarization exists because
+that resent history is bounded by the context window (a hard limit on how
+many token-positions the attention mechanism was trained to relate to
+each other) and by `CostTracker`'s dollar math, since every resent token
+is billed again on every turn. `tools.py`'s schemas work through
+constrained decoding — the server restricts sampling to only the tokens
+that keep the tool call structurally valid for the given JSON schema, the
+same mechanism from the structured-output lesson, applied to arguments
+instead of a return payload.
+
+Streaming doesn't change any of this generation process — it's purely a
+transport-layer choice to flush each token (or small token chunk) to the
+client via server-sent events as it's produced, rather than buffering the
+full response and sending it once at the end; the model computes tokens
+in exactly the same autoregressive order either way. And retries/backoff
+in the SDK config exist because rate limits are an admission-control
+mechanism protecting a fixed pool of GPU compute — a `429` means "the
+queue is full right now," not "your request was invalid," which is why
+retrying with backoff (rather than failing immediately) is the correct
+response.
+
+Seeing the whole capstone this way — one predict-next-token primitive,
+wrapped in progressively more client-side scaffolding — is the mental
+model that carries directly into Level 2's production patterns.
+
 ## Cheat sheet
 
 | Component | Modules it applies |

@@ -130,6 +130,35 @@ Models read and write **tokens** — chunks of roughly 3–4 English characters.
 model has a maximum context window measured in tokens, and `max_tokens`
 limits output tokens. Module 2 covers counting them precisely.
 
+## How It Actually Works
+
+Under the hood, "calling an LLM" means sending a serialized text payload
+(your prompt, encoded into integers called tokens) through an HTTP request
+to a server that runs a **transformer** — a stack of neural network layers
+whose only job is to output a probability distribution over "what token
+comes next." The model doesn't see words; it sees a sequence of integer
+token IDs, each mapped to a learned vector (an embedding) that captures
+something about its meaning and context.
+
+Generation is autoregressive: the model computes probabilities for the
+next token, a token is sampled from that distribution, it's appended to
+the sequence, and the whole (now one-token-longer) sequence is fed back
+in to predict the *next* token. This repeats until a stop condition — a
+special end-of-turn token, a `max_tokens` limit, or a stop sequence you
+specify — is hit. This is why response time scales roughly linearly with
+output length: each token requires a full forward pass through the network
+(though key/value caching from earlier steps means only the new token's
+computation is "new" work each step, not the whole prompt again).
+
+The difference between a hosted API and a local model isn't the algorithm —
+it's *where* those forward passes run. A hosted API's servers hold the
+model's weights (often tens to hundreds of gigabytes) loaded onto GPUs
+with enough VRAM to keep them resident, and your request just adds a job
+to a batch being processed. A local model puts that same computational
+burden on your own machine, which is why local inference is usually
+slower and more memory-hungry per request — you don't get the economies
+of large-batch GPU serving that providers use to amortize cost.
+
 ## Cheat sheet
 
 | Item | Detail |

@@ -155,6 +155,37 @@ supports native structured output, (b) schema features like recursion or
 numeric ranges aren't always supported so prompt+validate remains the
 fallback, and (c) the repair-loop pattern generalizes far beyond JSON.
 
+## How It Actually Works
+
+The model fundamentally only knows how to emit one token at a time from
+its vocabulary; it has no native concept of "JSON" as a data type. Getting
+reliable structured output relies on one of two underlying mechanisms.
+
+The first — prompting the model to "return JSON" — works purely because
+JSON is extremely common in the model's training data, so the learned
+distribution over next-tokens naturally favors JSON-shaped continuations
+after a JSON-shaped instruction and example. It's still just next-token
+prediction; there's no validation happening, which is exactly why it can
+still emit a trailing comma, an unescaped quote, or prose before the `{`.
+
+Native structured-output / JSON-mode features work differently and far
+more reliably: they use **constrained decoding**. Instead of sampling
+freely from the full vocabulary at each step, the server intersects the
+model's output distribution with a grammar or JSON-schema-derived state
+machine, zeroing out the probability of any token that would make the
+output invalid at that position (e.g., zeroing every token except `"`,
+`}`, or a digit if the schema expects a number next). The model still
+picks among only the tokens consistent with your schema, sampled according
+to its normal (renormalized) probabilities — so it's guaranteed
+syntactically valid, but the *values* it fills in are still generated
+predictions, not database lookups, and can still be factually wrong even
+though they're structurally perfect.
+
+This is also why constrained decoding is a server-side feature: it
+requires access to the raw logits before sampling, something a client
+calling the API over HTTP cannot do once it only receives the finished
+text.
+
 ## Cheat sheet
 
 | Technique | Guarantee | Cost |

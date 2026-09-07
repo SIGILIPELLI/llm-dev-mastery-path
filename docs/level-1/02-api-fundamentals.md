@@ -160,6 +160,42 @@ response.content       # list of content blocks
 response.usage         # input/output token counts
 ```
 
+## How It Actually Works
+
+The "messages" array you build isn't sent to the model as separate,
+labeled objects — the API flattens it into one continuous token stream
+using a **chat template**. Each role transition (`system`, `user`,
+`assistant`) is marked by special control tokens baked into the model's
+vocabulary during fine-tuning, something like
+`<|start|>user<|message|>...text...<|end|>` under the hood (exact tokens
+vary by model family). The model was trained to predict a coherent
+assistant turn specifically after seeing a `user`-then-`assistant` control
+sequence, which is *why* roles work at all — there's no hardcoded "role
+system," just a learned pattern from training data shaped that way.
+
+`max_tokens` is a hard cutoff on the autoregressive loop described in
+earlier lessons: the server just stops requesting a next-token prediction
+once the count is hit, truncating mid-thought if necessary — it doesn't
+know it's about to be cut off.
+
+Temperature works by reshaping the raw output distribution before
+sampling. The model's last layer produces "logits" — one real number per
+vocabulary token, roughly indicating how likely it is to come next.
+These are converted to probabilities via **softmax**:
+`p_i = exp(logit_i / T) / Σ exp(logit_j / T)`. At `T=0` (or very low),
+the highest-logit token dominates almost completely, so you nearly always
+get the single most likely token — this is why low temperature feels
+deterministic. As `T` increases, the distribution flattens, giving
+lower-probability tokens a real chance of being sampled, which produces
+more varied (and occasionally less coherent) output.
+
+Tokens and context windows exist because the transformer's attention
+mechanism computes relationships between every pair of positions in the
+input — a cost that grows quadratically with sequence length. The context
+window is the hard architectural limit on how many token-positions the
+model was built and trained to attend over; exceed it and the request is
+rejected or silently truncated, not "slower."
+
 ## Cheat sheet
 
 | Concept | Key fact |

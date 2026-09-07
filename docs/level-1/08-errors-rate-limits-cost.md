@@ -196,6 +196,34 @@ def cached_ask(user_text: str, system: str = "") -> str:
   to it — for now, know it exists and that it's the single biggest cost
   lever for chat apps.
 
+## How It Actually Works
+
+Rate limits and per-token pricing both trace back to the same underlying
+resource: GPU compute time. A provider's fleet has a fixed number of GPUs,
+each with finite memory and finite throughput for running forward passes.
+Rate limits (requests-per-minute, tokens-per-minute) exist to keep
+aggregate demand within what that fleet can serve without queueing
+collapsing — they're an admission-control mechanism, not an arbitrary
+business rule, which is why limits are usually expressed in *both*
+requests and tokens: a request with a huge prompt consumes proportionally
+more GPU time than a tiny one even though it's "one request."
+
+Per-token pricing splits input and output tokens because they cost the
+provider differently to serve. Processing a prompt (the "prefill" phase)
+can process all input tokens through the network in parallel in a single
+batched pass. Generating output is inherently sequential — each new token
+requires its own forward pass conditioned on everything before it, one at
+a time — so output tokens are almost always priced higher per token than
+input tokens, reflecting that sequential, harder-to-batch cost.
+
+Retrying on `429`/`529` errors with exponential backoff isn't just
+politeness — it's what prevents a client-side positive feedback loop.
+If every failed request were retried instantly, transient overload turns
+into sustained overload (a thundering herd), because failed requests pile
+up and retry at the same moment as new ones. Backoff with jitter spreads
+retries out in time so the server's queue actually has a chance to drain
+before the same client hits it again.
+
 ## Cheat sheet
 
 | Concern | Practice |
