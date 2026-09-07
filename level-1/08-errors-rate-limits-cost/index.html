@@ -980,6 +980,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2294,6 +2305,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2571,6 +2593,30 @@ memory feature).</p>
   to it — for now, know it exists and that it's the single biggest cost
   lever for chat apps.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Rate limits and per-token pricing both trace back to the same underlying
+resource: GPU compute time. A provider's fleet has a fixed number of GPUs,
+each with finite memory and finite throughput for running forward passes.
+Rate limits (requests-per-minute, tokens-per-minute) exist to keep
+aggregate demand within what that fleet can serve without queueing
+collapsing — they're an admission-control mechanism, not an arbitrary
+business rule, which is why limits are usually expressed in <em>both</em>
+requests and tokens: a request with a huge prompt consumes proportionally
+more GPU time than a tiny one even though it's "one request."</p>
+<p>Per-token pricing splits input and output tokens because they cost the
+provider differently to serve. Processing a prompt (the "prefill" phase)
+can process all input tokens through the network in parallel in a single
+batched pass. Generating output is inherently sequential — each new token
+requires its own forward pass conditioned on everything before it, one at
+a time — so output tokens are almost always priced higher per token than
+input tokens, reflecting that sequential, harder-to-batch cost.</p>
+<p>Retrying on <code>429</code>/<code>529</code> errors with exponential backoff isn't just
+politeness — it's what prevents a client-side positive feedback loop.
+If every failed request were retried instantly, transient overload turns
+into sustained overload (a thundering herd), because failed requests pile
+up and retry at the same moment as new ones. Backoff with jitter spreads
+retries out in time so the server's queue actually has a chance to drain
+before the same client hits it again.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -913,6 +913,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2272,6 +2283,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2472,6 +2494,26 @@ counter from module 2:</p>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">if</span> <span class="n">history_tokens</span><span class="p">(</span><span class="n">convo</span><span class="o">.</span><span class="n">system</span><span class="p">,</span> <span class="n">convo</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8_000</span><span class="p">:</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="o">...</span>  <span class="c1"># summarize now</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>LLM APIs are stateless: the server holds no memory of your previous
+requests between calls. Every "conversation" you have is really the same
+thing repeated — you resend the <em>entire</em> message history on every single
+request, and the model re-reads it from scratch each time as one long
+token sequence, exactly like it would if you'd typed the whole transcript
+in one giant message. There's no persistent server-side session tied to
+a conversation; the "memory" lives entirely in whatever list of messages
+your client code maintains and resends.</p>
+<p>This is precisely why token counting matters for state management: each
+resend costs you the full context length in tokens, and that length grows
+with every turn — a 20-turn conversation might resend thousands of tokens
+that were already "seen" and paid for in earlier calls just to keep
+context. (Prompt caching, in Level 2, is the specific optimization that
+avoids fully re-processing that repeated prefix on the server side.) It's
+also why context windows put a hard ceiling on conversation length:
+history plus new input plus reserved output space must all fit inside one
+model's fixed attention span, so summarization or truncation strategies
+exist purely to keep that resent history under the limit as conversations
+grow.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -812,6 +812,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2294,6 +2305,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2466,6 +2488,37 @@ provider tokenizes differently — always use the provider's own counter.</p>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">response</span><span class="o">.</span><span class="n">content</span>       <span class="c1"># list of content blocks</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">response</span><span class="o">.</span><span class="n">usage</span>         <span class="c1"># input/output token counts</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>The "messages" array you build isn't sent to the model as separate,
+labeled objects — the API flattens it into one continuous token stream
+using a <strong>chat template</strong>. Each role transition (<code>system</code>, <code>user</code>,
+<code>assistant</code>) is marked by special control tokens baked into the model's
+vocabulary during fine-tuning, something like
+<code>&lt;|start|&gt;user&lt;|message|&gt;...text...&lt;|end|&gt;</code> under the hood (exact tokens
+vary by model family). The model was trained to predict a coherent
+assistant turn specifically after seeing a <code>user</code>-then-<code>assistant</code> control
+sequence, which is <em>why</em> roles work at all — there's no hardcoded "role
+system," just a learned pattern from training data shaped that way.</p>
+<p><code>max_tokens</code> is a hard cutoff on the autoregressive loop described in
+earlier lessons: the server just stops requesting a next-token prediction
+once the count is hit, truncating mid-thought if necessary — it doesn't
+know it's about to be cut off.</p>
+<p>Temperature works by reshaping the raw output distribution before
+sampling. The model's last layer produces "logits" — one real number per
+vocabulary token, roughly indicating how likely it is to come next.
+These are converted to probabilities via <strong>softmax</strong>:
+<code>p_i = exp(logit_i / T) / Σ exp(logit_j / T)</code>. At <code>T=0</code> (or very low),
+the highest-logit token dominates almost completely, so you nearly always
+get the single most likely token — this is why low temperature feels
+deterministic. As <code>T</code> increases, the distribution flattens, giving
+lower-probability tokens a real chance of being sampled, which produces
+more varied (and occasionally less coherent) output.</p>
+<p>Tokens and context windows exist because the transformer's attention
+mechanism computes relationships between every pair of positions in the
+input — a cost that grows quadratically with sequence length. The context
+window is the hard architectural limit on how many token-positions the
+model was built and trained to attend over; exceed it and the request is
+rejected or silently truncated, not "slower."</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

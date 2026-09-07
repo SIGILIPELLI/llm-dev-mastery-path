@@ -1069,6 +1069,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2360,6 +2371,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2749,6 +2771,36 @@ responses, handle failures, track cost, and assemble it all into an agent
 with guardrails. That is the core toolkit of applied LLM engineering —
 Level 2 builds production patterns (caching, evals at scale, MCP,
 multi-agent systems) on top of it.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Stepping back across the whole capstone, every piece resolves to the same
+underlying mechanism: a stateless transformer that predicts one token at
+a time, with all "features" implemented as client-side orchestration
+around that single primitive.</p>
+<p><code>assistant.py</code>'s agent loop works because the model is stateless — each
+call re-reads the full history you've assembled and produces either text
+or a tool-call token sequence; nothing persists between calls except what
+your loop chooses to resend. <code>memory.py</code>'s summarization exists because
+that resent history is bounded by the context window (a hard limit on how
+many token-positions the attention mechanism was trained to relate to
+each other) and by <code>CostTracker</code>'s dollar math, since every resent token
+is billed again on every turn. <code>tools.py</code>'s schemas work through
+constrained decoding — the server restricts sampling to only the tokens
+that keep the tool call structurally valid for the given JSON schema, the
+same mechanism from the structured-output lesson, applied to arguments
+instead of a return payload.</p>
+<p>Streaming doesn't change any of this generation process — it's purely a
+transport-layer choice to flush each token (or small token chunk) to the
+client via server-sent events as it's produced, rather than buffering the
+full response and sending it once at the end; the model computes tokens
+in exactly the same autoregressive order either way. And retries/backoff
+in the SDK config exist because rate limits are an admission-control
+mechanism protecting a fixed pool of GPU compute — a <code>429</code> means "the
+queue is full right now," not "your request was invalid," which is why
+retrying with backoff (rather than failing immediately) is the correct
+response.</p>
+<p>Seeing the whole capstone this way — one predict-next-token primitive,
+wrapped in progressively more client-side scaffolding — is the mental
+model that carries directly into Level 2's production patterns.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
