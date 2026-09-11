@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 02 · Alignment & RLHF Overview
 
 !!! info "Coming soon"

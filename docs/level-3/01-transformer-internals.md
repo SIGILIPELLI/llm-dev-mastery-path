@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 01 · Transformer Internals
 
 !!! info "Coming soon"

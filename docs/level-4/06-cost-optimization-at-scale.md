@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 06 · Cost Optimization at Scale
 
 !!! info "Coming soon"

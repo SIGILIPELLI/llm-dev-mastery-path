@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 08 · Guardrails & Content Moderation
 
 !!! info "Coming soon"

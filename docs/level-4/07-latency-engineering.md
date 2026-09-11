@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 07 · Latency Engineering & Batching
 
 !!! info "Coming soon"

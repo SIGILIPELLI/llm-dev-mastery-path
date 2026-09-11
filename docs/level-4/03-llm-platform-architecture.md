@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 03 · Production LLM Platform Architecture
 
 !!! info "Coming soon"

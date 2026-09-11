@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 01 · Pretraining & Scaling Laws Overview
 
 !!! info "Coming soon"

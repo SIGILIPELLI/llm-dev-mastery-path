@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 10 · Capstone Project
 
 !!! info "Coming soon"

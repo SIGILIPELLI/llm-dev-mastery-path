@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 02 · Prompt Caching & Cost Optimization
 
 !!! info "Coming soon"

@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 08 · Security — Prompt Injection & Beyond
 
 !!! info "Coming soon"

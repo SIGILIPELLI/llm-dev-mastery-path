@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 02 · Tokenizers Deep Dive
 
 !!! info "Coming soon"

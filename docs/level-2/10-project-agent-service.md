@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 10 · Project — Production-Ready Agent Service
 
 !!! info "Coming soon"

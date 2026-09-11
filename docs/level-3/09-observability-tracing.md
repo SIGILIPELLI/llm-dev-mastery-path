@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 09 · Observability & Tracing
 
 !!! info "Coming soon"

@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 03 · Embeddings & Semantic Search
 
 !!! info "Coming soon"

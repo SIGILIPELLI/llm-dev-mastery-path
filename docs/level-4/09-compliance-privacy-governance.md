@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 09 · Compliance, Privacy & Governance
 
 !!! info "Coming soon"

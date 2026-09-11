@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 04 · Advanced Tool Use Patterns
 
 !!! info "Coming soon"

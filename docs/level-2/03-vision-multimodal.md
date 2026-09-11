@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 03 · Vision & Multimodal Inputs
 
 !!! info "Coming soon"

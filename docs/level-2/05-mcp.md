@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 05 · Model Context Protocol (MCP)
 
 !!! info "Coming soon"

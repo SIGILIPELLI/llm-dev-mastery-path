@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 04 · Safety & Red-Teaming
 
 !!! info "Coming soon"

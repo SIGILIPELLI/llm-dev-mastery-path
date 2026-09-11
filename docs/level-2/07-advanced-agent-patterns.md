@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 07 · Advanced Agent Patterns
 
 !!! info "Coming soon"

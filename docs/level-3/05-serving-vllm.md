@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 05 · Serving Open Models with vLLM
 
 !!! info "Coming soon"

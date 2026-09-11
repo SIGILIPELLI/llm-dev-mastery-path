@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 10 · Project — Self-Hosted LLM Stack
 
 !!! info "Coming soon"

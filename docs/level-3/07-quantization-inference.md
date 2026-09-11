@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 07 · Quantization & Inference Optimization
 
 !!! info "Coming soon"

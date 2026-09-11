@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 09 · Building LLM Web Apps
 
 !!! info "Coming soon"

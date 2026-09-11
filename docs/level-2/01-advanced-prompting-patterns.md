@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 01 · Advanced Prompting Patterns
 
 !!! info "Coming soon"

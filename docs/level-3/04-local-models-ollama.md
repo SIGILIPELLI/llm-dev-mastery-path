@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 04 · Running Local Models with Ollama
 
 !!! info "Coming soon"
