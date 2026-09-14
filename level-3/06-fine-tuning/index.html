@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1562,6 +1560,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Fine-Tuning Fundamentals (LoRA/QLoRA)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1578,6 +1594,124 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-fine-tuning-beats-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When fine-tuning beats prompting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-fine-tuning-without-touching-most-of-the-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRA: fine-tuning without touching most of the weights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qlora-lora-on-a-quantized-base-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QLoRA: LoRA on a quantized base model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-loop-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training loop (sketch)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-after-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation after fine-tuning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2233,113 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-fine-tuning-beats-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When fine-tuning beats prompting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-fine-tuning-without-touching-most-of-the-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRA: fine-tuning without touching most of the weights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qlora-lora-on-a-quantized-base-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QLoRA: LoRA on a quantized base model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-loop-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training loop (sketch)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-after-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation after fine-tuning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2359,242 @@
 
 
 <h1 id="06-fine-tuning-fundamentals-loraqlora">06 · Fine-Tuning Fundamentals (LoRA/QLoRA)<a class="headerlink" href="#06-fine-tuning-fundamentals-loraqlora" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover when fine-tuning beats prompting, dataset preparation, LoRA/QLoRA training, and evaluation.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>Every module so far shaped model behavior with prompting — instructions,
+examples, tool schemas. Fine-tuning changes the model's <em>weights</em> instead,
+useful when a task needs a narrow style or format so consistently that no
+amount of prompting reliably gets there, or when you need to shrink a
+large general-purpose model's prompt (fewer few-shot examples needed) to
+cut latency and cost at scale.</p>
+<h2 id="when-fine-tuning-beats-prompting">When fine-tuning beats prompting<a class="headerlink" href="#when-fine-tuning-beats-prompting" title="Permanent link">&para;</a></h2>
+<p>Try prompting (and, if output is inconsistent, more few-shot examples)
+first — it's cheaper, faster to iterate, and doesn't require training
+infrastructure. Reach for fine-tuning when:</p>
+<ul>
+<li><strong>A narrow, high-volume task</strong> needs consistent formatting a prompt
+  can't fully pin down after real effort (e.g., matching a specific legal
+  document style exactly, every time).</li>
+<li><strong>You need to shrink cost/latency</strong> by baking a long few-shot prompt's
+  behavior into weights, so a smaller model or shorter prompt achieves
+  the same accuracy in production.</li>
+<li><strong>The task requires knowledge best taught by examples</strong>, not
+  instructions — style transfer, tone matching, structured output in an
+  unusual schema the model has never seen described in a prompt before.</li>
+</ul>
+<p>Don't reach for fine-tuning to inject <em>facts</em> — a model's weights encode
+patterns from training, not a queryable knowledge base, and new facts go
+stale the moment they're baked in. Use retrieval (module 3) for facts;
+reserve fine-tuning for behavior and style.</p>
+<h2 id="dataset-preparation">Dataset preparation<a class="headerlink" href="#dataset-preparation" title="Permanent link">&para;</a></h2>
+<p>Fine-tuning data is a set of (input, ideal-output) pairs in the same
+<code>messages</code> shape you already use for API calls — quality and consistency
+matter far more than volume:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">build_example</span><span class="p">(</span><span class="n">user_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">assistant_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a legal-summary assistant. Always structure output as: Parties, Terms, Risks.&quot;</span><span class="p">},</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">user_text</span><span class="p">},</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">assistant_text</span><span class="p">},</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="p">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">examples</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">build_example</span><span class="p">(</span><span class="n">contract_text_1</span><span class="p">,</span> <span class="s2">&quot;Parties: ...</span><span class="se">\n</span><span class="s2">Terms: ...</span><span class="se">\n</span><span class="s2">Risks: ...&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">build_example</span><span class="p">(</span><span class="n">contract_text_2</span><span class="p">,</span> <span class="s2">&quot;Parties: ...</span><span class="se">\n</span><span class="s2">Terms: ...</span><span class="se">\n</span><span class="s2">Risks: ...&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="c1"># aim for at least a few hundred high-quality, consistent examples</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;finetune_data.jsonl&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">examples</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>A hundred carefully-curated, consistently-formatted examples reliably
+outperforms a thousand noisy ones — every inconsistency in your training
+set teaches the model that inconsistency is acceptable. Hold out 10-20% of
+examples as an eval set (Level 2, module 6) so you can measure whether
+fine-tuning actually improved behavior rather than just changed it.</p>
+<h2 id="lora-fine-tuning-without-touching-most-of-the-weights">LoRA: fine-tuning without touching most of the weights<a class="headerlink" href="#lora-fine-tuning-without-touching-most-of-the-weights" title="Permanent link">&para;</a></h2>
+<p>Full fine-tuning updates every parameter in the model — expensive in
+memory and compute, and risks catastrophically forgetting general
+capability. <strong>LoRA</strong> (Low-Rank Adaptation) instead freezes the original
+weights and trains a small pair of low-rank matrices added alongside each
+targeted weight matrix, updating a tiny fraction of total parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">peft</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoraConfig</span><span class="p">,</span> <span class="n">get_peft_model</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">lora_config</span> <span class="o">=</span> <span class="n">LoraConfig</span><span class="p">(</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">r</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>                    <span class="c1"># rank of the low-rank matrices — the key size/quality knob</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">lora_alpha</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>           <span class="c1"># scaling factor</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">target_modules</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;q_proj&quot;</span><span class="p">,</span> <span class="s2">&quot;v_proj&quot;</span><span class="p">],</span>   <span class="c1"># which weight matrices get an adapter</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">lora_dropout</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">task_type</span><span class="o">=</span><span class="s2">&quot;CAUSAL_LM&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">model</span> <span class="o">=</span> <span class="n">get_peft_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">lora_config</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">model</span><span class="o">.</span><span class="n">print_trainable_parameters</span><span class="p">()</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># trainable params: 4,194,304 || all params: 8,034,000,000 || trainable%: 0.05%</span>
+</code></pre></div>
+<p>That 0.05% is the entire point: training updates a tiny adapter instead of
+8 billion parameters, which is why LoRA fine-tuning is feasible on a
+single consumer GPU where full fine-tuning of the same model would need a
+multi-GPU cluster.</p>
+<h2 id="qlora-lora-on-a-quantized-base-model">QLoRA: LoRA on a quantized base model<a class="headerlink" href="#qlora-lora-on-a-quantized-base-model" title="Permanent link">&para;</a></h2>
+<p>QLoRA goes further by loading the frozen base model in 4-bit quantization
+(module 7) and only training the LoRA adapters in higher precision on top
+— cutting the memory needed to even <em>load</em> the base model, which is often
+the binding constraint on consumer hardware:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">BitsAndBytesConfig</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">bnb_config</span> <span class="o">=</span> <span class="n">BitsAndBytesConfig</span><span class="p">(</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">load_in_4bit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">bnb_4bit_quant_type</span><span class="o">=</span><span class="s2">&quot;nf4&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">bnb_4bit_compute_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">quantization_config</span><span class="o">=</span><span class="n">bnb_config</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">model</span> <span class="o">=</span> <span class="n">get_peft_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">lora_config</span><span class="p">)</span>
+</code></pre></div>
+<p>The base model's 4-bit weights never change during training — only the
+LoRA adapter's higher-precision matrices are updated, which is why
+accuracy loss from quantizing the frozen base is much smaller in practice
+than quantizing a model you then can't adapt at all.</p>
+<h2 id="training-loop-sketch">Training loop (sketch)<a class="headerlink" href="#training-loop-sketch" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trainer</span><span class="p">,</span> <span class="n">TrainingArguments</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;json&quot;</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="s2">&quot;finetune_data.jsonl&quot;</span><span class="p">)[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">tokenize</span><span class="p">(</span><span class="n">example</span><span class="p">):</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">apply_chat_template</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">],</span> <span class="n">tokenize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">return</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">2048</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">tokenized</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">tokenize</span><span class="p">)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">args</span><span class="o">=</span><span class="n">TrainingArguments</span><span class="p">(</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;./lora-adapter&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="n">learning_rate</span><span class="o">=</span><span class="mf">2e-4</span><span class="p">,</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="n">logging_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        <span class="n">save_strategy</span><span class="o">=</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="p">),</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="n">train_dataset</span><span class="o">=</span><span class="n">tokenized</span><span class="p">,</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="p">)</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">&quot;./lora-adapter&quot;</span><span class="p">)</span>   <span class="c1"># only the small adapter is saved</span>
+</code></pre></div>
+<p>Watch training loss, but don't trust it alone — run your held-out eval set
+through the fine-tuned model after training and compare against the base
+model's score on the same set (Level 2, module 6's exact regression-suite
+pattern), because a lower training loss doesn't guarantee better real-world
+behavior; it can just as easily mean overfitting to quirks of the training
+examples.</p>
+<h2 id="evaluation-after-fine-tuning">Evaluation after fine-tuning<a class="headerlink" href="#evaluation-after-fine-tuning" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_finetuned</span><span class="p">(</span><span class="n">golden</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">case</span> <span class="ow">in</span> <span class="n">golden</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="n">output</span> <span class="o">=</span> <span class="n">generate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="n">case</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">])</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">correct</span> <span class="o">+=</span> <span class="n">matches_format</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">case</span><span class="p">[</span><span class="s2">&quot;expected_format&quot;</span><span class="p">])</span>   <span class="c1"># your own check</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">return</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">golden</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">base_score</span> <span class="o">=</span> <span class="n">evaluate_finetuned</span><span class="p">(</span><span class="n">golden_eval</span><span class="p">,</span> <span class="n">base_model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">finetuned_score</span> <span class="o">=</span> <span class="n">evaluate_finetuned</span><span class="p">(</span><span class="n">golden_eval</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;base: </span><span class="si">{</span><span class="n">base_score</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">  finetuned: </span><span class="si">{</span><span class="n">finetuned_score</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>If the fine-tuned model doesn't clearly beat the base model plus good
+prompting on your eval set, the fine-tune isn't earning its added
+complexity (a training pipeline, an adapter to version and deploy, a new
+thing that can silently regress) — go back to prompting.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Fine-tuning updates the same weight matrices module 1 introduced
+(attention projections, feed-forward layers) using ordinary gradient
+descent: run training examples through the model, compute how far its
+predicted next-token distribution is from the target output at each
+position, and adjust weights to reduce that error, backpropagated through
+every layer — the identical process that produced the base model's
+weights in the first place, just starting from an already-trained
+checkpoint on a much smaller, task-specific dataset instead of from
+random initialization on the full pretraining corpus.</p>
+<p>LoRA's insight is that the <em>update</em> needed to adapt a large weight matrix
+to a new narrow task is often well-approximated by a low-rank matrix (the
+product of two small matrices), even though the original weight matrix
+itself is full-rank — so instead of learning a full-size update, LoRA
+learns two small matrices whose product approximates it, added to the
+frozen original weight at inference time. This is why <code>target_modules</code> and
+<code>r</code> are the decisions that matter most: they determine how much
+adaptation capacity you're giving the model and where, and why a
+too-small <code>r</code> under-fits (the adapter can't express the needed change)
+while a too-large <code>r</code> starts to approach the cost of full fine-tuning
+without the low-rank benefit.</p>
+<p>QLoRA's memory savings come from a separate, complementary fact: loading
+weights in 4-bit format only affects the <em>storage and matrix-multiply
+precision</em> of the frozen base model, and gradients only ever need to flow
+into the small LoRA matrices (kept in higher precision) — the frozen base
+never needs gradient storage at all, since it never updates, which is the
+specific reason QLoRA's memory footprint is so much smaller than
+full-precision full fine-tuning even though the <em>model being adapted</em> is
+identical.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fine-tune vs. prompt</td>
+<td>Prompting first; fine-tune for consistent style/format at volume</td>
+</tr>
+<tr>
+<td>Not for facts</td>
+<td>Use retrieval (module 3) for facts; fine-tuning bakes in behavior, not knowledge</td>
+</tr>
+<tr>
+<td>Dataset</td>
+<td>Consistent <code>messages</code>-shaped examples; quality over volume</td>
+</tr>
+<tr>
+<td>LoRA</td>
+<td>Freezes base weights; trains small low-rank adapter matrices</td>
+</tr>
+<tr>
+<td><code>r</code> (rank)</td>
+<td>Key size/quality knob — too small under-fits, too large loses the LoRA benefit</td>
+</tr>
+<tr>
+<td>QLoRA</td>
+<td>LoRA on a 4-bit quantized frozen base — lowest memory footprint</td>
+</tr>
+<tr>
+<td>Always re-eval</td>
+<td>Compare fine-tuned vs. base+prompting on a held-out set, not just training loss</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Prepare a 100-example dataset (even synthetically generated, clearly
+labeled as such) for a narrow reformatting task — e.g., converting free-text
+meeting notes into a fixed <code>Decisions / Action Items / Open Questions</code>
+structure. Fine-tune a small open model with QLoRA at <code>r=8</code> and <code>r=32</code>,
+and compare both against zero-shot prompting on a 20-example held-out set
+using an exact-format-match eval. Report which approach wins and by how
+much, and note the training time and adapter file size for each rank.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1798,6 +1796,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Pretraining & Scaling Laws Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1814,6 +1830,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-pretraining-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pretraining objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The data pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling laws
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-scaling-laws-matter-practically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why scaling laws matter practically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-pretraining-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pretraining objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The data pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling laws
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-scaling-laws-matter-practically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why scaling laws matter practically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2315,185 @@
 
 
 <h1 id="01-pretraining-scaling-laws-overview">01 · Pretraining &amp; Scaling Laws Overview<a class="headerlink" href="#01-pretraining-scaling-laws-overview" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover how frontier models are trained, data pipelines, and what scaling laws predict.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>Every model you've called throughout this course started as a randomly
+initialized transformer (Level 3, module 1) and became useful through
+<strong>pretraining</strong> — a massive, expensive, one-time process this module
+explains at the level a practitioner needs: what the data pipeline looks
+like, and what scaling laws let you predict before spending the compute.</p>
+<h2 id="the-pretraining-objective">The pretraining objective<a class="headerlink" href="#the-pretraining-objective" title="Permanent link">&para;</a></h2>
+<p>Pretraining trains the transformer on one deceptively simple task: predict
+the next token, given every token before it, across a huge and diverse
+text corpus. No labels, no task-specific supervision — the "label" for
+every position is just the token that actually came next in real text:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">next_token_loss</span><span class="p">(</span><span class="n">logits</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">target_token_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Cross-entropy loss for one position: -log P(correct token).&quot;&quot;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">logits</span> <span class="o">-</span> <span class="n">logits</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">probs</span> <span class="o">/=</span> <span class="n">probs</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">probs</span><span class="p">[</span><span class="n">target_token_id</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1e-12</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Illustrative: one position&#39;s loss, given the model&#39;s predicted distribution</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">vocab_logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>   <span class="c1"># 5-token toy vocab</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">actual_next_token</span> <span class="o">=</span> <span class="mi">3</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">loss</span> <span class="o">=</span> <span class="n">next_token_loss</span><span class="p">(</span><span class="n">vocab_logits</span><span class="p">,</span> <span class="n">actual_next_token</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;loss at this position: </span><span class="si">{</span><span class="n">loss</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Averaged over every position in every document in a training batch, this
+loss is what gradient descent minimizes — trillions of times, across a
+training run that can last weeks to months on thousands of accelerators.
+Nothing about the objective mentions "reasoning," "helpfulness," or
+"following instructions" — those behaviors are downstream effects of what
+next-token prediction over the right corpus, at sufficient scale, turns
+out to produce, refined further by the alignment stage (module 2).</p>
+<h2 id="the-data-pipeline">The data pipeline<a class="headerlink" href="#the-data-pipeline" title="Permanent link">&para;</a></h2>
+<p>Raw internet-scale text isn't training-ready — a real pretraining pipeline
+runs several stages before a document ever reaches the model:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">pretraining_pipeline_stage</span><span class="p">(</span><span class="n">raw_document</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1"># 1. Deduplication — near-identical documents waste compute and can</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="c1">#    cause memorization of specific repeated content.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">if</span> <span class="n">is_near_duplicate</span><span class="p">(</span><span class="n">raw_document</span><span class="p">):</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="k">return</span> <span class="kc">None</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="c1"># 2. Quality filtering — heuristic and model-based filters remove</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="c1">#    boilerplate, spam, and very low-quality text.</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">if</span> <span class="n">quality_score</span><span class="p">(</span><span class="n">raw_document</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">QUALITY_THRESHOLD</span><span class="p">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">return</span> <span class="kc">None</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="c1"># 3. Safety/PII filtering — remove or redact clearly harmful content</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="c1">#    and personally identifiable information before training ever sees it.</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">redact_pii</span><span class="p">(</span><span class="n">raw_document</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="c1"># 4. Mixing — the final corpus blends sources (web text, books, code,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="c1">#    academic papers) in deliberately chosen proportions, not naturally</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="c1">#    occurring ones — code and high-quality reference text are typically</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="c1">#    over-represented relative to their share of raw internet volume.</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">return</span> <span class="n">cleaned</span>
+</code></pre></div>
+<p>The mixing ratios are themselves a major design decision with measurable
+downstream effects — a corpus over-weighted toward code measurably
+improves logical/structured reasoning even on non-code tasks, which is why
+"what's in the training mix" is one of the first questions worth asking
+when comparing models' differing strengths.</p>
+<h2 id="scaling-laws">Scaling laws<a class="headerlink" href="#scaling-laws" title="Permanent link">&para;</a></h2>
+<p>Scaling laws are empirical relationships — discovered by training many
+smaller models at different sizes and data volumes and fitting a curve —
+predicting how loss decreases as you increase model size, dataset size, or
+compute, before you spend the money to train the large run itself:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">predicted_loss</span><span class="p">(</span><span class="n">compute_flops</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.34</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Simplified power-law fit: loss ~ a * compute^-alpha (illustrative constants).&quot;&quot;&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">compute_flops</span> <span class="o">**</span> <span class="o">-</span><span class="n">alpha</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">for</span> <span class="n">flops</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1e18</span><span class="p">,</span> <span class="mf">1e20</span><span class="p">,</span> <span class="mf">1e22</span><span class="p">,</span> <span class="mf">1e24</span><span class="p">]:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;compute=</span><span class="si">{</span><span class="n">flops</span><span class="si">:</span><span class="s2">.0e</span><span class="si">}</span><span class="s2">  predicted_loss~</span><span class="si">{</span><span class="n">predicted_loss</span><span class="p">(</span><span class="n">flops</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The key practical use of scaling laws is deciding, for a <em>fixed</em> compute
+budget, the optimal split between model size and training data volume —
+this is the "compute-optimal" question (famously addressed by the
+Chinchilla scaling analysis): training a smaller model on proportionally
+more data can reach lower loss for the same compute spend than training a
+larger model on less data, which reshaped how labs allocate training
+budgets industry-wide.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">compute_optimal_split</span><span class="p">(</span><span class="n">compute_budget_flops</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Illustrative: roughly balanced scaling of params and tokens with compute.&quot;&quot;&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="n">compute_budget_flops</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">tokens</span> <span class="o">=</span> <span class="n">compute_budget_flops</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">params</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">return</span> <span class="n">params</span><span class="p">,</span> <span class="n">tokens</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">params</span><span class="p">,</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">compute_optimal_split</span><span class="p">(</span><span class="mf">1e23</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;~</span><span class="si">{</span><span class="n">params</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> parameters, ~</span><span class="si">{</span><span class="n">tokens</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> training tokens&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="why-scaling-laws-matter-practically">Why scaling laws matter practically<a class="headerlink" href="#why-scaling-laws-matter-practically" title="Permanent link">&para;</a></h2>
+<p>You will likely never pretrain a frontier model yourself, but scaling laws
+explain observable facts about the models you <em>do</em> call via API:</p>
+<ul>
+<li><strong>Why bigger models are usually more capable, with diminishing
+  returns</strong> — loss decreases as a power law, not linearly, so each further
+  doubling of size/compute yields a smaller absolute improvement.</li>
+<li><strong>Why data quality has become as important as data quantity</strong> — once
+  labs run low on unique high-quality text at the scale scaling laws call
+  for, filtering and mixing (above) become the lever instead of raw volume.</li>
+<li><strong>Why smaller, well-trained models can rival older larger ones</strong> — a
+  model trained compute-optimally on more, better data can match a larger,
+  under-trained model's quality at a fraction of the inference cost.</li>
+</ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Pretraining is gradient descent on the transformer weights from Level 3,
+module 1, applied at a scale that differs from the fine-tuning you did in
+Level 3, module 6 only in degree, not in kind: the same forward
+pass→loss→backward pass→weight update loop, run over a training corpus
+many orders of magnitude larger, for a training duration many orders of
+magnitude longer, spread across thousands of accelerators communicating
+gradient updates with each other rather than one.</p>
+<p>Scaling laws are possible because loss curves as a function of model
+size/data/compute have empirically followed smooth power-law relationships
+across many independent training runs, at many labs, across many
+architectures — a genuinely surprising empirical regularity, not something
+derived from first principles of the transformer architecture. This is
+also their limitation: a scaling law is a fit to observed data, valid
+within the regime it was measured in, and extrapolating far beyond that
+regime (a very different data mix, an architecture change) is not
+guaranteed to hold — which is why labs still run smaller-scale
+confirmation experiments before committing a full training budget, rather
+than trusting extrapolation blindly.</p>
+<p>The reason next-token prediction alone produces behaviors as varied as
+translation, summarization, and code generation is that all of these are,
+in a sufficiently large and diverse training corpus, literally represented
+as "what comes next" in real documents — a training corpus containing
+millions of examples of text followed by its French translation, or code
+followed by its explanation, gives the objective genuine signal to learn
+those mappings, without ever being told "translation" is a task; scale
+matters because larger models can represent and generalize more of these
+implicit patterns simultaneously without interfering with each other.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pretraining objective</td>
+<td>Predict the next token — no task-specific labels</td>
+</tr>
+<tr>
+<td>Data pipeline</td>
+<td>Dedup → quality filter → PII/safety filter → deliberate source mixing</td>
+</tr>
+<tr>
+<td>Scaling laws</td>
+<td>Empirical power-law relationships between loss, size, data, compute</td>
+</tr>
+<tr>
+<td>Compute-optimal</td>
+<td>For fixed compute, there's a size/data split that minimizes loss</td>
+</tr>
+<tr>
+<td>Diminishing returns</td>
+<td>Power-law scaling means each doubling helps less than the last</td>
+</tr>
+<tr>
+<td>Practical takeaway</td>
+<td>Data quality/mix now rivals raw scale as the main quality lever</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Using the toy <code>predicted_loss</code> and <code>compute_optimal_split</code> functions
+above, plot predicted loss against compute budget on a log-log scale for
+budgets from 1e18 to 1e26 FLOPs, and separately plot the compute-optimal
+parameter count and token count over the same range. Write a short
+explanation, in your own words, of why the compute-optimal parameter
+count grows more slowly than total compute — tie your answer back to the
+power-law loss curve, not just the arithmetic.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1590,6 +1588,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Quantization & Inference Optimization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1606,6 +1622,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-quantization-actually-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What quantization actually does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gguf-awq-gptq-what-differs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GGUF, AWQ, GPTQ — what differs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-quality-vs-size-tradeoff-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The quality-vs-size tradeoff, measured
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speeding-up-inference-beyond-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speeding up inference beyond quantization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-quantization-actually-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What quantization actually does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gguf-awq-gptq-what-differs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GGUF, AWQ, GPTQ — what differs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-quality-vs-size-tradeoff-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The quality-vs-size tradeoff, measured
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speeding-up-inference-beyond-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speeding up inference beyond quantization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2315,200 @@
 
 
 <h1 id="07-quantization-inference-optimization">07 · Quantization &amp; Inference Optimization<a class="headerlink" href="#07-quantization-inference-optimization" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover GGUF/AWQ/GPTQ formats, quality-vs-size tradeoffs, and speeding up inference.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>Module 4 and 5 both referenced quantization in passing — this module
+explains it directly: what GGUF, AWQ, and GPTQ actually do to a model's
+weights, the real quality-vs-size tradeoff, and other levers for faster
+inference.</p>
+<h2 id="what-quantization-actually-does">What quantization actually does<a class="headerlink" href="#what-quantization-actually-does" title="Permanent link">&para;</a></h2>
+<p>A model's weights are normally stored as 16-bit floating point numbers
+(sometimes 32-bit). Quantization stores each weight with fewer bits — 8,
+4, or even fewer — trading numeric precision for a smaller file and faster
+memory-bound computation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">quantize_to_int8</span><span class="p">(</span><span class="n">weights</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Symmetric per-tensor int8 quantization — the simplest scheme.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">/</span> <span class="mf">127.0</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">quantized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">weights</span> <span class="o">/</span> <span class="n">scale</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="n">quantized</span><span class="p">,</span> <span class="n">scale</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">dequantize</span><span class="p">(</span><span class="n">quantized</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="k">return</span> <span class="n">quantized</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">*</span> <span class="n">scale</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">q</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">quantize_to_int8</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">reconstructed</span> <span class="o">=</span> <span class="n">dequantize</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;original:     &quot;</span><span class="p">,</span> <span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reconstructed:&quot;</span><span class="p">,</span> <span class="n">reconstructed</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;max error:    &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">weights</span> <span class="o">-</span> <span class="n">reconstructed</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</code></pre></div>
+<p>Every weight now takes 1 byte instead of 2 or 4, cutting model size (and
+memory bandwidth needed to read it during inference) by half to a quarter
+— at the cost of the small reconstruction error printed above, repeated
+across billions of weights.</p>
+<h2 id="gguf-awq-gptq-what-differs">GGUF, AWQ, GPTQ — what differs<a class="headerlink" href="#gguf-awq-gptq-what-differs" title="Permanent link">&para;</a></h2>
+<p>These are different <em>quantization schemes and file formats</em>, not
+different models:</p>
+<ul>
+<li><strong>GGUF</strong> — the format used by <code>llama.cpp</code> and Ollama (module 4);
+  supports a range of bit-widths (<code>Q4_K_M</code>, <code>Q5_K_M</code>, <code>Q8_0</code>, etc.) with
+  per-block scaling factors (rather than one scale for the whole tensor)
+  to reduce error, and is optimized for CPU and consumer-GPU inference.</li>
+<li><strong>GPTQ</strong> — a post-training quantization method that calibrates
+  quantization error using a small sample dataset, minimizing the
+  <em>output</em> difference (not just weight-value difference) between the
+  quantized and original model, layer by layer.</li>
+<li><strong>AWQ</strong> (Activation-aware Weight Quantization) — observes that a small
+  fraction of weights matter disproportionately for output quality
+  (correlated with which activations tend to be large) and preserves
+  those at higher precision while quantizing the rest more aggressively.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Loading a GPTQ-quantized model via transformers + auto-gptq</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="s2">&quot;TheBloke/Llama-3-8B-GPTQ&quot;</span><span class="p">,</span> <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;TheBloke/Llama-3-8B-GPTQ&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Loading a GGUF model via llama.cpp / Ollama — quantization choice is in the filename</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>llama3.1:8b-instruct-q4_K_M
+</code></pre></div>
+<h2 id="the-quality-vs-size-tradeoff-measured">The quality-vs-size tradeoff, measured<a class="headerlink" href="#the-quality-vs-size-tradeoff-measured" title="Permanent link">&para;</a></h2>
+<p>Never take "4-bit is fine" on faith — measure it against your own eval set
+(Level 2, module 6), since quality loss varies by task and by how
+aggressively you quantize:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_at_precision</span><span class="p">(</span><span class="n">model_variant</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">golden</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">for</span> <span class="n">case</span> <span class="ow">in</span> <span class="n">golden</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">output</span> <span class="o">=</span> <span class="n">generate</span><span class="p">(</span><span class="n">model_variant</span><span class="p">,</span> <span class="n">case</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">])</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">correct</span> <span class="o">+=</span> <span class="n">output</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">case</span><span class="p">[</span><span class="s2">&quot;expected&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">return</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">golden</span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="s2">&quot;fp16 (baseline)&quot;</span><span class="p">:</span> <span class="n">evaluate_at_precision</span><span class="p">(</span><span class="s2">&quot;llama3.1:8b-instruct-fp16&quot;</span><span class="p">,</span> <span class="n">golden</span><span class="p">),</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="s2">&quot;8-bit&quot;</span><span class="p">:</span>           <span class="n">evaluate_at_precision</span><span class="p">(</span><span class="s2">&quot;llama3.1:8b-instruct-q8_0&quot;</span><span class="p">,</span> <span class="n">golden</span><span class="p">),</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="s2">&quot;4-bit&quot;</span><span class="p">:</span>           <span class="n">evaluate_at_precision</span><span class="p">(</span><span class="s2">&quot;llama3.1:8b-instruct-q4_K_M&quot;</span><span class="p">,</span> <span class="n">golden</span><span class="p">),</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">:</span><span class="s2">20s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>A common real-world pattern: 8-bit quantization is often nearly
+indistinguishable from full precision on most tasks, while aggressive
+4-bit (or lower) quantization starts showing measurable degradation on
+tasks needing precise numeric or structured reasoning — but the exact
+threshold is task- and model-dependent, which is why you measure rather
+than assume.</p>
+<h2 id="speeding-up-inference-beyond-quantization">Speeding up inference beyond quantization<a class="headerlink" href="#speeding-up-inference-beyond-quantization" title="Permanent link">&para;</a></h2>
+<p>Quantization reduces memory bandwidth needs, which is usually the
+bottleneck for single-request generation (memory-bound, not
+compute-bound, because generating one token needs the <em>entire</em> weight
+matrix read from memory even though it's used for one small computation).
+Other levers:</p>
+<ul>
+<li><strong>Speculative decoding</strong> — a small, fast "draft" model proposes several
+  tokens ahead; the large model verifies them in one batched forward pass
+  instead of one sequential pass per token, accepting correct guesses and
+  only falling back to normal generation where the draft was wrong.</li>
+<li><strong>Flash Attention</strong> — a fused, memory-efficient attention
+  implementation that avoids materializing the full attention score
+  matrix, reducing memory traffic without changing the mathematical
+  result.</li>
+<li><strong>Batching</strong> (module 5's continuous batching) — amortizes the fixed
+  cost of reading weight matrices from memory across many concurrent
+  requests' worth of computation.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Conceptual speculative decoding sketch</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">speculative_generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">draft_model</span><span class="p">,</span> <span class="n">target_model</span><span class="p">,</span> <span class="n">num_draft_tokens</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">draft_tokens</span> <span class="o">=</span> <span class="n">draft_model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="n">num_draft_tokens</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c1"># Target model verifies all draft tokens in one forward pass</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">accepted</span> <span class="o">=</span> <span class="n">target_model</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">draft_tokens</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">return</span> <span class="n">accepted</span>   <span class="c1"># tokens the target model agrees with, up to the first disagreement</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Every weight in a transformer participates in a matrix multiplication
+during the forward pass from module 1 — generating each token means
+reading every relevant weight matrix from memory at least once. For a
+single request generating one token at a time, the GPU spends most of its
+time <em>waiting</em> for weights to arrive from memory, not computing — this is
+why it's called memory-bandwidth-bound rather than compute-bound, and why
+quantization (moving fewer bytes for the same weights) speeds things up
+even though it does no less arithmetic once weights are dequantized on the
+fly.</p>
+<p>GPTQ and AWQ differ from naive per-tensor quantization (the int8 sketch
+above) by choosing quantization parameters <em>based on their effect on
+model output</em>, not just on minimizing raw weight-value error. GPTQ
+calibrates layer-by-layer using a small dataset, adjusting remaining
+weights to compensate for the error already introduced by quantizing
+earlier ones in the same layer. AWQ instead identifies which weights
+correlate with the largest activation magnitudes for that specific model
+and keeps those at higher precision — because rounding error in a weight
+that gets multiplied by a large activation contributes proportionally
+more to the final output error. Both are more expensive to run once
+(calibration is a real computation over sample data) but produce
+noticeably better output quality per bit than uniform rounding.</p>
+<p>Speculative decoding's speedup comes from the same memory-bandwidth-bound
+fact stated above, exploited differently: verifying several draft tokens
+in one batched forward pass reads the target model's weights from memory
+<em>once</em> for multiple tokens' worth of computation, instead of once per
+token sequentially — it doesn't reduce total arithmetic, it amortizes the
+same fixed memory-read cost that dominates latency across more useful
+work per read.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantization</td>
+<td>Fewer bits per weight → smaller model, faster memory reads</td>
+</tr>
+<tr>
+<td>GGUF</td>
+<td>llama.cpp/Ollama format; per-block scaling; CPU/consumer-GPU friendly</td>
+</tr>
+<tr>
+<td>GPTQ</td>
+<td>Calibrated quantization minimizing output error, layer by layer</td>
+</tr>
+<tr>
+<td>AWQ</td>
+<td>Preserves high-precision for activation-correlated "important" weights</td>
+</tr>
+<tr>
+<td>Bottleneck</td>
+<td>Single-request generation is memory-bandwidth-bound, not compute-bound</td>
+</tr>
+<tr>
+<td>Speculative decoding</td>
+<td>Draft model proposes, target model verifies in one batched pass</td>
+</tr>
+<tr>
+<td>Always measure</td>
+<td>Quality loss is task-dependent — eval, don't assume</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Using Ollama, pull the same model at <code>q4_K_M</code>, <code>q8_0</code>, and (if your
+hardware allows) <code>fp16</code> quantization levels. Run a 20-question eval
+covering both factual recall and arithmetic/structured-output tasks
+against all three, and plot accuracy vs. quantization level per task
+category. Also measure tokens/sec for each. Write up whether the
+quality/speed tradeoff differs between the two task categories, and why
+that's consistent with the "output-aware vs. naive quantization" mechanism
+above.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

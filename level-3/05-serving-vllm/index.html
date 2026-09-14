@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1534,6 +1532,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Serving Open Models with vLLM
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1550,6 +1566,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-vllm-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting a vLLM server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagedattention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PagedAttention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous batching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throughput-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Throughput tuning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-vllm-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting a vLLM server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagedattention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PagedAttention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous batching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throughput-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Throughput tuning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2315,185 @@
 
 
 <h1 id="05-serving-open-models-with-vllm">05 · Serving Open Models with vLLM<a class="headerlink" href="#05-serving-open-models-with-vllm" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover PagedAttention, continuous batching, OpenAI-compatible serving, and throughput tuning.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>Ollama (module 4) is built for single-user, local convenience. Serving an
+open-weight model to many concurrent users with production-grade
+throughput needs a different tool: <strong>vLLM</strong>, an inference server built
+around two techniques — PagedAttention and continuous batching — that
+make it dramatically more efficient at high concurrency than a naive
+serving loop.</p>
+<h2 id="starting-a-vllm-server">Starting a vLLM server<a class="headerlink" href="#starting-a-vllm-server" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>vllm
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python<span class="w"> </span>-m<span class="w"> </span>vllm.entrypoints.openai.api_server<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>--max-model-len<span class="w"> </span><span class="m">8192</span>
+</code></pre></div>
+<p>This starts an <strong>OpenAI-compatible</strong> HTTP server — the same request/response
+shape as the hosted OpenAI API, which is why most client code needs only a
+<code>base_url</code> change:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8000/v1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;not-needed&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain PagedAttention in two sentences.&quot;</span><span class="p">}],</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="pagedattention">PagedAttention<a class="headerlink" href="#pagedattention" title="Permanent link">&para;</a></h2>
+<p>Every request's KV cache (module 1) needs contiguous memory in naive
+implementations, sized for the request's <em>maximum possible</em> length —
+wasteful, because most requests finish well short of the max, and that
+reserved memory can't be reused by other requests in the meantime.
+PagedAttention borrows the idea of OS virtual memory paging: the KV cache
+is split into fixed-size blocks allocated on demand, non-contiguously, and
+mapped through a lightweight table — so memory is only consumed as tokens
+are actually generated, and can be shared or freed per-block:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Conceptual sketch — not vLLM&#39;s actual internals, but the model to reason from</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">PagedKVCache</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">num_blocks</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">block_size</span> <span class="o">=</span> <span class="n">block_size</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">free_blocks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_blocks</span><span class="p">))</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">block_table</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c1"># request_id -&gt; block ids</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">allocate_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">block_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">free_blocks</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">block_table</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">block_id</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="k">return</span> <span class="n">block_id</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">free</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="k">for</span> <span class="n">block_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">block_table</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="p">[]):</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">free_blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">block_id</span><span class="p">)</span>
+</code></pre></div>
+<p>The practical effect: far more concurrent requests fit in the same GPU
+memory than a naive contiguous-allocation scheme, because you're no longer
+reserving worst-case memory for every in-flight request up front.</p>
+<h2 id="continuous-batching">Continuous batching<a class="headerlink" href="#continuous-batching" title="Permanent link">&para;</a></h2>
+<p>A naive server batches requests that arrive together and waits for the
+<em>whole batch</em> to finish before accepting new ones — one slow request in a
+batch stalls throughput for every other request in it. Continuous batching
+instead adds and removes individual requests from the running batch at
+every generation step, so a request that finishes early is immediately
+replaced by a new one rather than leaving that GPU capacity idle:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Conceptual sketch of the scheduling loop continuous batching implements</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">serve_loop</span><span class="p">(</span><span class="n">pending_requests</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">running_batch</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">max_batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">while</span> <span class="n">pending_requests</span> <span class="ow">or</span> <span class="n">running_batch</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">while</span> <span class="n">pending_requests</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">running_batch</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_batch_size</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            <span class="n">running_batch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pending_requests</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">step_all</span><span class="p">(</span><span class="n">running_batch</span><span class="p">)</span>   <span class="c1"># generate exactly one token for every request in the batch</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="n">finished</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">running_batch</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">is_done</span><span class="p">()]</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">finished</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="n">running_batch</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="n">return_to_client</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+<p>This is the single biggest lever for aggregate throughput under real,
+bursty traffic — requests arrive at different times and finish at
+different lengths, and continuous batching keeps the GPU's batch full of
+<em>active</em> work at every single generation step instead of at coarse batch
+boundaries.</p>
+<h2 id="throughput-tuning">Throughput tuning<a class="headerlink" href="#throughput-tuning" title="Permanent link">&para;</a></h2>
+<p>Key levers, roughly in order of impact:</p>
+<ul>
+<li><strong><code>--gpu-memory-utilization</code></strong> — how much GPU memory vLLM reserves for
+  the KV cache pool; higher generally means more concurrent requests fit,
+  up to your hardware's limit.</li>
+<li><strong><code>--max-num-seqs</code></strong> — cap on how many requests run concurrently in one
+  batch; too high can thrash memory, too low leaves throughput on the
+  table.</li>
+<li><strong>Quantization</strong> (module 7) — a quantized model needs less memory per
+  weight, freeing more room for the KV cache pool and therefore more
+  concurrent capacity.</li>
+<li><strong>Prefix caching</strong> — vLLM can reuse KV cache across requests sharing an
+  identical prompt prefix, the open-source-serving equivalent of Level 2's
+  hosted prompt caching, enabled with <code>--enable-prefix-caching</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-m<span class="w"> </span>vllm.entrypoints.openai.api_server<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>--gpu-memory-utilization<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span>--max-num-seqs<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span>--enable-prefix-caching
+</code></pre></div>
+<p>Measure before and after any tuning change with a real load test rather
+than guessing — throughput and latency trade off against each other, and
+the right setting depends on your traffic pattern (many short requests vs.
+few long ones).</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>vLLM doesn't change the model's computation from module 1 — it's serving
+infrastructure around the identical forward-pass mechanism, optimized for
+the specific bottleneck that matters at high concurrency: GPU memory
+occupied by KV caches. Every in-flight request needs its own growing KV
+cache (one key/value vector pair per token, per layer, per attention
+head), and naive serving either wastes memory reserving worst-case space
+per request or serializes requests to avoid that waste — both leave
+expensive GPU compute idle.</p>
+<p>PagedAttention's block-based allocation is a memory-management technique,
+not a change to attention's mathematics — attention still computes the
+same weighted average over keys and values described in module 1; the
+paging only affects <em>where in physical memory</em> those keys and values are
+stored and how they're addressed, transparently to the math. Continuous
+batching similarly doesn't change what any individual request's forward
+pass computes — it changes the <em>scheduling</em> of whose tokens get computed
+in which GPU step, maximizing the fraction of every batched matrix
+multiplication that's doing useful work for some active request rather
+than padding for a request that already finished or hasn't arrived yet.</p>
+<p>This is why both techniques compose so well together and why they matter
+specifically at scale: a single local request (module 4's Ollama use case)
+never contends for shared GPU memory or scheduling slots with other
+requests, so neither optimization has anything to bite on — they exist
+precisely for the multi-tenant, bursty-arrival regime a production serving
+layer has to handle.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vLLM</td>
+<td>OpenAI-compatible inference server for open-weight models</td>
+</tr>
+<tr>
+<td>PagedAttention</td>
+<td>Block-based, on-demand KV cache allocation — less wasted GPU memory</td>
+</tr>
+<tr>
+<td>Continuous batching</td>
+<td>Requests join/leave the running batch per-step, not per-batch</td>
+</tr>
+<tr>
+<td><code>--gpu-memory-utilization</code></td>
+<td>KV cache pool size — biggest lever on concurrent capacity</td>
+</tr>
+<tr>
+<td><code>--enable-prefix-caching</code></td>
+<td>Self-hosted equivalent of hosted prompt caching</td>
+</tr>
+<tr>
+<td>Load testing</td>
+<td>Always measure real throughput/latency before tuning further</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Start a vLLM server locally (or on a rented GPU instance) with a small
+open model, and load-test it with 50 concurrent requests of varying prompt
+lengths using a simple <code>asyncio</code> client. Record p50/p95 latency and total
+throughput (tokens/sec) with <code>--max-num-seqs</code> set to 8, then again at 64.
+Explain, using PagedAttention and continuous batching, why throughput does
+or doesn't scale linearly between the two settings.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

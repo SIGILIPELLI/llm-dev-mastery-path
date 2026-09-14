@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1450,6 +1448,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Tokenizers Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1466,6 +1482,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-just-split-on-characters-or-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why not just split on characters or words?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-bpe-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building a BPE tokenizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding-with-a-trained-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoding with a trained tokenizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-token-counts-differ-across-models-and-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why token counts differ across models and strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization-gotchas-that-bite-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tokenization gotchas that bite in practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-just-split-on-characters-or-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why not just split on characters or words?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-bpe-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building a BPE tokenizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding-with-a-trained-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoding with a trained tokenizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-token-counts-differ-across-models-and-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why token counts differ across models and strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization-gotchas-that-bite-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tokenization gotchas that bite in practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2337,206 @@
 
 
 <h1 id="02-tokenizers-deep-dive">02 · Tokenizers Deep Dive<a class="headerlink" href="#02-tokenizers-deep-dive" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover BPE, vocabulary design, tokenization gotchas, and why token counts differ across models.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>Every module up to now treated "tokens" as an abstract cost/length unit.
+This module builds a byte-pair encoding (BPE) tokenizer from scratch to
+show exactly how text becomes the integer ids the transformer in module 1
+actually consumes — and why token counts differ between models, and even
+between different strings you'd expect to cost the same.</p>
+<h2 id="why-not-just-split-on-characters-or-words">Why not just split on characters or words?<a class="headerlink" href="#why-not-just-split-on-characters-or-words" title="Permanent link">&para;</a></h2>
+<p>Character-level tokenization keeps vocabulary tiny but makes sequences
+very long (every character is a step of expensive attention computation).
+Word-level tokenization keeps sequences short but the vocabulary explodes
+(every inflection, typo, and rare word needs its own slot, and unseen words
+have no representation at all). BPE sits between the two: common words stay
+single tokens, rare words decompose into meaningful sub-word pieces, and
+literally any string — including gibberish or new words — can be
+represented, because worst-case it falls back to individual bytes.</p>
+<h2 id="building-a-bpe-tokenizer">Building a BPE tokenizer<a class="headerlink" href="#building-a-bpe-tokenizer" title="Permanent link">&para;</a></h2>
+<p>BPE starts from individual bytes/characters and iteratively merges the
+most frequent adjacent pair into a new token, building up a vocabulary of
+whatever substrings actually recur in the training corpus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_pair_counts</span><span class="p">(</span><span class="n">corpus</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Counter</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="n">counts</span><span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">return</span> <span class="n">counts</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">merge_pair</span><span class="p">(</span><span class="n">corpus</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">pair</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">merged</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">new_corpus</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="n">new_word</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="p">[],</span> <span class="mi">0</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">pair</span><span class="p">:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                <span class="n">new_word</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                <span class="n">new_word</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="n">new_corpus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_word</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="k">return</span> <span class="n">new_corpus</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">def</span><span class="w"> </span><span class="nf">train_bpe</span><span class="p">(</span><span class="n">words</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">num_merges</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">]:</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;&lt;/w&gt;&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>     <span class="c1"># start at character level</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="n">merges</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_merges</span><span class="p">):</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="n">pair_counts</span> <span class="o">=</span> <span class="n">get_pair_counts</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">pair_counts</span><span class="p">:</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>            <span class="k">break</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="n">best_pair</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pair_counts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">pair_counts</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="n">corpus</span> <span class="o">=</span> <span class="n">merge_pair</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">best_pair</span><span class="p">)</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        <span class="n">merges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best_pair</span><span class="p">)</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="k">return</span> <span class="n">merges</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="n">training_words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="s2">&quot;lowest&quot;</span><span class="p">,</span> <span class="s2">&quot;newer&quot;</span><span class="p">,</span> <span class="s2">&quot;wider&quot;</span><span class="p">,</span> <span class="s2">&quot;newest&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="n">merges</span> <span class="o">=</span> <span class="n">train_bpe</span><span class="p">(</span><span class="n">training_words</span><span class="p">,</span> <span class="n">num_merges</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="nb">print</span><span class="p">(</span><span class="n">merges</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="c1"># e.g. [(&#39;e&#39;, &#39;r&#39;), (&#39;er&#39;, &#39;&lt;/w&gt;&#39;), (&#39;n&#39;, &#39;e&#39;), (&#39;ne&#39;, &#39;w&#39;), (&#39;new&#39;, &#39;er&lt;/w&gt;&#39;)]</span>
+</code></pre></div>
+<p>The learned merges are the tokenizer's vocabulary, in the order they were
+discovered — <code>("e", "r")</code> merging first means "er" was the single most
+common adjacent character pair across the training corpus, and it becomes
+one token going forward.</p>
+<h2 id="encoding-with-a-trained-tokenizer">Encoding with a trained tokenizer<a class="headerlink" href="#encoding-with-a-trained-tokenizer" title="Permanent link">&para;</a></h2>
+<p>Applying the merges in the order they were learned to a new string is how
+encoding works — the same merge rules that built the vocabulary now
+segment new text into that vocabulary's pieces:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">encode</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">merges</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">tokens</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;&lt;/w&gt;&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">merges</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="n">new_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">pair</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                <span class="n">new_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pair</span><span class="p">))</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                <span class="n">new_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">tokens</span> <span class="o">=</span> <span class="n">new_tokens</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="k">return</span> <span class="n">tokens</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;newer&quot;</span><span class="p">,</span> <span class="n">merges</span><span class="p">))</span>    <span class="c1"># likely [&#39;new&#39;, &#39;er&lt;/w&gt;&#39;] if trained as above</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;newestly&quot;</span><span class="p">,</span> <span class="n">merges</span><span class="p">))</span> <span class="c1"># unseen word — falls back to smaller known pieces</span>
+</code></pre></div>
+<p>An unseen word never fails outright; it just decomposes into whatever
+pieces the trained merges cover, down to individual characters/bytes in
+the worst case — this is why a tokenizer never returns an "unknown token"
+error the way a fixed word-level vocabulary would.</p>
+<h2 id="why-token-counts-differ-across-models-and-strings">Why token counts differ across models and strings<a class="headerlink" href="#why-token-counts-differ-across-models-and-strings" title="Permanent link">&para;</a></h2>
+<p>Real tokenizers (used by production LLMs) are trained on huge, differently
+composed corpora, so the same string produces a different token count on
+different models — a string efficient in one model's vocabulary (because
+similar text was common in its training data) may split into many more
+pieces in another's:</p>
+<ul>
+<li><strong>Non-English text</strong> often tokenizes less efficiently than English on
+  vocabularies trained mostly on English corpora — expect noticeably more
+  tokens per character.</li>
+<li><strong>Code and rare identifiers</strong> (<code>snake_case_variable_123</code>) frequently
+  split into several sub-word tokens, since exact identifier strings are
+  far less likely to recur verbatim in training data than common English
+  words.</li>
+<li><strong>Whitespace and casing changes the tokenization</strong> — <code>"Hello"</code>,
+  <code>" Hello"</code>, and <code>"hello"</code> are commonly three distinct tokens or token
+  sequences, not variants of the same one, because BPE merges operate on
+  the literal byte sequence, whitespace included.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Illustrative: don&#39;t assume word count ≈ token count</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span> <span class="s2">&quot;  hello world&quot;</span><span class="p">,</span> <span class="s2">&quot;HELLO WORLD&quot;</span><span class="p">,</span> <span class="s2">&quot;hello_world_var&quot;</span><span class="p">]:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">encode</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">),</span> <span class="n">merges</span><span class="p">))</span>  <span class="c1"># toy tokenizer, illustrative only</span>
+</code></pre></div>
+<p>For real cost estimation, always use the provider's actual tokenizer or a
+<code>count_tokens</code> API rather than a word-count heuristic — the module 8 cost
+tracking from Level 1 should call the real counting endpoint, not
+<code>len(text.split())</code>.</p>
+<h2 id="tokenization-gotchas-that-bite-in-practice">Tokenization gotchas that bite in practice<a class="headerlink" href="#tokenization-gotchas-that-bite-in-practice" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Numbers split unpredictably.</strong> <code>"12345"</code> might be one token, two, or
+  five depending on the vocabulary — arithmetic reliability partly
+  depends on how consistently a model's tokenizer represents digit
+  sequences, which is one reason Level 1's tool-calling module told you to
+  offload math to a calculator tool rather than trust generated digits.</li>
+<li><strong>Token boundaries don't align with word boundaries.</strong> A regex or
+  string-length-based prompt truncation strategy can cut a token in half
+  from the model's perspective (though not from yours, since you're
+  slicing the string) — truncate by <em>token count</em>, not character count,
+  when you're near a context-window limit.</li>
+<li><strong>A single "character" can be several tokens.</strong> Emoji and many non-Latin
+  scripts are represented as multiple bytes, which can become multiple
+  tokens — never assume <code>len(string) ≈ len(tokens)</code>.</li>
+</ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Tokenization is not part of the transformer's learned computation from
+module 1 — it's a fixed, separately-trained preprocessing step that runs
+<em>before</em> the embedding lookup, converting raw text into the sequence of
+integer ids the model was trained against. Once a tokenizer's vocabulary
+is fixed (typically frozen before pretraining begins), it never changes
+for that model — this is precisely why token counts for identical text are
+consistent within one model but vary between models with different
+vocabularies: each vocabulary encodes a different set of frequent
+substrings, learned from a different training corpus via the same
+frequency-driven merge process demonstrated above at a much larger scale
+(commonly ten-thousand to several-hundred-thousand merges, not ten).</p>
+<p>This also explains the numeric and multilingual gotchas directly: BPE
+merges are chosen purely by byte/character-pair frequency in the training
+corpus, with no built-in concept of "this is a number" or "this is a word
+boundary" — a digit sequence's tokenization depends entirely on how often
+that exact digit substring appeared during training, and a
+low-resource language's tokenization is worse simply because its
+substrings were rarer in the corpus the merges were learned from, so fewer
+of its common patterns earned a place in the vocabulary as a single token.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BPE</td>
+<td>Iteratively merges the most frequent adjacent pair into a new token</td>
+</tr>
+<tr>
+<td>Vocabulary</td>
+<td>The ordered list of learned merges, fixed after training</td>
+</tr>
+<tr>
+<td>Unseen words</td>
+<td>Decompose into smaller known pieces — never a hard failure</td>
+</tr>
+<tr>
+<td>Token ≠ word ≠ character</td>
+<td>None of these counts are interchangeable</td>
+</tr>
+<tr>
+<td>Cross-model variance</td>
+<td>Different training corpora → different vocabularies → different counts</td>
+</tr>
+<tr>
+<td>Cost estimation</td>
+<td>Always use the real tokenizer/count API, never a word-count heuristic</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Train the toy BPE tokenizer above on a corpus of at least 50 short English
+sentences for 60 merges, then encode 5 test strings: a common English
+sentence, a snake_case code identifier, a string of digits, a sentence
+with unusual capitalization, and a word absent from training. Print the
+token count for each and explain in a comment, for each case, <em>why</em> it
+tokenized the way it did based on which merges fired.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

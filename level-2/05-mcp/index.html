@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1158,6 +1156,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Model Context Protocol (MCP)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1174,6 +1190,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-shape-of-the-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The shape of the protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-a-minimal-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing a minimal MCP server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-an-mcp-server-from-your-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to an MCP server from your app
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-your-own-mcp-tools-for-reuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing your own MCP tools for reuse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-shape-of-the-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The shape of the protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-a-minimal-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing a minimal MCP server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-an-mcp-server-from-your-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to an MCP server from your app
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-your-own-mcp-tools-for-reuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing your own MCP tools for reuse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2315,173 @@
 
 
 <h1 id="05-model-context-protocol-mcp">05 · Model Context Protocol (MCP)<a class="headerlink" href="#05-model-context-protocol-mcp" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover the MCP standard, connecting existing MCP servers, and writing your own MCP tools.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>Every tool you've defined so far has been hand-written and wired directly
+into your own <code>TOOLS</code> list and <code>execute_tool</code> dispatcher. That doesn't
+scale once you want to reuse the same tool across multiple apps, or plug in
+tools someone else maintains (a database connector, a Slack integration).
+<strong>MCP (Model Context Protocol)</strong> standardizes how an LLM application
+discovers and calls tools exposed by an independent server — write a tool
+once as an MCP server, use it from any MCP-compatible client.</p>
+<h2 id="the-shape-of-the-protocol">The shape of the protocol<a class="headerlink" href="#the-shape-of-the-protocol" title="Permanent link">&para;</a></h2>
+<p>An MCP server exposes three kinds of things over a client/server
+connection (typically stdio for local processes, or HTTP for remote ones):</p>
+<ul>
+<li><strong>Tools</strong> — callable functions with a name, description, and JSON Schema,
+  conceptually identical to Level 1's tool definitions.</li>
+<li><strong>Resources</strong> — readable data (files, DB rows, API responses) addressed
+  by URI, for the client to pull into context.</li>
+<li><strong>Prompts</strong> — reusable, parameterized prompt templates the server
+  provides.</li>
+</ul>
+<p>The client (your application) connects, asks the server "what tools do you
+have," and gets back JSON Schema definitions it can pass straight through
+to the model's <code>tools</code> parameter — the server is the single source of
+truth for what a tool does and how to call it.</p>
+<h2 id="writing-a-minimal-mcp-server">Writing a minimal MCP server<a class="headerlink" href="#writing-a-minimal-mcp-server" title="Permanent link">&para;</a></h2>
+<p>Using the Python SDK, a server exposing one tool looks like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># weather_mcp_server.py</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.fastmcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastMCP</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="s2">&quot;weather&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_weather</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Get current weather for a city.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="c1"># Real implementation would call a weather API.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">fake_temp_c</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="n">city</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span> <span class="o">%</span> <span class="mi">35</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">temp</span> <span class="o">=</span> <span class="n">fake_temp_c</span> <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">&quot;celsius&quot;</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">fake_temp_c</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="n">city</span><span class="p">,</span> <span class="s2">&quot;temp&quot;</span><span class="p">:</span> <span class="n">temp</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">mcp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="s2">&quot;stdio&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The decorator inspects the function's type hints and docstring to build the
+JSON Schema automatically — you write a normal Python function, and the
+protocol-level wiring (schema generation, request parsing, response
+serialization) is handled by the SDK.</p>
+<h2 id="connecting-to-an-mcp-server-from-your-app">Connecting to an MCP server from your app<a class="headerlink" href="#connecting-to-an-mcp-server-from-your-app" title="Permanent link">&para;</a></h2>
+<p>Your application acts as an MCP <strong>client</strong>, launching the server as a
+subprocess and forwarding its tools into a normal <code>messages.create</code> call:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientSession</span><span class="p">,</span> <span class="n">StdioServerParameters</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.client.stdio</span><span class="w"> </span><span class="kn">import</span> <span class="n">stdio_client</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">anthropic</span><span class="o">,</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">load_dotenv</span><span class="p">()</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">client</span> <span class="o">=</span> <span class="n">anthropic</span><span class="o">.</span><span class="n">Anthropic</span><span class="p">()</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">MODEL</span> <span class="o">=</span> <span class="s2">&quot;claude-sonnet-5&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">():</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">server_params</span> <span class="o">=</span> <span class="n">StdioServerParameters</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;weather_mcp_server.py&quot;</span><span class="p">])</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">stdio_client</span><span class="p">(</span><span class="n">server_params</span><span class="p">)</span> <span class="k">as</span> <span class="p">(</span><span class="n">read</span><span class="p">,</span> <span class="n">write</span><span class="p">):</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">(</span><span class="n">read</span><span class="p">,</span> <span class="n">write</span><span class="p">)</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            <span class="n">tools_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>            <span class="n">tools</span> <span class="o">=</span> <span class="p">[{</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>                <span class="s2">&quot;input_schema&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">inputSchema</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="p">}</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tools_response</span><span class="o">.</span><span class="n">tools</span><span class="p">]</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>            <span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What&#39;s the weather in Lisbon?&quot;</span><span class="p">}]</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            <span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">MODEL</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span> <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">)</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>            <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>                <span class="k">if</span> <span class="n">block</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;tool_use&quot;</span><span class="p">:</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>                    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">call_tool</span><span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">block</span><span class="o">.</span><span class="n">input</span><span class="p">)</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">block</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">block</span><span class="o">.</span><span class="n">input</span><span class="si">}</span><span class="s2">) -&gt; </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+</code></pre></div>
+<p>This is the same request→execute→respond loop from Level 1 — the only
+difference is that <code>execute_tool</code> is replaced by <code>session.call_tool</code>,
+which forwards the call over the protocol to the server process instead of
+running a local Python function directly.</p>
+<h2 id="writing-your-own-mcp-tools-for-reuse">Writing your own MCP tools for reuse<a class="headerlink" href="#writing-your-own-mcp-tools-for-reuse" title="Permanent link">&para;</a></h2>
+<p>The payoff for the extra layer is reuse: a <code>github_mcp_server.py</code> you write
+once can back a CLI assistant, a Slack bot, and a web app — each app is a
+thin MCP client that connects to the same server and never re-implements
+the GitHub API calls, auth, or pagination logic. When designing a server
+for reuse:</p>
+<ul>
+<li><strong>Keep tool descriptions self-contained.</strong> The consuming application may
+  not know the domain — write descriptions as if the model has never seen
+  your system before, because from a fresh client's perspective, it hasn't.</li>
+<li><strong>Return structured, not prose, results.</strong> Let the calling model decide
+  how to phrase things to its own user; a server returning <code>{"temp": 18,
+  "unit": "celsius"}</code> is more reusable across apps than one returning
+  "It's a pleasant 18°C in Lisbon today!"</li>
+<li><strong>Version your server</strong> the same way you'd version an API — tool schema
+  changes are breaking changes for every client depending on them.</li>
+</ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>MCP does not change how the model calls tools — the model still only ever
+emits a <code>tool_use</code> block naming a tool and filling arguments against a JSON
+Schema, exactly as in Level 1. What MCP standardizes is everything
+<em>around</em> that: a wire format (JSON-RPC messages over stdio or HTTP) for a
+client to ask a server "what tools exist" and "run this one," so that tool
+<em>discovery</em> and <em>invocation</em> are decoupled from any single application's
+codebase.</p>
+<p>This decoupling is why an MCP tool is reusable in a way a hand-written
+<code>execute_tool</code> branch isn't: the server owns both the schema definition and
+the implementation, and any client that speaks the protocol can fetch the
+current schema at connection time via <code>list_tools()</code> rather than a
+developer hand-copying it into a <code>TOOLS</code> list that can drift out of sync
+with the actual function signature. The <code>@mcp.tool()</code> decorator's job is
+purely mechanical — introspecting Python type hints to generate the JSON
+Schema your app would otherwise have written by hand, and marshalling
+requests and responses across the process boundary.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP</td>
+<td>Protocol standardizing tool discovery + invocation across apps</td>
+</tr>
+<tr>
+<td>Tools / Resources / Prompts</td>
+<td>The three things an MCP server can expose</td>
+</tr>
+<tr>
+<td><code>list_tools()</code></td>
+<td>Client fetches current schemas at connection time</td>
+</tr>
+<tr>
+<td><code>call_tool()</code></td>
+<td>Client-side equivalent of Level 1's <code>execute_tool</code></td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>stdio for local subprocess servers, HTTP for remote ones</td>
+</tr>
+<tr>
+<td>Reuse payoff</td>
+<td>One server backs many client applications</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Turn Level 1's calculator and weather tools into a single MCP server using
+<code>FastMCP</code>, then write a client script that connects to it, lists its
+tools, and runs a conversation requiring both. Confirm the schemas the
+client receives from <code>list_tools()</code> match what you'd have hand-written in
+Level 1 — then add a third tool to the server <em>without touching the client
+code</em> and confirm the client picks it up automatically on the next
+<code>list_tools()</code> call.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
