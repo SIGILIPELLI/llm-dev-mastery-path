@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1826,6 +1824,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Alignment & RLHF Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1842,6 +1858,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-stage-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three-stage pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rlhf-with-ppo-the-classical-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RLHF with PPO (the classical approach)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dpo-alignment-without-a-separate-rl-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DPO: alignment without a separate RL loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constitutional-ai-and-rlaif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constitutional AI and RLAIF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-aligned-models-still-refuse-things-you-didnt-expect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why aligned models still refuse things you didn't expect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-stage-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three-stage pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rlhf-with-ppo-the-classical-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RLHF with PPO (the classical approach)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dpo-alignment-without-a-separate-rl-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DPO: alignment without a separate RL loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constitutional-ai-and-rlaif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constitutional AI and RLAIF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-aligned-models-still-refuse-things-you-didnt-expect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why aligned models still refuse things you didn't expect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2337,216 @@
 
 
 <h1 id="02-alignment-rlhf-overview">02 · Alignment &amp; RLHF Overview<a class="headerlink" href="#02-alignment-rlhf-overview" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover instruction tuning, RLHF/RLAIF, constitutional AI, and why aligned models behave the way they do.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>A base model, fresh out of pretraining, is a raw next-token predictor: it
+completes text plausibly, but it has no notion of "answer the user's
+question helpfully" versus "continue this text in whatever direction is
+statistically likely." Alignment is the set of training steps that turn
+that raw completion engine into an assistant that follows instructions,
+refuses harmful requests, and prefers helpful, honest, harmless responses.
+Understanding how alignment works — even if you never train a model
+yourself — explains why deployed models behave the way they do: why they
+refuse certain requests, why they sometimes over-refuse benign ones, and
+why "just prompt it differently" only gets you so far against training
+that pushes the opposite direction.</p>
+<h2 id="the-three-stage-pipeline">The three-stage pipeline<a class="headerlink" href="#the-three-stage-pipeline" title="Permanent link">&para;</a></h2>
+<p>Most production chat models go through three broad stages after
+pretraining:</p>
+<ol>
+<li><strong>Supervised fine-tuning (SFT)</strong> — the model is trained on curated
+   (prompt, ideal-response) pairs written or selected by humans. This
+   teaches the model the <em>format</em> of being an assistant: answering
+   directly, following instructions, using a consistent tone. It's
+   ordinary fine-tuning (Level 3, module 6) on a dataset specifically
+   built to demonstrate assistant behavior.</li>
+<li><strong>Reward modeling (RM)</strong> — humans (or, in RLAIF, another model) rank
+   multiple candidate responses to the same prompt from best to worst. A
+   separate model is trained to predict that ranking, producing a scalar
+   "reward" for any given response. This reward model becomes a proxy for
+   "how much would a human like this response."</li>
+<li><strong>RLHF / policy optimization</strong> — the SFT model is further trained with
+   reinforcement learning, using the reward model's score as the signal to
+   maximize, subject to a penalty for straying too far from the SFT model
+   (so it doesn't degenerate into reward-hacking gibberish that scores
+   well but reads badly).</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Conceptual reward model training — pairwise ranking loss</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">reward_model_loss</span><span class="p">(</span><span class="n">reward_chosen</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">reward_rejected</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="c1"># Bradley-Terry model: P(chosen &gt; rejected) = sigmoid(r_chosen - r_rejected)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="c1"># Training pushes the model to score human-preferred responses higher.</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">return</span> <span class="o">-</span><span class="n">F</span><span class="o">.</span><span class="n">logsigmoid</span><span class="p">(</span><span class="n">reward_chosen</span> <span class="o">-</span> <span class="n">reward_rejected</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># During training: for each (prompt, response_a, response_b, human_preferred) example,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># run both responses through the reward model, compute this loss, backpropagate.</span>
+</code></pre></div>
+<h2 id="rlhf-with-ppo-the-classical-approach">RLHF with PPO (the classical approach)<a class="headerlink" href="#rlhf-with-ppo-the-classical-approach" title="Permanent link">&para;</a></h2>
+<p>Proximal Policy Optimization (PPO) is the reinforcement learning
+algorithm most associated with RLHF. At a high level, for each training
+prompt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Conceptual RLHF training step (heavily simplified)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">rlhf_step</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">policy_model</span><span class="p">,</span> <span class="n">ref_model</span><span class="p">,</span> <span class="n">reward_model</span><span class="p">,</span> <span class="n">kl_coef</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">policy_model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>                 <span class="c1"># sample a response</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">reward</span> <span class="o">=</span> <span class="n">reward_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>             <span class="c1"># how good is it?</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="c1"># KL penalty: don&#39;t let the policy drift too far from the reference</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="c1"># (the original SFT model) — this prevents reward hacking and</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="c1"># catastrophic forgetting of general capability.</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">policy_logprobs</span> <span class="o">=</span> <span class="n">policy_model</span><span class="o">.</span><span class="n">logprobs</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">ref_logprobs</span> <span class="o">=</span> <span class="n">ref_model</span><span class="o">.</span><span class="n">logprobs</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">kl_penalty</span> <span class="o">=</span> <span class="p">(</span><span class="n">policy_logprobs</span> <span class="o">-</span> <span class="n">ref_logprobs</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">total_reward</span> <span class="o">=</span> <span class="n">reward</span> <span class="o">-</span> <span class="n">kl_coef</span> <span class="o">*</span> <span class="n">kl_penalty</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="c1"># PPO then uses total_reward as the RL signal, clipping policy updates</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="c1"># to stay within a &quot;trust region&quot; of the previous policy for stability.</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="k">return</span> <span class="n">total_reward</span>
+</code></pre></div>
+<p>The KL penalty term is not a minor implementation detail — it's the thing
+that keeps RLHF from producing a model that games the reward model with
+degenerate, high-scoring-but-useless text (a well-documented failure mode
+called reward hacking). Too small a <code>kl_coef</code> and the policy drifts into
+exploiting quirks of the reward model; too large and the policy barely
+moves from the SFT baseline.</p>
+<h2 id="dpo-alignment-without-a-separate-rl-loop">DPO: alignment without a separate RL loop<a class="headerlink" href="#dpo-alignment-without-a-separate-rl-loop" title="Permanent link">&para;</a></h2>
+<p>Direct Preference Optimization (DPO) reformulates the same underlying
+objective as a single supervised loss, skipping the separate reward model
+and RL training loop entirely — it directly optimizes the policy on
+preference pairs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">dpo_loss</span><span class="p">(</span><span class="n">policy_chosen_logps</span><span class="p">,</span> <span class="n">policy_rejected_logps</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>             <span class="n">ref_chosen_logps</span><span class="p">,</span> <span class="n">ref_rejected_logps</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1"># beta controls how far the policy is allowed to move from the reference model</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">policy_logratio</span> <span class="o">=</span> <span class="n">policy_chosen_logps</span> <span class="o">-</span> <span class="n">policy_rejected_logps</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">ref_logratio</span> <span class="o">=</span> <span class="n">ref_chosen_logps</span> <span class="o">-</span> <span class="n">ref_rejected_logps</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">logits</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">*</span> <span class="p">(</span><span class="n">policy_logratio</span> <span class="o">-</span> <span class="n">ref_logratio</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">return</span> <span class="o">-</span><span class="n">F</span><span class="o">.</span><span class="n">logsigmoid</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+<p>DPO has become popular in practice because it removes an entire moving
+part (the reward model and its own training instability) while optimizing
+a mathematically equivalent objective under reasonable assumptions — a
+meaningful engineering simplification, not just a shortcut, which is why
+many open-weight aligned models today are DPO-tuned rather than
+full-PPO-RLHF-tuned.</p>
+<h2 id="constitutional-ai-and-rlaif">Constitutional AI and RLAIF<a class="headerlink" href="#constitutional-ai-and-rlaif" title="Permanent link">&para;</a></h2>
+<p>Human preference labeling is expensive and slow to scale. Constitutional
+AI and RLAIF (RL from AI Feedback) replace or supplement human raters with
+model-generated feedback, guided by a written set of principles (a
+"constitution"):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">constitution_principles</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="s2">&quot;Choose the response that is more helpful and directly answers the question.&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="s2">&quot;Choose the response that avoids providing instructions for causing harm.&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="s2">&quot;Choose the response that acknowledges uncertainty rather than fabricating facts.&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">ai_feedback_rank</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">response_a</span><span class="p">,</span> <span class="n">response_b</span><span class="p">,</span> <span class="n">critique_model</span><span class="p">):</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="c1"># The critique model is prompted with the constitution and asked to</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="c1"># judge which response better satisfies the principles.</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">verdict</span> <span class="o">=</span> <span class="n">critique_model</span><span class="o">.</span><span class="n">judge</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">response_a</span><span class="p">,</span> <span class="n">response_b</span><span class="p">,</span> <span class="n">constitution_principles</span><span class="p">)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="k">return</span> <span class="n">verdict</span>  <span class="c1"># &quot;a&quot; or &quot;b&quot; — used exactly like a human preference label</span>
+</code></pre></div>
+<p>This doesn't remove humans from the loop entirely — the constitution
+itself is human-written, and human-labeled data typically anchors the
+critique model's judgment — but it lets preference data scale far beyond
+what human labeling budgets alone would allow.</p>
+<h2 id="why-aligned-models-still-refuse-things-you-didnt-expect">Why aligned models still refuse things you didn't expect<a class="headerlink" href="#why-aligned-models-still-refuse-things-you-didnt-expect" title="Permanent link">&para;</a></h2>
+<p>Because alignment optimizes for a reward model's aggregate preferences
+across a huge, diverse training distribution, individual edge cases don't
+get individually tuned — the model generalizes a <em>pattern</em> of
+"cautious around topic X" from many training examples, which is why it
+can over-refuse benign requests that superficially resemble a harmful
+pattern (a chemistry question that resembles a weapons question) or
+under-refuse a genuinely harmful request phrased unusually. This is a
+distribution-generalization problem, not a bug in any single training
+example, and it's why red-teaming (module 4) and layered runtime
+guardrails (Level 3, module 8) remain necessary even on well-aligned
+models — alignment shifts the <em>default</em> behavior; it doesn't guarantee
+correct behavior on every input.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>The core mechanical insight across PPO-RLHF and DPO is that both are
+solving the same constrained optimization problem — maximize expected
+human preference while staying close to a reference policy — just via
+different mathematical paths. PPO does it explicitly: sample responses,
+score them with a learned reward model, and use policy-gradient updates
+(clipped to prevent destructively large steps) to shift the model's
+output distribution toward higher-reward regions, with the KL term
+enforced as an explicit penalty added to the reward signal at every step.</p>
+<p>DPO exploits an algebraic identity: under the same reward-maximization
+formulation, the optimal policy's log-probability ratio versus the
+reference model has a closed-form relationship to the reward. Substituting
+that relationship back into the preference-modeling loss (the same
+Bradley-Terry pairwise comparison used to train a reward model) yields a
+loss expressed purely in terms of the <em>policy's own</em> log-probabilities on
+chosen versus rejected responses — no separate reward model, no sampling,
+no RL update rule, just a classification-style loss you can optimize with
+standard supervised gradient descent. This is why DPO is dramatically
+simpler to implement and more stable to train: it turns an RL problem
+into a supervised-learning problem by algebraic substitution, not by
+approximation.</p>
+<p>The reason any of this changes model <em>behavior</em> rather than just model
+<em>scores</em> comes back to the same weight-update mechanism as fine-tuning:
+gradients computed from these losses flow through the same attention and
+feed-forward layers, nudging the probability the model assigns to
+generating preferred continuations upward and dispreferred continuations
+downward, token by token, until the aggregate effect across millions of
+preference pairs reshapes the model's default response style, tone, and
+refusal patterns.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SFT</td>
+<td>Teach assistant format/behavior from curated examples</td>
+</tr>
+<tr>
+<td>Reward model</td>
+<td>Predict human preference ranking as a scalar score</td>
+</tr>
+<tr>
+<td>PPO-RLHF</td>
+<td>RL against the reward model, KL-penalized to a reference policy</td>
+</tr>
+<tr>
+<td>DPO</td>
+<td>Same objective as RLHF, solved as a direct supervised loss — no RL loop</td>
+</tr>
+<tr>
+<td>Constitutional AI / RLAIF</td>
+<td>Model-generated preference labels guided by written principles</td>
+</tr>
+<tr>
+<td>KL penalty</td>
+<td>Prevents reward hacking and capability collapse during RL</td>
+</tr>
+<tr>
+<td>Why over-refusal happens</td>
+<td>Alignment generalizes patterns across training distribution, not per-case rules</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Take a small open preference dataset (e.g., a subset of Anthropic's HH-RLHF
+or a similar public dataset) and implement the <code>dpo_loss</code> function above
+against a small model (1-3B parameters) using a library like TRL. Train
+for one epoch, then compare the fine-tuned model's responses against the
+base model's on 10 held-out prompts, scoring each pair with a simple
+LLM-as-judge rubric (Level 3, module 9's tracing patterns are useful for
+recording every judged comparison). Report how often the DPO-tuned model's
+response was preferred, and note any responses where the tuned model
+became measurably more cautious or verbose as a side effect.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

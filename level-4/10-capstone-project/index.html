@@ -92,8 +92,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -2048,6 +2046,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Capstone Project
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2064,6 +2080,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youre-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you're building
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build phases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapping-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrapping up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2097,6 +2209,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youre-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you're building
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build phases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapping-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrapping up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2116,23 +2313,206 @@
 
 
 <h1 id="10-capstone-project">10 · Capstone Project<a class="headerlink" href="#10-capstone-project" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover designing and operating a complete, safe, cost-controlled LLM platform end to end.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>This capstone pulls together every module in Level 4 into one coherent
+build: a small but genuinely production-shaped LLM platform serving
+multiple simulated teams, with routing, cost controls, safety layers,
+evaluation, and compliance all present — not as separate toy exercises,
+but as one integrated system where each piece depends on the others the
+way they do in a real deployment.</p>
+<h2 id="what-youre-building">What you're building<a class="headerlink" href="#what-youre-building" title="Permanent link">&para;</a></h2>
+<p>A "Platform Service" that sits in front of one or more models and serves
+requests from at least two simulated internal "teams" (e.g., a
+<code>support-bot</code> team and an <code>internal-tools</code> team), with these components
+wired together end to end:</p>
+<ol>
+<li>A <strong>gateway</strong> (module 3) with provider adapters, a routing table, and
+   quota enforcement per team.</li>
+<li><strong>Model tiering with escalation</strong> (module 6) so simple requests use a
+   cheap model and only escalate when needed.</li>
+<li>A <strong>safety layer</strong> (modules 4 and 8): input classification for
+   obvious attack patterns, output filtering, and least-privilege tool
+   scoping for any agentic team.</li>
+<li><strong>Continuous evaluation</strong> (module 5): a sampling pipeline that scores
+   a percentage of live traffic and a rolling quality monitor that
+   alerts on drift.</li>
+<li><strong>Cost attribution</strong> (module 6): per-team spend tracking, visible in
+   one place.</li>
+<li><strong>An audit trail and PII redaction layer</strong> (module 9): every
+   consequential action logged in a tamper-evident chain, with PII
+   redacted before storage.</li>
+<li><strong>Latency budgets</strong> (module 7): p99 tracked per team, with a
+   documented fallback path when a budget is at risk of being blown.</li>
+</ol>
+<h2 id="reference-architecture">Reference architecture<a class="headerlink" href="#reference-architecture" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">ModelTier</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">SMALL</span> <span class="o">=</span> <span class="s2">&quot;small&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">LARGE</span> <span class="o">=</span> <span class="s2">&quot;large&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlatformRequest</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">team_id</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">task_type</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">messages</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlatformResponse</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">tier_used</span><span class="p">:</span> <span class="n">ModelTier</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="n">latency_ms</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">cost</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="n">flagged</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMPlatform</span><span class="p">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">small_model</span><span class="p">,</span> <span class="n">large_model</span><span class="p">,</span> <span class="n">gateway_quota</span><span class="p">,</span> <span class="n">audit_log</span><span class="p">,</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>                 <span class="n">quality_monitor</span><span class="p">,</span> <span class="n">pii_redactor</span><span class="p">,</span> <span class="n">tool_scopes</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">small_model</span> <span class="o">=</span> <span class="n">small_model</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">large_model</span> <span class="o">=</span> <span class="n">large_model</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">gateway_quota</span> <span class="o">=</span> <span class="n">gateway_quota</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">audit_log</span> <span class="o">=</span> <span class="n">audit_log</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">quality_monitor</span> <span class="o">=</span> <span class="n">quality_monitor</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pii_redactor</span> <span class="o">=</span> <span class="n">pii_redactor</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tool_scopes</span> <span class="o">=</span> <span class="n">tool_scopes</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">handle_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">PlatformRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PlatformResponse</span><span class="p">:</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="c1"># 1. Quota check (module 3)</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway_quota</span><span class="o">.</span><span class="n">check_quota</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">team_id</span><span class="p">):</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>            <span class="k">raise</span> <span class="ne">PermissionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Team </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">team_id</span><span class="si">}</span><span class="s2"> exceeded quota&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        <span class="c1"># 2. Safety input check (modules 4, 8)</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_looks_like_injection</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">messages</span><span class="p">):</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">audit_log</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="s2">&quot;blocked_injection_attempt&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;team&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">team_id</span><span class="p">})</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>            <span class="k">raise</span> <span class="ne">PermissionError</span><span class="p">(</span><span class="s2">&quot;Request blocked by input safety filter&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>        <span class="c1"># 3. PII redaction before anything is logged or sent onward (module 9)</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>        <span class="n">redacted_messages</span><span class="p">,</span> <span class="n">pii_found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redact_messages</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>        <span class="c1"># 4. Tiered routing with escalation (module 6)</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">small_model</span><span class="o">.</span><span class="n">generate_with_confidence</span><span class="p">(</span><span class="n">redacted_messages</span><span class="p">)</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>        <span class="n">tier_used</span> <span class="o">=</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">SMALL</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span> <span class="o">&lt;</span> <span class="mf">0.7</span><span class="p">:</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">large_model</span><span class="o">.</span><span class="n">generate_with_confidence</span><span class="p">(</span><span class="n">redacted_messages</span><span class="p">)</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>            <span class="n">tier_used</span> <span class="o">=</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">LARGE</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>        <span class="n">latency_ms</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>        <span class="c1"># 5. Output safety check (module 8)</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>        <span class="n">flagged</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_flagged</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>        <span class="c1"># 6. Cost + audit (modules 6, 9)</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>        <span class="n">cost</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_cost</span><span class="p">(</span><span class="n">tier_used</span><span class="p">,</span> <span class="n">redacted_messages</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">audit_log</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="s2">&quot;request_served&quot;</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>            <span class="s2">&quot;team&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">team_id</span><span class="p">,</span> <span class="s2">&quot;tier&quot;</span><span class="p">:</span> <span class="n">tier_used</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;cost&quot;</span><span class="p">:</span> <span class="n">cost</span><span class="p">,</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>            <span class="s2">&quot;pii_redacted&quot;</span><span class="p">:</span> <span class="n">pii_found</span><span class="p">,</span> <span class="s2">&quot;flagged&quot;</span><span class="p">:</span> <span class="n">flagged</span><span class="p">,</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>        <span class="p">})</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>        <span class="c1"># 7. Sample for continuous eval (module 5)</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">quality_monitor</span><span class="o">.</span><span class="n">maybe_sample</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>        <span class="k">return</span> <span class="n">PlatformResponse</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tier_used</span><span class="o">=</span><span class="n">tier_used</span><span class="p">,</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>                                  <span class="n">latency_ms</span><span class="o">=</span><span class="n">latency_ms</span><span class="p">,</span> <span class="n">cost</span><span class="o">=</span><span class="n">cost</span><span class="p">,</span> <span class="n">flagged</span><span class="o">=</span><span class="n">flagged</span><span class="p">)</span>
+</code></pre></div>
+<p>This is deliberately a sketch, not a finished library — every method
+prefixed <code>_</code> is where you plug in the real implementation from the
+corresponding module (<code>_looks_like_injection</code> from module 8's patterns,
+<code>_redact_messages</code> from module 9's <code>redact_pii</code>, <code>_compute_cost</code> from
+module 6's cost attribution, and so on).</p>
+<h2 id="build-phases">Build phases<a class="headerlink" href="#build-phases" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Phase 1 — the gateway skeleton.</strong> Get <code>LLMPlatform.handle_request</code>
+   running end to end with a single mock model, no safety or eval logic
+   yet — just quota checking and a hardcoded response. Verify two teams
+   get independently enforced quotas.</li>
+<li><strong>Phase 2 — tiering and cost.</strong> Add the small/large model escalation
+   and per-team cost attribution. Verify cost is correctly summed per
+   team and that escalation actually triggers on low-confidence
+   responses.</li>
+<li><strong>Phase 3 — safety.</strong> Add input injection detection (module 8) and an
+   output content filter (module 4). Build a 20-case red-team suite and
+   confirm the platform blocks the attack cases while passing the
+   control cases.</li>
+<li><strong>Phase 4 — compliance.</strong> Add PII redaction before storage and the
+   hash-chained audit log. Verify a deletion request can locate and
+   remove a specific user's data across every store the platform writes
+   to.</li>
+<li><strong>Phase 5 — continuous eval and latency.</strong> Wire up traffic sampling
+   into an LLM-as-judge scoring pipeline and a rolling quality monitor.
+   Add p99 latency tracking per team and a documented fallback when a
+   team's p99 is trending toward its budget.</li>
+</ol>
+<h2 id="acceptance-checklist">Acceptance checklist<a class="headerlink" href="#acceptance-checklist" title="Permanent link">&para;</a></h2>
+<p>Treat this as the capstone's actual "done" bar — each item should be
+independently verifiable, not just asserted:</p>
+<ul>
+<li>[ ] Two teams have independently enforced quotas; exceeding one doesn't
+      affect the other.</li>
+<li>[ ] A request that a small model handles confidently never invokes the
+      large model (verified via a call counter).</li>
+<li>[ ] A 20-case red-team suite (10 attacks, 10 controls) passes with the
+      attacks blocked and the controls answered normally.</li>
+<li>[ ] PII in a test request never appears unredacted in any log or audit
+      entry.</li>
+<li>[ ] The audit log's <code>verify_chain</code> correctly detects tampering when a
+      historical entry is modified.</li>
+<li>[ ] A per-team cost report sums correctly against a known set of
+      requests with known token counts.</li>
+<li>[ ] p99 latency is tracked and visible per team, separate from the
+      mean.</li>
+<li>[ ] Running <code>mkdocs</code>-style documentation (or a README) explains the
+      architecture well enough that someone unfamiliar with the build
+      could operate it.</li>
+</ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>The reason this capstone is structured as one integrated system rather
+than nine separate exercises is that the modules in this level are not
+independent features bolted onto a model — they're different views of
+the same underlying constraint: a model is a powerful, imperfect,
+non-deterministic component, and a production platform's job is to wrap
+it with enough structure that the <em>system's</em> behavior is more reliable,
+accountable, and controllable than the model's raw behavior alone. Quota
+enforcement, tiering, safety filtering, and audit logging all sit at the
+same architectural layer — around the model, not inside it — because none
+of them can be reliably achieved by prompting the model differently; they
+require software that constrains what the model is allowed to affect,
+independent of what the model itself decides to do.</p>
+<p>This is also why the acceptance checklist emphasizes independent
+verification over "it seems to work": every property on that list — quota
+isolation, tamper detection, redaction completeness — is a property of
+the <em>system</em>, observable only by testing the system's boundaries
+directly (trying to exceed a quota, trying to tamper with a log, trying
+to inject an attack), not by inspecting any single model response. That
+is the central lesson of Level 4: at platform scale, correctness lives in
+the architecture surrounding the model at least as much as in the model
+itself.</p>
+<h2 id="wrapping-up">Wrapping up<a class="headerlink" href="#wrapping-up" title="Permanent link">&para;</a></h2>
+<p>Completing this capstone means you've built — end to end, even if at
+small scale — the same architectural shape used by real production LLM
+platforms: a gateway, tiered routing, layered safety, continuous
+evaluation, cost accountability, and compliance-grade logging, all
+integrated rather than siloed. That shape is the actual transferable
+skill; the specific model, provider, and scale will keep changing, but a
+platform built this way absorbs those changes at the adapter and
+routing-table layer without requiring the rest of the system to be
+rebuilt.</p>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Implement all five build phases above against a mock model pair (a fast
+"small" model and a slower "large" model, both simple functions you
+control so behavior is predictable), run the full acceptance checklist,
+and write up a short incident postmortem for one deliberately-injected
+failure: pick one guardrail (quota, safety filter, or audit log), disable
+it, run the same red-team and load tests, and document exactly what
+breaks and how the system's own monitoring would have surfaced the
+regression.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

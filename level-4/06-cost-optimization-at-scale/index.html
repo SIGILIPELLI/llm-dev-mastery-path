@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1938,6 +1936,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Cost Optimization at Scale
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1954,6 +1970,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-tiering-matching-model-cost-to-task-difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model tiering: matching model cost to task difficulty
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-apis-for-non-interactive-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch APIs for non-interactive workloads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-and-response-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt and response caching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-attribution-across-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost attribution across teams
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-tiering-matching-model-cost-to-task-difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model tiering: matching model cost to task difficulty
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-apis-for-non-interactive-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch APIs for non-interactive workloads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-and-response-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt and response caching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-attribution-across-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost attribution across teams
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,23 +2315,207 @@
 
 
 <h1 id="06-cost-optimization-at-scale">06 · Cost Optimization at Scale<a class="headerlink" href="#06-cost-optimization-at-scale" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-This module will cover model tiering, batch APIs, caching strategies, and cost attribution across teams.</p>
-</div>
-<p>Check back soon — new modules are published regularly. In the meantime,
-work through <a href="../../level-1/">Level 1 · Entry</a>, which is fully
-available now.</p>
+<p>At prototype scale, LLM API cost is a rounding error. At platform scale
+— millions of requests across many teams — it becomes one of the largest
+line items in the infrastructure budget, and small per-request savings
+compound into large absolute numbers. This module covers the concrete
+levers for reducing cost without degrading quality: model tiering, batch
+processing, caching, and cost attribution so the right teams see and own
+their spend.</p>
+<h2 id="model-tiering-matching-model-cost-to-task-difficulty">Model tiering: matching model cost to task difficulty<a class="headerlink" href="#model-tiering-matching-model-cost-to-task-difficulty" title="Permanent link">&para;</a></h2>
+<p>Not every request needs the most capable (and most expensive) model.
+Tiering routes requests to the cheapest model that reliably handles them,
+escalating only when needed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">ModelTier</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">SMALL</span> <span class="o">=</span> <span class="s2">&quot;small&quot;</span>     <span class="c1"># cheap, fast, good for classification/extraction/simple tasks</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">MEDIUM</span> <span class="o">=</span> <span class="s2">&quot;medium&quot;</span>    <span class="c1"># balanced, general-purpose default</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">LARGE</span> <span class="o">=</span> <span class="s2">&quot;large&quot;</span>      <span class="c1"># expensive, reserved for genuinely complex reasoning</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">TIER_COST_PER_1K_TOKENS</span> <span class="o">=</span> <span class="p">{</span><span class="n">ModelTier</span><span class="o">.</span><span class="n">SMALL</span><span class="p">:</span> <span class="mf">0.0002</span><span class="p">,</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">MEDIUM</span><span class="p">:</span> <span class="mf">0.003</span><span class="p">,</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">LARGE</span><span class="p">:</span> <span class="mf">0.015</span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">select_tier</span><span class="p">(</span><span class="n">task_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">input_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelTier</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">if</span> <span class="n">task_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;classification&quot;</span><span class="p">,</span> <span class="s2">&quot;extraction&quot;</span><span class="p">,</span> <span class="s2">&quot;simple_qa&quot;</span><span class="p">):</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="k">return</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">SMALL</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="k">if</span> <span class="n">task_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;complex_reasoning&quot;</span><span class="p">,</span> <span class="s2">&quot;code_generation&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">input_length</span> <span class="o">&gt;</span> <span class="mi">8000</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="k">return</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">LARGE</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="k">return</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">MEDIUM</span>
+</code></pre></div>
+<p>A more robust version escalates dynamically based on observed confidence
+rather than a static task-type mapping:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">tiered_call_with_escalation</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">small_model</span><span class="p">,</span> <span class="n">large_model</span><span class="p">,</span> <span class="n">confidence_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">small_model</span><span class="o">.</span><span class="n">generate_with_confidence</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span> <span class="o">&gt;=</span> <span class="n">confidence_threshold</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">SMALL</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="c1"># small model wasn&#39;t confident — escalate to the larger model</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">return</span> <span class="n">large_model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span> <span class="n">ModelTier</span><span class="o">.</span><span class="n">LARGE</span>
+</code></pre></div>
+<p>This pattern — try cheap first, escalate on low confidence — routinely
+cuts aggregate cost substantially versus routing everything to the large
+model by default, because most real traffic is disproportionately simple
+requests that a small model handles just as well.</p>
+<h2 id="batch-apis-for-non-interactive-workloads">Batch APIs for non-interactive workloads<a class="headerlink" href="#batch-apis-for-non-interactive-workloads" title="Permanent link">&para;</a></h2>
+<p>Anything that doesn't need a response within the same interaction —
+nightly summarization, bulk classification, offline eval scoring (module
+5) — is a candidate for batch processing, which most providers price at
+a substantial discount versus real-time calls in exchange for
+higher-latency (often hours, not seconds) turnaround:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">build_batch_request</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="s2">&quot;custom_id&quot;</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">],</span> <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;max_tokens&quot;</span><span class="p">,</span> <span class="mi">512</span><span class="p">)},</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="p">}))</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>   <span class="c1"># provider-specific JSONL batch format</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">submit_batch</span><span class="p">(</span><span class="n">batch_jsonl</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">batch_client</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">batch_job</span> <span class="o">=</span> <span class="n">batch_client</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">input_data</span><span class="o">=</span><span class="n">batch_jsonl</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">return</span> <span class="n">batch_job</span><span class="o">.</span><span class="n">id</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">def</span><span class="w"> </span><span class="nf">poll_and_collect</span><span class="p">(</span><span class="n">batch_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">batch_client</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="n">job</span> <span class="o">=</span> <span class="n">batch_client</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">batch_id</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="s2">&quot;completed&quot;</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batch </span><span class="si">{</span><span class="n">batch_id</span><span class="si">}</span><span class="s2"> not ready: </span><span class="si">{</span><span class="n">job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="k">return</span> <span class="p">{</span><span class="n">result</span><span class="o">.</span><span class="n">custom_id</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">output</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">job</span><span class="o">.</span><span class="n">results</span><span class="p">}</span>
+</code></pre></div>
+<p>Route any workload that can tolerate hours-not-seconds latency through
+batch — it's one of the highest-leverage cost changes available with
+zero quality tradeoff, since it's the same model, just priced and
+scheduled differently.</p>
+<h2 id="prompt-and-response-caching">Prompt and response caching<a class="headerlink" href="#prompt-and-response-caching" title="Permanent link">&para;</a></h2>
+<p>Repeated or near-identical requests (a common system prompt, a
+frequently-asked question, a re-run eval) don't need to pay full
+inference cost every time:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">ResponseCache</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">store</span><span class="p">):</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="n">store</span>   <span class="c1"># any key-value store (Redis, etc.)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">cache_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">messages</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">model</span><span class="p">},</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">payload</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_or_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">call_fn</span><span class="p">,</span> <span class="n">ttl_seconds</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_key</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="k">if</span> <span class="n">cached</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            <span class="k">return</span> <span class="n">cached</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        <span class="n">response</span> <span class="o">=</span> <span class="n">call_fn</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">setex</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">ttl_seconds</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="k">return</span> <span class="n">response</span>
+</code></pre></div>
+<p>Exact-match caching only helps identical requests. For a stable system
+prompt or shared document context reused across many calls, provider-side
+prompt caching (caching the processed representation of a prompt prefix
+across calls) cuts cost on the repeated portion without requiring
+identical full requests — check current provider documentation for exact
+mechanics and pricing, since implementations vary and evolve.</p>
+<h2 id="cost-attribution-across-teams">Cost attribution across teams<a class="headerlink" href="#cost-attribution-across-teams" title="Permanent link">&para;</a></h2>
+<p>Centralized spend without per-team visibility means no one is
+accountable for their own usage. Tag every request at the gateway
+(module 3) with the calling team, and aggregate:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">UsageRecord</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">team_id</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">input_tokens</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">output_tokens</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">compute_cost</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">UsageRecord</span><span class="p">,</span> <span class="n">pricing</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">rates</span> <span class="o">=</span> <span class="n">pricing</span><span class="p">[</span><span class="n">record</span><span class="o">.</span><span class="n">model</span><span class="p">]</span>   <span class="c1"># {&quot;input&quot;: $/1k tokens, &quot;output&quot;: $/1k tokens}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">input_tokens</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">rates</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">output_tokens</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">rates</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">])</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">aggregate_by_team</span><span class="p">(</span><span class="n">records</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">UsageRecord</span><span class="p">],</span> <span class="n">pricing</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">totals</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="n">totals</span><span class="p">[</span><span class="n">record</span><span class="o">.</span><span class="n">team_id</span><span class="p">]</span> <span class="o">+=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">pricing</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">totals</span><span class="p">)</span>
+</code></pre></div>
+<p>Feed this into the same dashboard as the quality monitoring from module
+5 — cost and quality should be reviewed together, since the cheapest
+option that also fails quality checks isn't actually cheaper once you
+count the cost of the resulting incidents or rework.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Tiering and escalation work because task difficulty in real traffic is
+heavily right-skewed: most requests are easy, a small fraction are hard,
+and a fixed policy of always using the most capable model pays the
+hard-task price on every easy task too. Confidence-based escalation
+approximates an oracle router (one that always picks the cheapest
+sufficient model) without needing to know task difficulty in advance —
+the small model's own uncertainty signal (e.g., low top-token
+probability, or an explicit self-rated confidence) serves as a proxy for
+"this request is probably harder than what I reliably handle," which
+correlates with actual difficulty well enough to be useful even though
+it's an imperfect signal.</p>
+<p>Batch pricing discounts exist because they change what the provider is
+selling: real-time inference must reserve capacity to answer instantly,
+which caps how much a given GPU cluster can serve; batch requests can be
+scheduled into idle capacity between real-time spikes, so the same
+hardware serves more aggregate work over a day. That's a genuine
+capacity-utilization efficiency, not just a discount — which is why
+batch latency (however long the provider takes to schedule your job into
+spare capacity) is the tradeoff, not a quality difference in the
+response itself.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Lever</th>
+<th>Mechanism</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model tiering</td>
+<td>Route to cheapest sufficient model, escalate on low confidence</td>
+<td>Mixed-difficulty traffic</td>
+</tr>
+<tr>
+<td>Batch API</td>
+<td>Trade latency (hours) for a substantial per-token discount</td>
+<td>Non-interactive, bulk workloads</td>
+</tr>
+<tr>
+<td>Exact-match caching</td>
+<td>Skip inference entirely on identical repeated requests</td>
+<td>FAQ-style, repeated queries</td>
+</tr>
+<tr>
+<td>Prompt caching</td>
+<td>Reuse processed prefix across calls with shared context</td>
+<td>Long, stable system prompts/docs</td>
+</tr>
+<tr>
+<td>Cost attribution</td>
+<td>Tag every request with team/caller at the gateway</td>
+<td>Accountability, budget alerts</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Build the <code>tiered_call_with_escalation</code> function against a real small +
+large model pair, run it on 50 mixed-difficulty prompts (mostly simple,
+a few genuinely hard), and measure: (a) total cost versus always using
+the large model, (b) how often escalation actually triggered, and (c)
+whether any escalated-but-still-wrong cases suggest the confidence
+threshold needs tuning. Report the cost savings percentage and whether
+quality (spot-checked against always-large-model answers) held up.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
