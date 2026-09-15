@@ -1,3 +1,7 @@
+---
+description: "Evaluation Frameworks — 'It looked good when I tried it' is not a testing strategy. Once a prompt or agent ships, you need a repeatable way to know…"
+---
+
 # 06 · Evaluation Frameworks
 
 "It looked good when I tried it" is not a testing strategy. Once a prompt

@@ -1,3 +1,7 @@
+---
+description: "Guardrails & Content Moderation — An agent with tools (Level 1, module 9) and a chatbot facing real users both need defenses beyond 'trust the model's…"
+---
+
 # 08 · Guardrails & Content Moderation
 
 An agent with tools (Level 1, module 9) and a chatbot facing real users

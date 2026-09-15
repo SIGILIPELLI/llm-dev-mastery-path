@@ -1,3 +1,7 @@
+---
+description: "Multi-Agent Systems — One agent, one context window, one job — that's the limit of module 7's patterns. Some tasks genuinely benefit from splitting work…"
+---
+
 # 08 · Multi-Agent Systems
 
 One agent, one context window, one job — that's the limit of module 7's

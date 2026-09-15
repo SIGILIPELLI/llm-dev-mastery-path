@@ -1,3 +1,7 @@
+---
+description: "Latency Engineering & Batching — Cost optimization (module 6) asks 'how much does this request cost?' Latency engineering asks the companion question…"
+---
+
 # 07 · Latency Engineering & Batching
 
 Cost optimization (module 6) asks "how much does this request cost?"

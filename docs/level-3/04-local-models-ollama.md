@@ -1,3 +1,7 @@
+---
+description: "Running Local Models with Ollama — Every previous module called a hosted API. Sometimes you need the model running on hardware you control …"
+---
+
 # 04 · Running Local Models with Ollama
 
 Every previous module called a hosted API. Sometimes you need the model

@@ -1,3 +1,7 @@
+---
+description: "Prompt Engineering — Prompt engineering is not magic incantations — it's writing unambiguous specifications for a very literal, very capable reader. The…"
+---
+
 # 03 · Prompt Engineering
 
 Prompt engineering is not magic incantations — it's writing unambiguous

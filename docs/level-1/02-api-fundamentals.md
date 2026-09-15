@@ -1,3 +1,7 @@
+---
+description: "API Fundamentals — Every request you send to an LLM API has the same anatomy: a model, a token limit, an optional system prompt, and a list of messages.…"
+---
+
 # 02 · API Fundamentals
 
 Every request you send to an LLM API has the same anatomy: a model, a token

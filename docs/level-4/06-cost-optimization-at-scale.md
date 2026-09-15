@@ -1,3 +1,7 @@
+---
+description: "Cost Optimization at Scale — At prototype scale, LLM API cost is a rounding error. At platform scale — millions of requests across many teams — it becomes…"
+---
+
 # 06 · Cost Optimization at Scale
 
 At prototype scale, LLM API cost is a rounding error. At platform scale

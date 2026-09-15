@@ -1,3 +1,7 @@
+---
+description: "Quantization & Inference Optimization — Module 4 and 5 both referenced quantization in passing — this module explains it directly: what GGUF, AWQ, and…"
+---
+
 # 07 · Quantization & Inference Optimization
 
 Module 4 and 5 both referenced quantization in passing — this module

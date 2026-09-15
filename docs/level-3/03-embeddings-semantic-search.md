@@ -1,3 +1,7 @@
+---
+description: "Embeddings & Semantic Search — Keyword search fails the moment a query and a document describe the same thing in different words ('car' vs. 'automobile,'…"
+---
+
 # 03 · Embeddings & Semantic Search
 
 Keyword search fails the moment a query and a document describe the same

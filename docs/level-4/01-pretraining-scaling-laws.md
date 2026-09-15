@@ -1,3 +1,7 @@
+---
+description: "Pretraining & Scaling Laws Overview — Every model you've called throughout this course started as a randomly initialized transformer (Level 3, module 1)…"
+---
+
 # 01 · Pretraining & Scaling Laws Overview
 
 Every model you've called throughout this course started as a randomly

@@ -1,3 +1,7 @@
+---
+description: "Project — Production-Ready Agent Service — This capstone combines everything in Level 2 into one deployable service: a FastAPI agent backend with prompt…"
+---
+
 # 10 · Project — Production-Ready Agent Service
 
 This capstone combines everything in Level 2 into one deployable service: a

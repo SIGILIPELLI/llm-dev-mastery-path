@@ -1,3 +1,7 @@
+---
+description: "Tokenizers Deep Dive — Every module up to now treated 'tokens' as an abstract cost/length unit. This module builds a byte-pair encoding (BPE) tokenizer…"
+---
+
 # 02 · Tokenizers Deep Dive
 
 Every module up to now treated "tokens" as an abstract cost/length unit.

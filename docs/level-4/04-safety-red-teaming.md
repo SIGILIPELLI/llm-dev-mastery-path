@@ -1,3 +1,7 @@
+---
+description: "Safety & Red-Teaming — Alignment training (module 2) shifts a model's default behavior toward being helpful and declining harmful requests, but 'shifts…"
+---
+
 # 04 · Safety & Red-Teaming
 
 Alignment training (module 2) shifts a model's default behavior toward

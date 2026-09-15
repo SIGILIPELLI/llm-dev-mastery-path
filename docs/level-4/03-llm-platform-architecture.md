@@ -1,3 +1,7 @@
+---
+description: "Production LLM Platform Architecture — A single API call to a single model provider works fine for a prototype. A production platform serving many teams…"
+---
+
 # 03 · Production LLM Platform Architecture
 
 A single API call to a single model provider works fine for a prototype.

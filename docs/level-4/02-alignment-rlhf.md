@@ -1,3 +1,7 @@
+---
+description: "Alignment & RLHF Overview — A base model, fresh out of pretraining, is a raw next-token predictor: it completes text plausibly, but it has no notion of…"
+---
+
 # 02 · Alignment & RLHF Overview
 
 A base model, fresh out of pretraining, is a raw next-token predictor: it

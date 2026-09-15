@@ -1,3 +1,7 @@
+---
+description: "Conversation State & Memory — LLM APIs are stateless: every request stands alone, and the model 'remembers' only what you put in the messages list. That…"
+---
+
 # 06 · Conversation State & Memory
 
 LLM APIs are stateless: every request stands alone, and the model "remembers"

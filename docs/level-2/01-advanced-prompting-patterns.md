@@ -1,3 +1,7 @@
+---
+description: "Advanced Prompting Patterns — Level 1's prompting (module 3) covered single-shot instructions. Real applications chain prompts together, have the model…"
+---
+
 # 01 · Advanced Prompting Patterns
 
 Level 1's prompting (module 3) covered single-shot instructions. Real

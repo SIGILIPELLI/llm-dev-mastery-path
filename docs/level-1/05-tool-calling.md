@@ -1,3 +1,7 @@
+---
+description: "Tool / Function Calling — An LLM by itself can only emit text — it can't check the weather, query your database, or do reliable arithmetic. Tool calling…"
+---
+
 # 05 · Tool / Function Calling
 
 An LLM by itself can only emit text — it can't check the weather, query your

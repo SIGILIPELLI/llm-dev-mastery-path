@@ -1,3 +1,7 @@
+---
+description: "Fine-Tuning Fundamentals (LoRA/QLoRA) — Every module so far shaped model behavior with prompting — instructions, examples, tool schemas. Fine-tuning…"
+---
+
 # 06 · Fine-Tuning Fundamentals (LoRA/QLoRA)
 
 Every module so far shaped model behavior with prompting — instructions,

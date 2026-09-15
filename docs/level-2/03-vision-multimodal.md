@@ -1,3 +1,7 @@
+---
+description: "Vision & Multimodal Inputs — Everything so far has been text in, text out. Modern LLMs also accept images and PDFs directly in the message content…"
+---
+
 # 03 · Vision & Multimodal Inputs
 
 Everything so far has been text in, text out. Modern LLMs also accept

@@ -1,3 +1,7 @@
+---
+description: "A Simple Agent Loop — An 'agent' sounds exotic, but you've already built every ingredient: tools (module 5), conversation state (module 6), and error…"
+---
+
 # 09 · A Simple Agent Loop
 
 An "agent" sounds exotic, but you've already built every ingredient: tools

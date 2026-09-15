@@ -1,3 +1,7 @@
+---
+description: "Prompt Caching & Cost Optimization — Every request in Level 1 re-sends the full prompt — system instructions, few-shot examples, long reference documents…"
+---
+
 # 02 · Prompt Caching & Cost Optimization
 
 Every request in Level 1 re-sends the full prompt — system instructions,

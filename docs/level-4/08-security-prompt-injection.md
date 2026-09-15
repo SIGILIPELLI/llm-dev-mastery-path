@@ -1,3 +1,7 @@
+---
+description: "Security — Prompt Injection & Beyond — Module 4 covered red-teaming a model's own refusal behavior. This module covers a related but distinct threat…"
+---
+
 # 08 · Security — Prompt Injection & Beyond
 
 Module 4 covered red-teaming a model's own refusal behavior. This module

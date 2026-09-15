@@ -1,3 +1,7 @@
+---
+description: "Project — Self-Hosted LLM Stack — This capstone assembles Level 3 into one running stack: a local/served open model, a serving layer built for real…"
+---
+
 # 10 · Project — Self-Hosted LLM Stack
 
 This capstone assembles Level 3 into one running stack: a local/served

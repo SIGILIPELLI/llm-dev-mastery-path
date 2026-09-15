@@ -1,3 +1,7 @@
+---
+description: "Errors, Rate Limits & Cost — LLM APIs fail in all the usual ways HTTP APIs fail — plus a few of their own: rate limits measured in tokens, overload errors…"
+---
+
 # 08 · Errors, Rate Limits & Cost
 
 LLM APIs fail in all the usual ways HTTP APIs fail — plus a few of their own:

@@ -1,3 +1,7 @@
+---
+description: "Serving Open Models with vLLM — Ollama (module 4) is built for single-user, local convenience. Serving an open-weight model to many concurrent users with…"
+---
+
 # 05 · Serving Open Models with vLLM
 
 Ollama (module 4) is built for single-user, local convenience. Serving an

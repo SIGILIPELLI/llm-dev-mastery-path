@@ -1,3 +1,7 @@
+---
+description: "Advanced Agent Patterns — Level 1's agent loop (module 9) works well for short, tool-bounded tasks. Once tasks span many steps — a research report, a…"
+---
+
 # 07 · Advanced Agent Patterns
 
 Level 1's agent loop (module 9) works well for short, tool-bounded tasks.

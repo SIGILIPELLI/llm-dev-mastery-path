@@ -1,3 +1,7 @@
+---
+description: "Capstone Project — This capstone pulls together every module in Level 4 into one coherent build: a small but genuinely production-shaped LLM platform…"
+---
+
 # 10 · Capstone Project
 
 This capstone pulls together every module in Level 4 into one coherent

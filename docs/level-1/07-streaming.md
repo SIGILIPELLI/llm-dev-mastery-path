@@ -1,3 +1,7 @@
+---
+description: "Streaming — A non-streaming API call makes the user stare at nothing until the entire response is generated — easily 10–30 seconds for a long answer.…"
+---
+
 # 07 · Streaming
 
 A non-streaming API call makes the user stare at nothing until the entire

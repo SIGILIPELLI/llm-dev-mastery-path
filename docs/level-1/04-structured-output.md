@@ -1,3 +1,7 @@
+---
+description: "Structured Output — The moment an LLM's answer feeds into code instead of a human's eyes, prose stops being acceptable — you need JSON that parses every…"
+---
+
 # 04 · Structured Output
 
 The moment an LLM's answer feeds into *code* instead of a human's eyes, prose

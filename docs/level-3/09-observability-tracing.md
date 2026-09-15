@@ -1,3 +1,7 @@
+---
+description: "Observability & Tracing — By this point your system might have chained calls (Level 2, module 1), subagents (Level 2, module 8), tool use, and retrieval …"
+---
+
 # 09 · Observability & Tracing
 
 By this point your system might have chained calls (Level 2, module 1),

@@ -1,3 +1,7 @@
+---
+description: "Advanced Tool Use Patterns — Level 1's tool calling covered the request→execute→respond loop for a handful of simple tools. Production tool use adds…"
+---
+
 # 04 · Advanced Tool Use Patterns
 
 Level 1's tool calling covered the request→execute→respond loop for a

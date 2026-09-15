@@ -1,3 +1,7 @@
+---
+description: "Transformer Internals — Every module so far treated the model as a black box: text in, text out. This module opens the box just enough to explain why the…"
+---
+
 # 01 · Transformer Internals
 
 Every module so far treated the model as a black box: text in, text out.

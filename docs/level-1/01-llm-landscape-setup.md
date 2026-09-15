@@ -1,3 +1,7 @@
+---
+description: "The LLM Landscape & Setup — A large language model (LLM) is a neural network trained on enormous amounts of text to predict the next token in a sequence.…"
+---
+
 # 01 · The LLM Landscape & Setup
 
 A large language model (LLM) is a neural network trained on enormous amounts

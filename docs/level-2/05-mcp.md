@@ -1,3 +1,7 @@
+---
+description: "Model Context Protocol (MCP) — Every tool you've defined so far has been hand-written and wired directly into your own TOOLS list and execute_tool…"
+---
+
 # 05 · Model Context Protocol (MCP)
 
 Every tool you've defined so far has been hand-written and wired directly

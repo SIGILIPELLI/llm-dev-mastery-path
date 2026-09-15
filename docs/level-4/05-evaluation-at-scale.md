@@ -1,3 +1,7 @@
+---
+description: "Advanced Evaluation at Scale — Level 2's eval module covered building a golden-example regression suite you run before shipping a prompt change. That…"
+---
+
 # 05 · Advanced Evaluation at Scale
 
 Level 2's eval module covered building a golden-example regression suite

@@ -1,3 +1,7 @@
+---
+description: "Compliance, Privacy & Governance — Everything covered so far in Level 4 — alignment, safety, security, cost, latency — is about making an LLM system work…"
+---
+
 # 09 · Compliance, Privacy & Governance
 
 Everything covered so far in Level 4 — alignment, safety, security, cost,

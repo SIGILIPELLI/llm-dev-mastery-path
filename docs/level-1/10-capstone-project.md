@@ -1,3 +1,7 @@
+---
+description: "Capstone — CLI Personal Assistant — Time to combine everything from Level 1 into one real, multi-file project: a terminal personal assistant with tools…"
+---
+
 # 10 · Capstone — CLI Personal Assistant
 
 Time to combine everything from Level 1 into one real, multi-file project: a

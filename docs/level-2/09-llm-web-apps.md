@@ -1,3 +1,7 @@
+---
+description: "Building LLM Web Apps — Every example so far has been a script printing to a terminal. Shipping an LLM feature to actual users means wrapping it in a web…"
+---
+
 # 09 · Building LLM Web Apps
 
 Every example so far has been a script printing to a terminal. Shipping an
