@@ -191,6 +191,12 @@ response itself.
 | Prompt caching | Reuse processed prefix across calls with shared context | Long, stable system prompts/docs |
 | Cost attribution | Tag every request with team/caller at the gateway | Accountability, budget alerts |
 
+## 🔀 Related lessons on other tracks
+
+- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://sigilipelli.github.io/ai-ml-mastery-path/level-4/08-efficient-inference/)
+- [AWS — Cost Optimization at Scale](https://sigilipelli.github.io/aws-mastery-path/level-4/06-cost-optimization-at-scale/)
+- [Azure — 09 · Cost Management & Optimization](https://sigilipelli.github.io/azure-mastery-path/level-3/09-cost-management-optimization/)
+
 ## Exercise
 
 Build the `tiered_call_with_escalation` function against a real small +

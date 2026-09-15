@@ -193,6 +193,11 @@ depends on the specific model and rate in effect for each logged call.
 | Debugging via trace | Answer "what did it see / decide / get back" without live reproduction |
 | Observability platforms | Same data model as hand-rolled tracing, with less boilerplate |
 
+## 🔀 Related lessons on other tracks
+
+- [Azure — 05 · Advanced Observability (App Insights, Tracing)](https://sigilipelli.github.io/azure-mastery-path/level-4/05-advanced-observability/)
+- [RAG — 09 · Observability & Tracing](https://sigilipelli.github.io/rag-mastery-path/level-3/09-observability/)
+
 ## Exercise
 
 Add the `Tracer` class above to Level 2's planner/executor agent (module

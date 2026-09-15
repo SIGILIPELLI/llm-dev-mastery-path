@@ -229,6 +229,10 @@ identical.
 | QLoRA | LoRA on a 4-bit quantized frozen base — lowest memory footprint |
 | Always re-eval | Compare fine-tuned vs. base+prompting on a held-out set, not just training loss |
 
+## 🔀 Related lessons on other tracks
+
+- [RAG — 05 · Embedding Model Selection & Fine-Tuning](https://sigilipelli.github.io/rag-mastery-path/level-3/05-embedding-selection/)
+
 ## Exercise
 
 Prepare a 100-example dataset (even synthetically generated, clearly

@@ -179,6 +179,10 @@ work per read.
 | Speculative decoding | Draft model proposes, target model verifies in one batched pass |
 | Always measure | Quality loss is task-dependent — eval, don't assume |
 
+## 🔀 Related lessons on other tracks
+
+- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://sigilipelli.github.io/ai-ml-mastery-path/level-4/08-efficient-inference/)
+
 ## Exercise
 
 Using Ollama, pull the same model at `q4_K_M`, `q8_0`, and (if your

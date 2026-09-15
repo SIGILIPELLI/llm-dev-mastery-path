@@ -169,6 +169,12 @@ for GPU compute you avoided, not for a fixed "API feature."
 | Verification | Always log `usage` — never assume the cache is hitting |
 | Multi-turn | Cache the growing history by breakpointing the latest message each turn |
 
+## 🔀 Related lessons on other tracks
+
+- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://sigilipelli.github.io/ai-ml-mastery-path/level-4/08-efficient-inference/)
+- [AWS — Cost Optimization at Scale](https://sigilipelli.github.io/aws-mastery-path/level-4/06-cost-optimization-at-scale/)
+- [Azure — 09 · Cost Management & Optimization](https://sigilipelli.github.io/azure-mastery-path/level-3/09-cost-management-optimization/)
+
 ## Exercise
 
 Take module 1's chained pipeline (or any prompt using a long static system

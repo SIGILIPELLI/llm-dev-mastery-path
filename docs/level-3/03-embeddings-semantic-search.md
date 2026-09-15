@@ -199,6 +199,10 @@ of conversation history.
 | Chunking | Balance too-small (loses context) vs. too-large (dilutes meaning) |
 | RAG | Retrieval + generation, for synthesized rather than raw-document answers |
 
+## 🔀 Related lessons on other tracks
+
+- [RAG — 02 · Embeddings & Semantic Similarity](https://sigilipelli.github.io/rag-mastery-path/level-1/02-embeddings/)
+
 ## Exercise
 
 Take 10 short paragraphs on different topics, embed them, and build a

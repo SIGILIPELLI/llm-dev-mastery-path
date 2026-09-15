@@ -186,6 +186,10 @@ it behaved when called through a hosted API in earlier levels.
 | Tracing + usage logging | Module 9 |
 | Gateway orchestration | Plain FastAPI, no new mechanism |
 
+## 🔀 Related lessons on other tracks
+
+- [GitHub & Git — 09 · Self-Hosted Runners & Enterprise GitHub](https://sigilipelli.github.io/github-mastery-path/level-4/09-self-hosted-runners-enterprise/)
+
 ## Exercise
 
 Stand up the full stack locally with a small AWQ-quantized model, and run

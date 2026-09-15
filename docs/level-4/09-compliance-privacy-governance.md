@@ -208,6 +208,12 @@ gates rather than downstream cleanup.
 | Data minimization | Send models only what the task needs, not everything available |
 | Deletion by design | Every store needs a `user_id`-indexed deletion path from day one |
 
+## 🔀 Related lessons on other tracks
+
+- [Edge AI — Privacy, Safety & Compliance](https://sigilipelli.github.io/edge-ai-mastery-path/level-4/09-privacy-safety-compliance/)
+- [AI Manager — 02 · AI Governance & Compliance](https://sigilipelli.github.io/ai-manager-mastery-path/level-3/02-ai-governance-compliance/)
+- [AWS — Compliance & Governance (Config, Audit Manager)](https://sigilipelli.github.io/aws-mastery-path/level-4/08-compliance-governance/)
+
 ## Exercise
 
 Implement `redact_pii` and run it against 20 synthetic sample prompts

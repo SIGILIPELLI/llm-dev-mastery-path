@@ -183,6 +183,10 @@ are complementary rather than substitutes.
 | Human-in-the-loop | Require explicit confirmation for irreversible/sensitive tool calls |
 | Exfiltration risk | Any outbound network call with attacker-influenced content/URL |
 
+## 🔀 Related lessons on other tracks
+
+- [REST API — 02 · API Security Hardening (CORS, Injection, OWASP API Top 10)](https://sigilipelli.github.io/rest-api-mastery-path/level-4/02-api-security-hardening/)
+
 ## Exercise
 
 Build a mock email-summarization agent with `read_email` and

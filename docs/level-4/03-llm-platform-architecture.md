@@ -220,6 +220,11 @@ time instead.
 | Normalized errors | One retryable/non-retryable contract across all providers |
 | Centralized logging | One place to see cross-team cost, latency, and error rate |
 
+## 🔀 Related lessons on other tracks
+
+- [Data Engineering — 01 · Enterprise Data Platform Architecture](https://sigilipelli.github.io/data-engineering-mastery-path/level-4/01-enterprise-platform-architecture/)
+- [Terraform — 06 · Designing a Platform's Terraform Architecture](https://sigilipelli.github.io/terraform-mastery-path/level-4/06-platform-architecture/)
+
 ## Exercise
 
 Build the `Gateway` class above with two adapters (a real provider and a
