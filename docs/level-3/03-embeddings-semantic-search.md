@@ -201,7 +201,7 @@ of conversation history.
 
 ## 🔀 Related lessons on other tracks
 
-- [RAG — 02 · Embeddings & Semantic Similarity](https://sigilipelli.github.io/rag-mastery-path/level-1/02-embeddings/)
+- [RAG — 02 · Embeddings & Semantic Similarity](https://learnmasterypath.com/rag-mastery-path/level-1/02-embeddings/)
 
 ## Exercise
 

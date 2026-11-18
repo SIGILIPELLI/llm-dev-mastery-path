@@ -185,7 +185,7 @@ are complementary rather than substitutes.
 
 ## 🔀 Related lessons on other tracks
 
-- [REST API — 02 · API Security Hardening (CORS, Injection, OWASP API Top 10)](https://sigilipelli.github.io/rest-api-mastery-path/level-4/02-api-security-hardening/)
+- [REST API — 02 · API Security Hardening (CORS, Injection, OWASP API Top 10)](https://learnmasterypath.com/rest-api-mastery-path/level-4/02-api-security-hardening/)
 
 ## Exercise
 

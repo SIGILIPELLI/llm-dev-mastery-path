@@ -231,7 +231,7 @@ identical.
 
 ## 🔀 Related lessons on other tracks
 
-- [RAG — 05 · Embedding Model Selection & Fine-Tuning](https://sigilipelli.github.io/rag-mastery-path/level-3/05-embedding-selection/)
+- [RAG — 05 · Embedding Model Selection & Fine-Tuning](https://learnmasterypath.com/rag-mastery-path/level-3/05-embedding-selection/)
 
 ## Exercise
 

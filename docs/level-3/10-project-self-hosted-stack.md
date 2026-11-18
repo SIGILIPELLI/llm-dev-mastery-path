@@ -188,7 +188,7 @@ it behaved when called through a hosted API in earlier levels.
 
 ## 🔀 Related lessons on other tracks
 
-- [GitHub & Git — 09 · Self-Hosted Runners & Enterprise GitHub](https://sigilipelli.github.io/github-mastery-path/level-4/09-self-hosted-runners-enterprise/)
+- [GitHub & Git — 09 · Self-Hosted Runners & Enterprise GitHub](https://learnmasterypath.com/github-mastery-path/level-4/09-self-hosted-runners-enterprise/)
 
 ## Exercise
 

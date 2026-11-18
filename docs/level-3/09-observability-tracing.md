@@ -195,8 +195,8 @@ depends on the specific model and rate in effect for each logged call.
 
 ## 🔀 Related lessons on other tracks
 
-- [Azure — 05 · Advanced Observability (App Insights, Tracing)](https://sigilipelli.github.io/azure-mastery-path/level-4/05-advanced-observability/)
-- [RAG — 09 · Observability & Tracing](https://sigilipelli.github.io/rag-mastery-path/level-3/09-observability/)
+- [Azure — 05 · Advanced Observability (App Insights, Tracing)](https://learnmasterypath.com/azure-mastery-path/level-4/05-advanced-observability/)
+- [RAG — 09 · Observability & Tracing](https://learnmasterypath.com/rag-mastery-path/level-3/09-observability/)
 
 ## Exercise
 

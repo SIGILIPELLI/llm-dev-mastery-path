@@ -222,8 +222,8 @@ time instead.
 
 ## 🔀 Related lessons on other tracks
 
-- [Data Engineering — 01 · Enterprise Data Platform Architecture](https://sigilipelli.github.io/data-engineering-mastery-path/level-4/01-enterprise-platform-architecture/)
-- [Terraform — 06 · Designing a Platform's Terraform Architecture](https://sigilipelli.github.io/terraform-mastery-path/level-4/06-platform-architecture/)
+- [Data Engineering — 01 · Enterprise Data Platform Architecture](https://learnmasterypath.com/data-engineering-mastery-path/level-4/01-enterprise-platform-architecture/)
+- [Terraform — 06 · Designing a Platform's Terraform Architecture](https://learnmasterypath.com/terraform-mastery-path/level-4/06-platform-architecture/)
 
 ## Exercise
 

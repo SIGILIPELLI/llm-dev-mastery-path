@@ -181,7 +181,7 @@ work per read.
 
 ## 🔀 Related lessons on other tracks
 
-- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://sigilipelli.github.io/ai-ml-mastery-path/level-4/08-efficient-inference/)
+- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://learnmasterypath.com/ai-ml-mastery-path/level-4/08-efficient-inference/)
 
 ## Exercise
 
