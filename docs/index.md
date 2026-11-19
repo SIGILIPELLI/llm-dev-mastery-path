@@ -61,7 +61,7 @@ Start here → [Level 1 · Entry](level-1/index.md)
 - [AI/ML Mastery Path](https://learnmasterypath.com/ai-ml-mastery-path/) — classical machine learning foundations
 - [RAG Mastery Path](https://learnmasterypath.com/rag-mastery-path/) — retrieval-augmented generation pipelines (this site links there instead of duplicating RAG content)
 
-🎥 **Prefer video?** Watch the [Mastery Path video series](https://youtube.com/@sigilipelli) on YouTube — Shorts and full walkthroughs of these lessons.
+🎥 **Prefer video?** Watch the [Mastery Path video series](https://youtube.com/@learnmasterypath) on YouTube — Shorts and full walkthroughs of these lessons.
 
 ## More from the Mastery Path series
 
