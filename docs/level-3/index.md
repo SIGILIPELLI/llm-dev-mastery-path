@@ -1,3 +1,7 @@
+---
+description: "Level 3 (Advanced) of the free LLM Development Mastery Path. Understand what's inside the models you've been calling — transformers, tokenizers, embeddings…"
+---
+
 # Level 3 · Advanced <span class="level-badge">Under the Hood</span>
 
 Goal: understand what's inside the models you've been calling —

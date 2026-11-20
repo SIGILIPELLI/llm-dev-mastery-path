@@ -1,3 +1,7 @@
+---
+description: "Level 4 (Master) of the free LLM Development Mastery Path. Operate LLM systems at production scale — understand how frontier models are trained and aligned…"
+---
+
 # Level 4 · Master <span class="level-badge">Production Scale</span>
 
 Goal: operate LLM systems at production scale — understand how frontier

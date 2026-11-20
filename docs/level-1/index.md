@@ -1,3 +1,7 @@
+---
+description: "Level 1 (Entry) of the free LLM Development Mastery Path. Get comfortable calling an LLM from Python, engineering prompts that work reliably, wiring in…"
+---
+
 # Level 1 · Entry <span class="level-badge">Foundations</span>
 
 Goal: get comfortable calling an LLM from Python, engineering prompts that

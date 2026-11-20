@@ -1,3 +1,7 @@
+---
+description: "Level 2 (Intermediate) of the free LLM Development Mastery Path. Move beyond single API calls — master the patterns used in real LLM products: caching…"
+---
+
 # Level 2 · Intermediate <span class="level-badge">Applied Patterns</span>
 
 Goal: move beyond single API calls — master the patterns used in real

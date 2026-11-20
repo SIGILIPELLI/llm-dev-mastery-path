@@ -1,6 +1,6 @@
 ---
 title: "Learn LLM App Development Free: Beginner to Master Course"
-description: "Free course on building apps with large language models -- hands-on API lessons and real projects. Part of a 37-course free learning library."
+description: "Free course on building apps with large language models -- hands-on API lessons and real projects. Part of a 100+ course free learning library."
 ---
 
 # LLM Development Mastery Path
