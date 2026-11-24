@@ -96,7 +96,7 @@ nav:
       - "07 · Streaming": level-1/07-streaming.md
       - "08 · Errors, Rate Limits & Cost": level-1/08-errors-rate-limits-cost.md
       - "09 · A Simple Agent Loop": level-1/09-simple-agent-loop.md
-      - "10 · Capstone — CLI Personal Assistant": level-1/10-capstone-project.md
+      - "10 · Project — CLI Personal Assistant": level-1/10-capstone-project.md
   - "Level 2 · Intermediate":
       - Overview: level-2/index.md
       - "01 · Advanced Prompting Patterns": level-2/01-advanced-prompting-patterns.md
