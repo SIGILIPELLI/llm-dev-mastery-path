@@ -8,8 +8,7 @@ description: "Free course on building apps with large language models -- hands-o
 A structured, module-wise training program that takes you from your first
 LLM API call to master-level LLM application engineering — prompt
 engineering, tool calling, agents, evaluation, and production platforms —
-with runnable Python code in every module and a hands-on project at the end
-of each level.
+with runnable Python code in every module and a hands-on project at the end of Levels 1–3 and a capstone at the end of Level 4.
 
 This track is about **building applications with LLMs**, not training models
 from scratch. Examples use the Anthropic API (Claude), and every concept —
@@ -30,7 +29,7 @@ providers such as OpenAI and Google.
 - Work through each level in order — later modules assume earlier ones.
 - Every topic page has runnable Python code — you'll need Python 3.10+ and
   an Anthropic API key (each lesson says exactly where the key is needed).
-- Each level ends with a project that combines everything learned in that level.
+- Levels 1–3 each end with a project that combines everything learned in that level, and Level 4 ends with the course capstone.
 - Use the search bar (top of the page) to jump straight to a topic.
 
 Start here → [Level 1 · Entry](level-1/index.md)
