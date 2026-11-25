@@ -1,0 +1,4839 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A free LLM Development cheat sheet: 39 quick-reference tables from every level of the LLM Development Mastery Path, each linked to its full lesson.">
+      
+      
+      
+        <link rel="canonical" href="https://learnmasterypath.com/llm-dev-mastery-path/cheat-sheet/">
+      
+      
+        <link rel="prev" href="../interview-questions/">
+      
+      
+        <link rel="next" href="../level-1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+  
+  <title>LLM Development Cheat Sheet: Quick Reference, Beginner to Advanced</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/progress-tracker.css">
+    
+      <link rel="stylesheet" href="../stylesheets/final-quiz.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-05VBGCXN12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-05VBGCXN12');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mastery Path">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="LLM Development Cheat Sheet: Quick Reference, Beginner to Advanced">
+  <meta property="og:description" content="A free LLM Development cheat sheet: 39 quick-reference tables from every level of the LLM Development Mastery Path, each linked to its full lesson.">
+  <meta property="og:url" content="https://learnmasterypath.com/llm-dev-mastery-path/cheat-sheet/">
+  <meta property="og:image" content="https://learnmasterypath.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mastery Path: free structured courses, beginner to master">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LLM Development Cheat Sheet: Quick Reference, Beginner to Advanced">
+  <meta name="twitter:description" content="A free LLM Development cheat sheet: 39 quick-reference tables from every level of the LLM Development Mastery Path, each linked to its full lesson.">
+  <meta name="twitter:image" content="https://learnmasterypath.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9440969811959397"
+     crossorigin="anonymous"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Mastery Path", "item": "https://learnmasterypath.com/"},
+      {"@type": "ListItem", "position": 2, "name": "LLM Development Mastery Path", "item": "https://learnmasterypath.com/llm-dev-mastery-path/"},
+      {"@type": "ListItem", "position": 3, "name": "Cheat Sheet", "item": "https://learnmasterypath.com/llm-dev-mastery-path/cheat-sheet/"}
+    ]
+  }
+  </script>
+  <style>
+    .md-banner a:hover { text-decoration: underline !important; }
+    .mp-related { margin-top: 2.4rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lightest); font-size: .78rem; }
+    .mp-related h2 { font-size: .9rem; margin: 0 0 .5rem; }
+    .mp-related ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+    .mp-related li { margin: 0 !important; }
+  </style>
+  <script type="application/json" id="mp-course-meta">{"home": false, "id": "llm-dev-mastery-path", "name": "LLM Development Mastery Path", "repo": "https://github.com/SIGILIPELLI/llm-dev-mastery-path", "src": "cheat-sheet.md", "url": "https://learnmasterypath.com/llm-dev-mastery-path/"}</script>
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/learn.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/course.css?v=1">
+  <script src="https://learnmasterypath.com/assets/learn.js" defer></script>
+  <script src="https://learnmasterypath.com/assets/signup.js" defer></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#llm-development-cheat-sheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <a href="https://learnmasterypath.com/" style="color: inherit; text-decoration: none;">
+    &larr; Mastery Path &middot; all 100+ free courses
+  </a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/search/" style="color: inherit; text-decoration: none;">Search all courses</a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/resume/" style="color: inherit; font-weight: 700; text-decoration: none;">
+    Got the skills? Free resume ATS check &rarr;
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LLM Development Mastery Path" class="md-header__button md-logo" aria-label="LLM Development Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLM Development Mastery Path
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LLM Development Cheat Sheet: Quick Reference, Beginner to Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SIGILIPELLI/llm-dev-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llm-dev-mastery-path
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../interview-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interview Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Sheet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 1 · Entry
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-2/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 2 · Intermediate
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 3 · Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 4 · Master
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quiz/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Final Quiz
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LLM Development Mastery Path" class="md-nav__button md-logo" aria-label="LLM Development Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    LLM Development Mastery Path
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SIGILIPELLI/llm-dev-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llm-dev-mastery-path
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-the-llm-landscape-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · The LLM Landscape &amp; Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-api-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · API Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Prompt Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Structured Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-tool-function-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Tool / Function Calling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-conversation-state-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Conversation State &amp; Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Streaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-errors-rate-limits-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Errors, Rate Limits &amp; Cost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-a-simple-agent-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · A Simple Agent Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-cli-personal-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone — CLI Personal Assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-advanced-prompting-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Advanced Prompting Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-prompt-caching-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Prompt Caching &amp; Cost Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-vision-multimodal-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Vision &amp; Multimodal Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-advanced-tool-use-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Advanced Tool Use Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-model-context-protocol-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Model Context Protocol (MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-evaluation-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Evaluation Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-advanced-agent-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Advanced Agent Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-multi-agent-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Multi-Agent Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-building-llm-web-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Building LLM Web Apps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-production-ready-agent-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Production-Ready Agent Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-transformer-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Transformer Internals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-tokenizers-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Tokenizers Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-embeddings-semantic-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Embeddings &amp; Semantic Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-running-local-models-with-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Running Local Models with Ollama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-serving-open-models-with-vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Serving Open Models with vLLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-fine-tuning-fundamentals-loraqlora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Fine-Tuning Fundamentals (LoRA/QLoRA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-quantization-inference-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Quantization &amp; Inference Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-guardrails-content-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Guardrails &amp; Content Moderation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-observability-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Observability &amp; Tracing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-self-hosted-llm-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Self-Hosted LLM Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-pretraining-scaling-laws-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Pretraining &amp; Scaling Laws Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-alignment-rlhf-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Alignment &amp; RLHF Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-production-llm-platform-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Production LLM Platform Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-safety-red-teaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Safety &amp; Red-Teaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-advanced-evaluation-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Advanced Evaluation at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cost-optimization-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cost Optimization at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-latency-engineering-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Latency Engineering &amp; Batching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-security-prompt-injection-beyond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Security — Prompt Injection &amp; Beyond
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-compliance-privacy-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Compliance, Privacy &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 1 · Entry
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 1 · Entry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/01-llm-landscape-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · The LLM Landscape & Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/02-api-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · API Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/03-prompt-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Prompt Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/04-structured-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Structured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/05-tool-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Tool / Function Calling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/06-conversation-state-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Conversation State & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/07-streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/08-errors-rate-limits-cost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Errors, Rate Limits & Cost
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/09-simple-agent-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · A Simple Agent Loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/10-capstone-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — CLI Personal Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 2 · Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 2 · Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/01-advanced-prompting-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Advanced Prompting Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/02-prompt-caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Prompt Caching & Cost Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/03-vision-multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Vision & Multimodal Inputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/04-advanced-tool-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Advanced Tool Use Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/05-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Model Context Protocol (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/06-evaluation-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Evaluation Frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/07-advanced-agent-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Advanced Agent Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/08-multi-agent-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Multi-Agent Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/09-llm-web-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Building LLM Web Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/10-project-agent-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Production-Ready Agent Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 3 · Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 3 · Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/01-transformer-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Transformer Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/02-tokenizers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Tokenizers Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/03-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Embeddings & Semantic Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/04-local-models-ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Running Local Models with Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/05-serving-vllm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Serving Open Models with vLLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/06-fine-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Fine-Tuning Fundamentals (LoRA/QLoRA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/07-quantization-inference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Quantization & Inference Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/08-guardrails-moderation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Guardrails & Content Moderation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/09-observability-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Observability & Tracing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/10-project-self-hosted-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Self-Hosted LLM Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 4 · Master
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 4 · Master
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/01-pretraining-scaling-laws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Pretraining & Scaling Laws Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/02-alignment-rlhf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Alignment & RLHF Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/03-llm-platform-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Production LLM Platform Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/04-safety-red-teaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Safety & Red-Teaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/05-evaluation-at-scale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Advanced Evaluation at Scale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/06-cost-optimization-at-scale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Cost Optimization at Scale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/07-latency-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Latency Engineering & Batching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/08-security-prompt-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Security — Prompt Injection & Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/09-compliance-privacy-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Compliance, Privacy & Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/10-capstone-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Capstone Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-the-llm-landscape-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · The LLM Landscape &amp; Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-api-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · API Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Prompt Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Structured Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-tool-function-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Tool / Function Calling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-conversation-state-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Conversation State &amp; Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Streaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-errors-rate-limits-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Errors, Rate Limits &amp; Cost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-a-simple-agent-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · A Simple Agent Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-cli-personal-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone — CLI Personal Assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-advanced-prompting-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Advanced Prompting Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-prompt-caching-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Prompt Caching &amp; Cost Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-vision-multimodal-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Vision &amp; Multimodal Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-advanced-tool-use-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Advanced Tool Use Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-model-context-protocol-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Model Context Protocol (MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-evaluation-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Evaluation Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-advanced-agent-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Advanced Agent Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-multi-agent-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Multi-Agent Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-building-llm-web-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Building LLM Web Apps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-production-ready-agent-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Production-Ready Agent Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-transformer-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Transformer Internals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-tokenizers-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Tokenizers Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-embeddings-semantic-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Embeddings &amp; Semantic Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-running-local-models-with-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Running Local Models with Ollama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-serving-open-models-with-vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Serving Open Models with vLLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-fine-tuning-fundamentals-loraqlora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Fine-Tuning Fundamentals (LoRA/QLoRA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-quantization-inference-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Quantization &amp; Inference Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-guardrails-content-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Guardrails &amp; Content Moderation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-observability-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Observability &amp; Tracing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-self-hosted-llm-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Self-Hosted LLM Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-pretraining-scaling-laws-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Pretraining &amp; Scaling Laws Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-alignment-rlhf-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Alignment &amp; RLHF Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-production-llm-platform-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Production LLM Platform Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-safety-red-teaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Safety &amp; Red-Teaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-advanced-evaluation-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Advanced Evaluation at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cost-optimization-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cost Optimization at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-latency-engineering-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Latency Engineering &amp; Batching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-security-prompt-injection-beyond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Security — Prompt Injection &amp; Beyond
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-compliance-privacy-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Compliance, Privacy &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="llm-development-cheat-sheet">LLM Development Cheat Sheet<a class="headerlink" href="#llm-development-cheat-sheet" title="Permanent link">&para;</a></h1>
+<p>Quick-reference tables from <strong>39 lessons</strong> of the free LLM Development Mastery Path, in course order from beginner to advanced. Each section links to the full lesson with explanations and runnable examples.</p>
+<h2 id="level-1-entry">Level 1 · Entry<a class="headerlink" href="#level-1-entry" title="Permanent link">&para;</a></h2>
+<h3 id="01-the-llm-landscape-setup"><a href="../level-1/01-llm-landscape-setup/">01 · The LLM Landscape &amp; Setup</a><a class="headerlink" href="#01-the-llm-landscape-setup" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install</td>
+<td><code>pip install anthropic python-dotenv</code></td>
+</tr>
+<tr>
+<td>Key storage</td>
+<td><code>.env</code> file with <code>ANTHROPIC_API_KEY=...</code>, listed in <code>.gitignore</code></td>
+</tr>
+<tr>
+<td>Load key</td>
+<td><code>from dotenv import load_dotenv; load_dotenv()</code></td>
+</tr>
+<tr>
+<td>Client</td>
+<td><code>client = anthropic.Anthropic()</code> — reads the key from the environment</td>
+</tr>
+<tr>
+<td>Basic call</td>
+<td><code>client.messages.create(model=..., max_tokens=..., messages=[...])</code></td>
+</tr>
+<tr>
+<td>Workhorse model</td>
+<td><code>claude-sonnet-5</code></td>
+</tr>
+<tr>
+<td>Cheap/fast model</td>
+<td><code>claude-haiku-4-5</code></td>
+</tr>
+<tr>
+<td>Response text</td>
+<td>iterate <code>response.content</code>, use blocks where <code>block.type == "text"</code></td>
+</tr>
+<tr>
+<td>Golden rule</td>
+<td>Never hardcode or commit an API key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-api-fundamentals"><a href="../level-1/02-api-fundamentals/">02 · API Fundamentals</a><a class="headerlink" href="#02-api-fundamentals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roles</td>
+<td><code>user</code> (human), <code>assistant</code> (model's prior turns), system prompt (developer rules)</td>
+</tr>
+<tr>
+<td>System prompt</td>
+<td>Top-level <code>system=</code> parameter; sets persona, rules, format</td>
+</tr>
+<tr>
+<td>Statelessness</td>
+<td>The API remembers nothing — resend full history every call</td>
+</tr>
+<tr>
+<td><code>max_tokens</code></td>
+<td>Hard output cap; check <code>stop_reason == "max_tokens"</code> for truncation</td>
+</tr>
+<tr>
+<td><code>stop_reason</code></td>
+<td><code>end_turn</code> = finished; <code>max_tokens</code> = truncated; <code>tool_use</code> = wants a tool</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>Sampling randomness; removed on newest Claude models — steer via prompts</td>
+</tr>
+<tr>
+<td>Context window</td>
+<td>Max input size; 1M tokens for Claude Sonnet 5</td>
+</tr>
+<tr>
+<td>Count before</td>
+<td><code>client.messages.count_tokens(...)</code> — free</td>
+</tr>
+<tr>
+<td>Count after</td>
+<td><code>response.usage.input_tokens</code> / <code>.output_tokens</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-prompt-engineering"><a href="../level-1/03-prompt-engineering/">03 · Prompt Engineering</a><a class="headerlink" href="#03-prompt-engineering" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Use when</th>
+<th>One-liner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Specific instructions</td>
+<td>Always</td>
+<td>State task, audience, format, constraints explicitly</td>
+</tr>
+<tr>
+<td>XML delimiters</td>
+<td>Prompt mixes instructions and data</td>
+<td>Wrap data in <code>&lt;tags&gt;</code>; refer to sections by name</td>
+</tr>
+<tr>
+<td>Few-shot examples</td>
+<td>Format or edge cases matter</td>
+<td>2–5 input→output pairs, including hard cases</td>
+</tr>
+<tr>
+<td>Role prompting</td>
+<td>Tone/judgment matters</td>
+<td>"You are a senior X who values Y"</td>
+</tr>
+<tr>
+<td>Chain of thought</td>
+<td>Math, logic, multi-step analysis</td>
+<td>"Think in <code>&lt;thinking&gt;</code>, answer in <code>&lt;answer&gt;</code>"</td>
+</tr>
+<tr>
+<td>Output constraints</td>
+<td>Downstream code parses the reply</td>
+<td>"Respond with only the category name"</td>
+</tr>
+<tr>
+<td>Systematic iteration</td>
+<td>Always</td>
+<td>Test set + one change at a time + rerun everything</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-structured-output"><a href="../level-1/04-structured-output/">04 · Structured Output</a><a class="headerlink" href="#04-structured-output" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Guarantee</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schema in prompt</td>
+<td>None — usually works</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>"ONLY JSON, no fences" instruction</td>
+<td>Fewer format slips</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><code>extract_json</code> tolerant parsing</td>
+<td>Survives fences/prose</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Pydantic <code>model_validate</code></td>
+<td>Correct types &amp; fields, or a clear error</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Retry with error feedback</td>
+<td>Self-heals most failures</td>
+<td>Extra API calls</td>
+</tr>
+<tr>
+<td><code>client.messages.parse(output_format=Model)</code></td>
+<td>Schema-valid by construction</td>
+<td>Native, Anthropic API</td>
+</tr>
+<tr>
+<td><code>model_json_schema()</code> in prompt</td>
+<td>Prompt and validator never drift</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-tool-function-calling"><a href="../level-1/05-tool-calling/">05 · Tool / Function Calling</a><a class="headerlink" href="#05-tool-function-calling" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool definition</td>
+<td><code>{name, description, input_schema}</code> — schema is JSON Schema</td>
+</tr>
+<tr>
+<td>Descriptions</td>
+<td>Say <em>when</em> to use the tool; the model chooses based on them</td>
+</tr>
+<tr>
+<td>Detection</td>
+<td><code>response.stop_reason == "tool_use"</code></td>
+</tr>
+<tr>
+<td>Request block</td>
+<td><code>block.type == "tool_use"</code> with <code>.id</code>, <code>.name</code>, <code>.input</code> (already parsed)</td>
+</tr>
+<tr>
+<td>Result message</td>
+<td><code>{"type": "tool_result", "tool_use_id": ..., "content": ...}</code> in a <strong>user</strong> turn</td>
+</tr>
+<tr>
+<td>Parallel calls</td>
+<td>Multiple <code>tool_use</code> blocks in one response → all results in one message</td>
+</tr>
+<tr>
+<td>Errors</td>
+<td>Return as result text with <code>is_error: True</code>; never raise</td>
+</tr>
+<tr>
+<td>Control</td>
+<td><code>tool_choice</code>: <code>auto</code> / <code>any</code> / <code>tool</code> / <code>none</code></td>
+</tr>
+<tr>
+<td>Safety</td>
+<td>The model only <em>requests</em>; your code decides what runs. Never <code>eval()</code> model output</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-conversation-state-memory"><a href="../level-1/06-conversation-state-memory/">06 · Conversation State &amp; Memory</a><a class="headerlink" href="#06-conversation-state-memory" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Statelessness</td>
+<td>The model sees only what's in this request's <code>messages</code></td>
+</tr>
+<tr>
+<td>Memory cost</td>
+<td>Full history is re-billed as input every turn</td>
+</tr>
+<tr>
+<td>Sliding window</td>
+<td>Keep last N turns; must still start with <code>user</code>; don't split tool exchanges</td>
+</tr>
+<tr>
+<td>Summarization</td>
+<td>Replace old turns with a model-written summary; keep recent turns verbatim</td>
+</tr>
+<tr>
+<td>Cheap summarizer</td>
+<td>Use the fast model (<code>claude-haiku-4-5</code>) for summaries</td>
+</tr>
+<tr>
+<td>System-prompt state</td>
+<td>Stable facts/rules; survives truncation; keep it stable for caching</td>
+</tr>
+<tr>
+<td>Message state</td>
+<td>The dialogue itself; what gets trimmed/summarized</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Summarize on a token budget via <code>count_tokens</code>, not message count</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-streaming"><a href="../level-1/07-streaming/">07 · Streaming</a><a class="headerlink" href="#07-streaming" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Why stream</td>
+<td>First token in ~0.5s instead of full-response latency; long outputs require it</td>
+</tr>
+<tr>
+<td>Easy path</td>
+<td><code>with client.messages.stream(...) as stream:</code></td>
+</tr>
+<tr>
+<td>Text chunks</td>
+<td><code>for text in stream.text_stream: print(text, end="", flush=True)</code></td>
+</tr>
+<tr>
+<td>Full message</td>
+<td><code>stream.get_final_message()</code> after the loop — usage, stop_reason, content</td>
+</tr>
+<tr>
+<td>History</td>
+<td>Append <code>final.content</code> exactly as in non-streaming code</td>
+</tr>
+<tr>
+<td>Events</td>
+<td><code>content_block_delta</code> carries <code>text_delta</code>; <code>message_delta</code> carries stop_reason/usage</td>
+</tr>
+<tr>
+<td>Wire format</td>
+<td>Server-Sent Events (SSE) — proxyable to browsers</td>
+</tr>
+<tr>
+<td>Partial output</td>
+<td>On cancel/disconnect, repair your history; never leave a dangling turn</td>
+</tr>
+<tr>
+<td><code>flush=True</code></td>
+<td>Without it, terminal buffering hides the streaming</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-errors-rate-limits-cost"><a href="../level-1/08-errors-rate-limits-cost/">08 · Errors, Rate Limits &amp; Cost</a><a class="headerlink" href="#08-errors-rate-limits-cost" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typed errors</td>
+<td>Catch <code>RateLimitError</code>, <code>APIStatusError</code>, <code>APIConnectionError</code> — most specific first</td>
+</tr>
+<tr>
+<td>Retryable</td>
+<td>429, ≥500, connection errors — with exponential backoff + jitter</td>
+</tr>
+<tr>
+<td>Not retryable</td>
+<td>400/401/403/404 — fix the request, not the retry count</td>
+</tr>
+<tr>
+<td><code>retry-after</code></td>
+<td>Honor the header on 429s</td>
+</tr>
+<tr>
+<td>Built-in retries</td>
+<td><code>anthropic.Anthropic(max_retries=N)</code> — SDK backs off automatically</td>
+</tr>
+<tr>
+<td>Timeouts</td>
+<td><code>timeout=30.0</code> on the client; stream long responses</td>
+</tr>
+<tr>
+<td>Rate limit visibility</td>
+<td><code>x-ratelimit-*</code> response headers via <code>with_raw_response</code></td>
+</tr>
+<tr>
+<td>Cost formula</td>
+<td><code>(in_tokens × in_price + out_tokens × out_price) / 1e6</code></td>
+</tr>
+<tr>
+<td>Cost data</td>
+<td><code>response.usage</code> after; <code>count_tokens</code> (free) before</td>
+</tr>
+<tr>
+<td>Cheap tier</td>
+<td>Route easy tasks to <code>claude-haiku-4-5</code></td>
+</tr>
+<tr>
+<td>Caching</td>
+<td>App-level response cache + provider prompt caching</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-a-simple-agent-loop"><a href="../level-1/09-simple-agent-loop/">09 · A Simple Agent Loop</a><a class="headerlink" href="#09-a-simple-agent-loop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent</td>
+<td>Model plans → your code executes tools → model observes → repeat</td>
+</tr>
+<tr>
+<td>Loop exit</td>
+<td><code>stop_reason != "tool_use"</code> → final answer</td>
+</tr>
+<tr>
+<td>Iteration cap</td>
+<td>Always bound the loop (<code>MAX_ITERATIONS</code>) — runaway loops burn money</td>
+</tr>
+<tr>
+<td>Dangerous actions</td>
+<td>Human confirmation before anything that writes/sends/spends</td>
+</tr>
+<tr>
+<td>Path safety</td>
+<td>Resolve + containment-check every model-supplied filename</td>
+</tr>
+<tr>
+<td>Errors to the model</td>
+<td>Return tool errors as results; the agent adapts</td>
+</tr>
+<tr>
+<td>Cost guardrail</td>
+<td>Track usage per iteration; abort past a budget</td>
+</tr>
+<tr>
+<td>Overkill test</td>
+<td>If steps are known in advance, use a pipeline, not an agent</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-capstone-cli-personal-assistant"><a href="../level-1/10-capstone-project/">10 · Capstone — CLI Personal Assistant</a><a class="headerlink" href="#10-capstone-cli-personal-assistant" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Modules it applies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tools.py</code> — schemas, safe implementations, dispatcher</td>
+<td>05</td>
+</tr>
+<tr>
+<td><code>memory.py</code> — token-budgeted summarization</td>
+<td>02, 06</td>
+</tr>
+<tr>
+<td><code>assistant.py</code> — streaming agent loop + iteration cap</td>
+<td>05, 07, 09</td>
+</tr>
+<tr>
+<td><code>CostTracker</code> — usage → dollars</td>
+<td>08</td>
+</tr>
+<tr>
+<td>Retries/timeout via SDK config</td>
+<td>08</td>
+</tr>
+<tr>
+<td><code>evals.py</code> — golden prompts with checkable expectations</td>
+<td>03</td>
+</tr>
+<tr>
+<td>System prompt with tool rules</td>
+<td>02, 03</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-2-intermediate">Level 2 · Intermediate<a class="headerlink" href="#level-2-intermediate" title="Permanent link">&para;</a></h2>
+<h3 id="01-advanced-prompting-patterns"><a href="../level-2/01-advanced-prompting-patterns/">01 · Advanced Prompting Patterns</a><a class="headerlink" href="#01-advanced-prompting-patterns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meta-prompting</td>
+<td>Fast first draft of a new system prompt</td>
+</tr>
+<tr>
+<td>Prompt chaining</td>
+<td>Complex tasks with clear intermediate outputs</td>
+</tr>
+<tr>
+<td>Self-critique</td>
+<td>Catching errors before returning output to users</td>
+</tr>
+<tr>
+<td>Prompt library</td>
+<td>Versioning, reviewing, and rolling back prompt changes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-prompt-caching-cost-optimization"><a href="../level-2/02-prompt-caching/">02 · Prompt Caching &amp; Cost Optimization</a><a class="headerlink" href="#02-prompt-caching-cost-optimization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cache_control</code></td>
+<td>Marks the end of a cacheable prefix segment</td>
+</tr>
+<tr>
+<td>Prefix rule</td>
+<td>Everything before the breakpoint must be byte-identical across calls</td>
+</tr>
+<tr>
+<td>Ordering</td>
+<td>Stable content (system, docs) first; volatile content (question) last</td>
+</tr>
+<tr>
+<td>First call</td>
+<td>Pays a small write premium (<code>cache_creation_input_tokens</code>)</td>
+</tr>
+<tr>
+<td>Later calls</td>
+<td>Steep discount on <code>cache_read_input_tokens</code></td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Always log <code>usage</code> — never assume the cache is hitting</td>
+</tr>
+<tr>
+<td>Multi-turn</td>
+<td>Cache the growing history by breakpointing the latest message each turn</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-vision-multimodal-inputs"><a href="../level-2/03-vision-multimodal/">03 · Vision &amp; Multimodal Inputs</a><a class="headerlink" href="#03-vision-multimodal-inputs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Content block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Photo, screenshot, chart</td>
+<td><code>{"type": "image", "source": {...}}</code></td>
+</tr>
+<tr>
+<td>PDF (text + layout)</td>
+<td><code>{"type": "document", "source": {...}}</code></td>
+</tr>
+<tr>
+<td>Multiple images</td>
+<td>Multiple blocks in one message, in reading order</td>
+</tr>
+<tr>
+<td>Precision on small text</td>
+<td>Ask for transcription first, then the answer</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Images/PDFs consume real context tokens — budget for them</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-advanced-tool-use-patterns"><a href="../level-2/04-advanced-tool-use/">04 · Advanced Tool Use Patterns</a><a class="headerlink" href="#04-advanced-tool-use-patterns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parallel execution</td>
+<td>Model batches requests; your code decides serial vs. concurrent</td>
+</tr>
+<tr>
+<td>Strict schema</td>
+<td><code>enum</code>/<code>pattern</code>/<code>additionalProperties: False</code> constrain generation directly</td>
+</tr>
+<tr>
+<td>Forced tool</td>
+<td><code>tool_choice: {"type": "tool", "name": ...}</code> — reliable structured extraction</td>
+</tr>
+<tr>
+<td>Disable parallel</td>
+<td><code>disable_parallel_tool_use: True</code> when ordering matters</td>
+</tr>
+<tr>
+<td>Server-side tools</td>
+<td>Provider executes; you only enable and read results</td>
+</tr>
+<tr>
+<td>Trust boundary</td>
+<td>Validate tool arguments on receipt even with a strict schema</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-model-context-protocol-mcp"><a href="../level-2/05-mcp/">05 · Model Context Protocol (MCP)</a><a class="headerlink" href="#05-model-context-protocol-mcp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP</td>
+<td>Protocol standardizing tool discovery + invocation across apps</td>
+</tr>
+<tr>
+<td>Tools / Resources / Prompts</td>
+<td>The three things an MCP server can expose</td>
+</tr>
+<tr>
+<td><code>list_tools()</code></td>
+<td>Client fetches current schemas at connection time</td>
+</tr>
+<tr>
+<td><code>call_tool()</code></td>
+<td>Client-side equivalent of Level 1's <code>execute_tool</code></td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>stdio for local subprocess servers, HTTP for remote ones</td>
+</tr>
+<tr>
+<td>Reuse payoff</td>
+<td>One server backs many client applications</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-evaluation-frameworks"><a href="../level-2/06-evaluation-frameworks/">06 · Evaluation Frameworks</a><a class="headerlink" href="#06-evaluation-frameworks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Golden dataset</td>
+<td>Fixed inputs + expected outputs, versioned like test fixtures</td>
+</tr>
+<tr>
+<td>Exact-match scoring</td>
+<td>Use for classification/extraction with one correct answer</td>
+</tr>
+<tr>
+<td>LLM-as-judge</td>
+<td>Use for open-ended output; grade against an explicit rubric</td>
+</tr>
+<tr>
+<td>Judge consistency</td>
+<td>Pin the judge model; spot-check against human judgment</td>
+</tr>
+<tr>
+<td>Regression suite</td>
+<td>Threshold-gated script run in CI on every prompt/model change</td>
+</tr>
+<tr>
+<td>Eval-driven dev</td>
+<td>Write the failing eval case first when you find a bug</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-advanced-agent-patterns"><a href="../level-2/07-advanced-agent-patterns/">07 · Advanced Agent Patterns</a><a class="headerlink" href="#07-advanced-agent-patterns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Planner/executor split</td>
+<td>Auditable, checkpointable multi-step plans</td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td>Catch drift/dead-ends before they compound</td>
+</tr>
+<tr>
+<td>Task list as external state</td>
+<td>Compact, always-current progress view</td>
+</tr>
+<tr>
+<td>Context editing</td>
+<td>Stay within the context window on long-running agents</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-multi-agent-systems"><a href="../level-2/08-multi-agent-systems/">08 · Multi-Agent Systems</a><a class="headerlink" href="#08-multi-agent-systems" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orchestrator</td>
+<td>Delegates via tool calls; never does the work itself</td>
+</tr>
+<tr>
+<td>Subagent</td>
+<td>A <code>messages.create</code> call with a narrow system prompt, invoked as a tool</td>
+</tr>
+<tr>
+<td>Specialization payoff</td>
+<td>Narrower prompt + isolated context = higher reliability</td>
+</tr>
+<tr>
+<td>Shared workspace</td>
+<td>Files/DB rows for artifacts too large to pass through messages</td>
+</tr>
+<tr>
+<td>Inter-agent messaging</td>
+<td>An explicit message log both sides read/append to</td>
+</tr>
+<tr>
+<td>No hidden coordination</td>
+<td>Agents only share what your code explicitly routes between them</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-building-llm-web-apps"><a href="../level-2/09-llm-web-apps/">09 · Building LLM Web Apps</a><a class="headerlink" href="#09-building-llm-web-apps" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic endpoint</td>
+<td>FastAPI route wrapping <code>messages.create</code></td>
+</tr>
+<tr>
+<td>Perceived latency</td>
+<td><code>StreamingResponse</code> + SSE, token-by-token</td>
+</tr>
+<tr>
+<td>Session state</td>
+<td>External store (Redis/DB) keyed by session id, with TTL</td>
+</tr>
+<tr>
+<td>Concurrency limits</td>
+<td><code>asyncio.Semaphore</code> capping in-flight model calls</td>
+</tr>
+<tr>
+<td>Provider errors</td>
+<td>Catch and translate to clean HTTP status + retry guidance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-project-production-ready-agent-service"><a href="../level-2/10-project-agent-service/">10 · Project — Production-Ready Agent Service</a><a class="headerlink" href="#10-project-production-ready-agent-service" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Module it came from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cached system prompt</td>
+<td>Module 2</td>
+</tr>
+<tr>
+<td>Strict tool schemas</td>
+<td>Module 4</td>
+</tr>
+<tr>
+<td>Agent loop + iteration cap</td>
+<td>Level 1, module 9</td>
+</tr>
+<tr>
+<td>SSE streaming</td>
+<td>Module 9</td>
+</tr>
+<tr>
+<td>Redis session persistence</td>
+<td>Module 9</td>
+</tr>
+<tr>
+<td>CI-gated eval suite</td>
+<td>Module 6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-3-advanced">Level 3 · Advanced<a class="headerlink" href="#level-3-advanced" title="Permanent link">&para;</a></h2>
+<h3 id="01-transformer-internals"><a href="../level-3/01-transformer-internals/">01 · Transformer Internals</a><a class="headerlink" href="#01-transformer-internals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embedding table</td>
+<td>Maps token ids to learned vectors</td>
+</tr>
+<tr>
+<td>Positional encoding / RoPE</td>
+<td>Injects order into an otherwise order-agnostic mechanism</td>
+</tr>
+<tr>
+<td>Self-attention</td>
+<td>Weighted average of all (visible) tokens' values</td>
+</tr>
+<tr>
+<td>Causal mask</td>
+<td>Blocks attending to future tokens — enables next-token prediction</td>
+</tr>
+<tr>
+<td>Multi-head</td>
+<td>Several parallel attention computations, concatenated</td>
+</tr>
+<tr>
+<td>Feed-forward + residual + norm</td>
+<td>Nonlinear per-position processing, stable deep stacking</td>
+</tr>
+<tr>
+<td>KV cache</td>
+<td>Reuses prior tokens' keys/values instead of recomputing every step</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-tokenizers-deep-dive"><a href="../level-3/02-tokenizers/">02 · Tokenizers Deep Dive</a><a class="headerlink" href="#02-tokenizers-deep-dive" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BPE</td>
+<td>Iteratively merges the most frequent adjacent pair into a new token</td>
+</tr>
+<tr>
+<td>Vocabulary</td>
+<td>The ordered list of learned merges, fixed after training</td>
+</tr>
+<tr>
+<td>Unseen words</td>
+<td>Decompose into smaller known pieces — never a hard failure</td>
+</tr>
+<tr>
+<td>Token ≠ word ≠ character</td>
+<td>None of these counts are interchangeable</td>
+</tr>
+<tr>
+<td>Cross-model variance</td>
+<td>Different training corpora → different vocabularies → different counts</td>
+</tr>
+<tr>
+<td>Cost estimation</td>
+<td>Always use the real tokenizer/count API, never a word-count heuristic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-embeddings-semantic-search"><a href="../level-3/03-embeddings-semantic-search/">03 · Embeddings &amp; Semantic Search</a><a class="headerlink" href="#03-embeddings-semantic-search" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embedding</td>
+<td>Fixed-length vector; semantically similar text → nearby vectors</td>
+</tr>
+<tr>
+<td><code>input_type</code></td>
+<td>Query vs. document embeddings are often different — don't mix them up</td>
+</tr>
+<tr>
+<td>Cosine similarity</td>
+<td>Measures angle, not magnitude — matches the training objective</td>
+</tr>
+<tr>
+<td>Vector store</td>
+<td>Approximate nearest-neighbor index for scale beyond brute force</td>
+</tr>
+<tr>
+<td>Chunking</td>
+<td>Balance too-small (loses context) vs. too-large (dilutes meaning)</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>Retrieval + generation, for synthesized rather than raw-document answers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-running-local-models-with-ollama"><a href="../level-3/04-local-models-ollama/">04 · Running Local Models with Ollama</a><a class="headerlink" href="#04-running-local-models-with-ollama" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ollama pull</code></td>
+<td>Downloads a model's weights, quantized by tag</td>
+</tr>
+<tr>
+<td><code>/api/generate</code></td>
+<td>Single-prompt completion</td>
+</tr>
+<tr>
+<td><code>/api/chat</code></td>
+<td>Multi-turn, same <code>messages</code> shape as the hosted API</td>
+</tr>
+<tr>
+<td>Streaming</td>
+<td><code>"stream": true</code> → newline-delimited JSON chunks</td>
+</tr>
+<tr>
+<td>Tool calling</td>
+<td>Supported by newer models; validate reliability per model</td>
+</tr>
+<tr>
+<td>OpenAI-compat endpoint</td>
+<td><code>base_url="http://localhost:11434/v1"</code></td>
+</tr>
+<tr>
+<td>Hardware rule of thumb</td>
+<td>~parameter count in GB of RAM at 4-bit quantization</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-serving-open-models-with-vllm"><a href="../level-3/05-serving-vllm/">05 · Serving Open Models with vLLM</a><a class="headerlink" href="#05-serving-open-models-with-vllm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vLLM</td>
+<td>OpenAI-compatible inference server for open-weight models</td>
+</tr>
+<tr>
+<td>PagedAttention</td>
+<td>Block-based, on-demand KV cache allocation — less wasted GPU memory</td>
+</tr>
+<tr>
+<td>Continuous batching</td>
+<td>Requests join/leave the running batch per-step, not per-batch</td>
+</tr>
+<tr>
+<td><code>--gpu-memory-utilization</code></td>
+<td>KV cache pool size — biggest lever on concurrent capacity</td>
+</tr>
+<tr>
+<td><code>--enable-prefix-caching</code></td>
+<td>Self-hosted equivalent of hosted prompt caching</td>
+</tr>
+<tr>
+<td>Load testing</td>
+<td>Always measure real throughput/latency before tuning further</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-fine-tuning-fundamentals-loraqlora"><a href="../level-3/06-fine-tuning/">06 · Fine-Tuning Fundamentals (LoRA/QLoRA)</a><a class="headerlink" href="#06-fine-tuning-fundamentals-loraqlora" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fine-tune vs. prompt</td>
+<td>Prompting first; fine-tune for consistent style/format at volume</td>
+</tr>
+<tr>
+<td>Not for facts</td>
+<td>Use retrieval (module 3) for facts; fine-tuning bakes in behavior, not knowledge</td>
+</tr>
+<tr>
+<td>Dataset</td>
+<td>Consistent <code>messages</code>-shaped examples; quality over volume</td>
+</tr>
+<tr>
+<td>LoRA</td>
+<td>Freezes base weights; trains small low-rank adapter matrices</td>
+</tr>
+<tr>
+<td><code>r</code> (rank)</td>
+<td>Key size/quality knob — too small under-fits, too large loses the LoRA benefit</td>
+</tr>
+<tr>
+<td>QLoRA</td>
+<td>LoRA on a 4-bit quantized frozen base — lowest memory footprint</td>
+</tr>
+<tr>
+<td>Always re-eval</td>
+<td>Compare fine-tuned vs. base+prompting on a held-out set, not just training loss</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-quantization-inference-optimization"><a href="../level-3/07-quantization-inference/">07 · Quantization &amp; Inference Optimization</a><a class="headerlink" href="#07-quantization-inference-optimization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantization</td>
+<td>Fewer bits per weight → smaller model, faster memory reads</td>
+</tr>
+<tr>
+<td>GGUF</td>
+<td>llama.cpp/Ollama format; per-block scaling; CPU/consumer-GPU friendly</td>
+</tr>
+<tr>
+<td>GPTQ</td>
+<td>Calibrated quantization minimizing output error, layer by layer</td>
+</tr>
+<tr>
+<td>AWQ</td>
+<td>Preserves high-precision for activation-correlated "important" weights</td>
+</tr>
+<tr>
+<td>Bottleneck</td>
+<td>Single-request generation is memory-bandwidth-bound, not compute-bound</td>
+</tr>
+<tr>
+<td>Speculative decoding</td>
+<td>Draft model proposes, target model verifies in one batched pass</td>
+</tr>
+<tr>
+<td>Always measure</td>
+<td>Quality loss is task-dependent — eval, don't assume</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-guardrails-content-moderation"><a href="../level-3/08-guardrails-moderation/">08 · Guardrails &amp; Content Moderation</a><a class="headerlink" href="#08-guardrails-content-moderation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input filtering</td>
+<td>Block or flag before the request reaches the main model</td>
+</tr>
+<tr>
+<td>Output filtering</td>
+<td>Catch problematic completions the input check couldn't predict</td>
+</tr>
+<tr>
+<td>Dedicated moderation API</td>
+<td>Cheaper, purpose-trained for common abuse categories</td>
+</tr>
+<tr>
+<td>Custom LLM classifier</td>
+<td>Domain-specific policy rules a generic API doesn't know</td>
+</tr>
+<tr>
+<td>Policy table</td>
+<td>Rules as data — auditable, versionable, separate from app code</td>
+</tr>
+<tr>
+<td>Audit logging</td>
+<td>Record every enforcement decision, independent of the chat transcript</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-observability-tracing"><a href="../level-3/09-observability-tracing/">09 · Observability &amp; Tracing</a><a class="headerlink" href="#09-observability-tracing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trace</td>
+<td>All spans (LLM calls, tool executions) for one user request, tied by trace ID</td>
+</tr>
+<tr>
+<td>Span</td>
+<td>One unit of work with timing, metadata, and error status</td>
+</tr>
+<tr>
+<td>Token/cost dashboard</td>
+<td>Aggregated <code>usage</code> data over time, alertable on spend spikes</td>
+</tr>
+<tr>
+<td>Debugging via trace</td>
+<td>Answer "what did it see / decide / get back" without live reproduction</td>
+</tr>
+<tr>
+<td>Observability platforms</td>
+<td>Same data model as hand-rolled tracing, with less boilerplate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-project-self-hosted-llm-stack"><a href="../level-3/10-project-self-hosted-stack/">10 · Project — Self-Hosted LLM Stack</a><a class="headerlink" href="#10-project-self-hosted-llm-stack" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Module it came from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open model, quantized</td>
+<td>Modules 4, 7</td>
+</tr>
+<tr>
+<td>vLLM serving</td>
+<td>Module 5</td>
+</tr>
+<tr>
+<td>Input/output guardrails</td>
+<td>Module 8</td>
+</tr>
+<tr>
+<td>Tracing + usage logging</td>
+<td>Module 9</td>
+</tr>
+<tr>
+<td>Gateway orchestration</td>
+<td>Plain FastAPI, no new mechanism</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-4-master">Level 4 · Master<a class="headerlink" href="#level-4-master" title="Permanent link">&para;</a></h2>
+<h3 id="01-pretraining-scaling-laws-overview"><a href="../level-4/01-pretraining-scaling-laws/">01 · Pretraining &amp; Scaling Laws Overview</a><a class="headerlink" href="#01-pretraining-scaling-laws-overview" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pretraining objective</td>
+<td>Predict the next token — no task-specific labels</td>
+</tr>
+<tr>
+<td>Data pipeline</td>
+<td>Dedup → quality filter → PII/safety filter → deliberate source mixing</td>
+</tr>
+<tr>
+<td>Scaling laws</td>
+<td>Empirical power-law relationships between loss, size, data, compute</td>
+</tr>
+<tr>
+<td>Compute-optimal</td>
+<td>For fixed compute, there's a size/data split that minimizes loss</td>
+</tr>
+<tr>
+<td>Diminishing returns</td>
+<td>Power-law scaling means each doubling helps less than the last</td>
+</tr>
+<tr>
+<td>Practical takeaway</td>
+<td>Data quality/mix now rivals raw scale as the main quality lever</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-alignment-rlhf-overview"><a href="../level-4/02-alignment-rlhf/">02 · Alignment &amp; RLHF Overview</a><a class="headerlink" href="#02-alignment-rlhf-overview" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SFT</td>
+<td>Teach assistant format/behavior from curated examples</td>
+</tr>
+<tr>
+<td>Reward model</td>
+<td>Predict human preference ranking as a scalar score</td>
+</tr>
+<tr>
+<td>PPO-RLHF</td>
+<td>RL against the reward model, KL-penalized to a reference policy</td>
+</tr>
+<tr>
+<td>DPO</td>
+<td>Same objective as RLHF, solved as a direct supervised loss — no RL loop</td>
+</tr>
+<tr>
+<td>Constitutional AI / RLAIF</td>
+<td>Model-generated preference labels guided by written principles</td>
+</tr>
+<tr>
+<td>KL penalty</td>
+<td>Prevents reward hacking and capability collapse during RL</td>
+</tr>
+<tr>
+<td>Why over-refusal happens</td>
+<td>Alignment generalizes patterns across training distribution, not per-case rules</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-production-llm-platform-architecture"><a href="../level-4/03-llm-platform-architecture/">03 · Production LLM Platform Architecture</a><a class="headerlink" href="#03-production-llm-platform-architecture" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Provider adapter</td>
+<td>Translates internal request/response shape to one provider's API</td>
+</tr>
+<tr>
+<td>Routing table</td>
+<td>Maps task type to an ordered list of providers/models to try</td>
+</tr>
+<tr>
+<td>Fallback chain</td>
+<td>Tries the next provider on failure instead of failing the whole request</td>
+</tr>
+<tr>
+<td>Token bucket</td>
+<td>Per-team/key rate limiting with smooth, continuous refill</td>
+</tr>
+<tr>
+<td>Normalized errors</td>
+<td>One retryable/non-retryable contract across all providers</td>
+</tr>
+<tr>
+<td>Centralized logging</td>
+<td>One place to see cross-team cost, latency, and error rate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-safety-red-teaming"><a href="../level-4/04-safety-red-teaming/">04 · Safety &amp; Red-Teaming</a><a class="headerlink" href="#04-safety-red-teaming" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jailbreak categories</td>
+<td>Role-play, instruction override, obfuscation, context stuffing, escalation</td>
+</tr>
+<tr>
+<td>Control cases</td>
+<td>Benign prompts that must NOT be refused — measures over-refusal</td>
+</tr>
+<tr>
+<td>Automated red-teaming</td>
+<td>Use an attacker LLM to generate/mutate adversarial variants at scale</td>
+</tr>
+<tr>
+<td>LLM-as-judge for refusal</td>
+<td>Classify compliance vs. refusal on the target's actual response</td>
+</tr>
+<tr>
+<td>Layered defense</td>
+<td>Alignment + system prompt + input filter + output filter + monitoring</td>
+</tr>
+<tr>
+<td>Why layers compound</td>
+<td>Independent failure modes multiply, not just add, reducing overall risk</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-advanced-evaluation-at-scale"><a href="../level-4/05-evaluation-at-scale/">05 · Advanced Evaluation at Scale</a><a class="headerlink" href="#05-advanced-evaluation-at-scale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Continuous eval</td>
+<td>Sample live traffic continuously, not just a static golden set</td>
+</tr>
+<tr>
+<td>LLM-as-judge at scale</td>
+<td>Automates scoring of sampled production traffic</td>
+</tr>
+<tr>
+<td>A/B testing</td>
+<td>Deterministic hash-based assignment; measure with a significance test</td>
+</tr>
+<tr>
+<td>Effect size</td>
+<td>Whether a measured difference is meaningful, not just non-zero</td>
+</tr>
+<tr>
+<td>Rolling baseline</td>
+<td>Alert on relative drift from a moving baseline, not a fixed threshold</td>
+</tr>
+<tr>
+<td>Why sampling matters</td>
+<td>Live traffic covers failure modes no static golden set anticipated</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-cost-optimization-at-scale"><a href="../level-4/06-cost-optimization-at-scale/">06 · Cost Optimization at Scale</a><a class="headerlink" href="#06-cost-optimization-at-scale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Lever</th>
+<th>Mechanism</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model tiering</td>
+<td>Route to cheapest sufficient model, escalate on low confidence</td>
+<td>Mixed-difficulty traffic</td>
+</tr>
+<tr>
+<td>Batch API</td>
+<td>Trade latency (hours) for a substantial per-token discount</td>
+<td>Non-interactive, bulk workloads</td>
+</tr>
+<tr>
+<td>Exact-match caching</td>
+<td>Skip inference entirely on identical repeated requests</td>
+<td>FAQ-style, repeated queries</td>
+</tr>
+<tr>
+<td>Prompt caching</td>
+<td>Reuse processed prefix across calls with shared context</td>
+<td>Long, stable system prompts/docs</td>
+</tr>
+<tr>
+<td>Cost attribution</td>
+<td>Tag every request with team/caller at the gateway</td>
+<td>Accountability, budget alerts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-latency-engineering-batching"><a href="../level-4/07-latency-engineering/">07 · Latency Engineering &amp; Batching</a><a class="headerlink" href="#07-latency-engineering-batching" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p99 over mean</td>
+<td>Tail latency reflects real worst-case user experience; mean hides it</td>
+</tr>
+<tr>
+<td>Time-to-first-token</td>
+<td>Matters more than total time for perceived responsiveness</td>
+</tr>
+<tr>
+<td>Streaming-first</td>
+<td>Default every user-facing feature to stream, not wait-then-return</td>
+</tr>
+<tr>
+<td>Request batching</td>
+<td>Trade a small wait for much better throughput/GPU utilization</td>
+</tr>
+<tr>
+<td>Speculative decoding</td>
+<td>Draft model guesses tokens; target model verifies in one pass</td>
+</tr>
+<tr>
+<td>Latency budget routing</td>
+<td>Fall back to a faster model when the primary is trending slow</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-security-prompt-injection-beyond"><a href="../level-4/08-security-prompt-injection/">08 · Security — Prompt Injection &amp; Beyond</a><a class="headerlink" href="#08-security-prompt-injection-beyond" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct injection</td>
+<td>Attacker is the user, writing malicious text into their own prompt</td>
+</tr>
+<tr>
+<td>Indirect injection</td>
+<td>Attacker plants instructions in third-party data the model processes</td>
+</tr>
+<tr>
+<td>Delimiter defense</td>
+<td>Mark untrusted content structurally; reduces but doesn't eliminate risk</td>
+</tr>
+<tr>
+<td>Least-privilege tools</td>
+<td>Scope tool access tightly per task — the strongest structural defense</td>
+</tr>
+<tr>
+<td>Human-in-the-loop</td>
+<td>Require explicit confirmation for irreversible/sensitive tool calls</td>
+</tr>
+<tr>
+<td>Exfiltration risk</td>
+<td>Any outbound network call with attacker-influenced content/URL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-compliance-privacy-governance"><a href="../level-4/09-compliance-privacy-governance/">09 · Compliance, Privacy &amp; Governance</a><a class="headerlink" href="#09-compliance-privacy-governance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retention policy</td>
+<td>Define per data category, not one global rule</td>
+</tr>
+<tr>
+<td>PII redaction</td>
+<td>Apply before data leaves your boundary; regex + model for full coverage</td>
+</tr>
+<tr>
+<td>Audit trail</td>
+<td>Hash-chained, tamper-evident log of every consequential action</td>
+</tr>
+<tr>
+<td>Purpose limitation</td>
+<td>Don't silently repurpose data collected for one use into another</td>
+</tr>
+<tr>
+<td>Data minimization</td>
+<td>Send models only what the task needs, not everything available</td>
+</tr>
+<tr>
+<td>Deletion by design</td>
+<td>Every store needs a <code>user_id</code>-indexed deletion path from day one</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Go deeper with the full <a href="../">LLM Development Mastery Path</a> curriculum or test yourself with the <a href="../interview-questions/">interview questions</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+  <nav class="mp-related" aria-label="Related free courses">
+    <h2>Related free courses</h2>
+    <ul>
+      <li><a href="https://learnmasterypath.com/ai-ml-mastery-path/">AI/ML</a></li><li><a href="https://learnmasterypath.com/rag-mastery-path/">RAG</a></li><li><a href="https://learnmasterypath.com/edge-ai-mastery-path/">Edge AI</a></li><li><a href="https://learnmasterypath.com/claude-training-mastery-path/">Claude Training</a></li><li><a href="https://learnmasterypath.com/ai-tools-mastery-path/">AI Tools</a></li>
+      <li><a href="https://learnmasterypath.com/">All 100+ courses &rarr;</a></li>
+    </ul>
+  </nav>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../interview-questions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interview Questions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Interview Questions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../level-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <div class="mp-foot">
+    <div class="mp-foot-inner">
+      <a class="mp-foot-brand" href="https://learnmasterypath.com/"><svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg><span>Mastery Path</span></a>
+      <nav class="mp-sitelinks" aria-label="Site and legal links">
+        <a href="https://learnmasterypath.com/">All courses</a>
+        <a href="https://learnmasterypath.com/about.html">About</a>
+        <a href="https://learnmasterypath.com/contact.html">Contact</a>
+        <a href="https://learnmasterypath.com/llm-dev-mastery-path/privacy/">Privacy Policy</a>
+        <a href="https://learnmasterypath.com/terms.html">Terms</a>
+        <a href="https://learnmasterypath.com/llm-dev-mastery-path/license/">License</a>
+        <a href="https://learnmasterypath.com/verify/">Verify a certificate</a>
+      </nav>
+    </div>
+    <p class="mp-license-note">
+      © 2026 Vinod Kumar Sigilipelli · Except where otherwise noted, lesson content is licensed under
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and code examples under the
+      <a href="https://opensource.org/license/mit">MIT License</a>.
+    </p>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/progress-tracker.js"></script>
+      
+        <script src="../javascripts/final-quiz.js"></script>
+      
+    
+  </body>
+</html>
